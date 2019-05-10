@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C057CBD22857EB000ADD413 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057CBC22857EB000ADD413 /* Coupon.swift */; };
+		3C057CBF22857EE900ADD413 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057CBE22857EE900ADD413 /* Rating.swift */; };
+		3C057CC22285976D00ADD413 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057CC12285976D00ADD413 /* Utility.swift */; };
+		3CB1A36522856BF200620E0D /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB1A36422856BF200620E0D /* ShadowView.swift */; };
+		3CB1B81F228579EA00634902 /* CouponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB1B81E228579EA00634902 /* CouponTableViewCell.swift */; };
+		809CE0E62285FD0900E7A765 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809CE0E52285FD0900E7A765 /* BarcodeViewController.swift */; };
+		80FADB5C2284B49800E45CB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FADB5B2284B49800E45CB8 /* AppDelegate.swift */; };
+		80FADB5E2284B49800E45CB8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FADB5D2284B49800E45CB8 /* HomeViewController.swift */; };
+		80FADB612284B49800E45CB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FADB5F2284B49800E45CB8 /* Main.storyboard */; };
+		80FADB632284B49900E45CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80FADB622284B49900E45CB8 /* Assets.xcassets */; };
+		80FADB662284B49900E45CB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FADB642284B49900E45CB8 /* LaunchScreen.storyboard */; };
+		80FADB702284B80500E45CB8 /* CalcDiscountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FADB6F2284B80500E45CB8 /* CalcDiscountViewController.swift */; };
+		80FADB722284B82000E45CB8 /* AddNewCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FADB712284B82000E45CB8 /* AddNewCouponViewController.swift */; };
+		80FADB752284B8A600E45CB8 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FADB742284B8A600E45CB8 /* RoundedTextField.swift */; };
+		80FADB772284BC3700E45CB8 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FADB762284BC3700E45CB8 /* RoundedButton.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3C057CBC22857EB000ADD413 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
+		3C057CBE22857EE900ADD413 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		3C057CC12285976D00ADD413 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		3CB1A36422856BF200620E0D /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		3CB1B81E228579EA00634902 /* CouponTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponTableViewCell.swift; sourceTree = "<group>"; };
+		809CE0E52285FD0900E7A765 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
+		80FADB582284B49800E45CB8 /* ExtremeCoupon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtremeCoupon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80FADB5B2284B49800E45CB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		80FADB5D2284B49800E45CB8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		80FADB602284B49800E45CB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		80FADB622284B49900E45CB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80FADB652284B49900E45CB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		80FADB672284B49900E45CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80FADB6F2284B80500E45CB8 /* CalcDiscountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcDiscountViewController.swift; sourceTree = "<group>"; };
+		80FADB712284B82000E45CB8 /* AddNewCouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCouponViewController.swift; sourceTree = "<group>"; };
+		80FADB742284B8A600E45CB8 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		80FADB762284BC3700E45CB8 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80FADB552284B49800E45CB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C057CBB22857EA200ADD413 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C057CBC22857EB000ADD413 /* Coupon.swift */,
+				3C057CBE22857EE900ADD413 /* Rating.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3C057CC02285975F00ADD413 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3C057CC12285976D00ADD413 /* Utility.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3CB1B81D228579C800634902 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3CB1B81E228579EA00634902 /* CouponTableViewCell.swift */,
+			);
+			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
+		80FADB4F2284B49800E45CB8 = {
+			isa = PBXGroup;
+			children = (
+				80FADB5A2284B49800E45CB8 /* ExtremeCoupon */,
+				80FADB592284B49800E45CB8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80FADB592284B49800E45CB8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80FADB582284B49800E45CB8 /* ExtremeCoupon.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80FADB5A2284B49800E45CB8 /* ExtremeCoupon */ = {
+			isa = PBXGroup;
+			children = (
+				3C057CC02285975F00ADD413 /* Utils */,
+				3C057CBB22857EA200ADD413 /* Model */,
+				3CB1B81D228579C800634902 /* Custom Cell */,
+				80FADB732284B88D00E45CB8 /* Custom View */,
+				80FADB6E2284B4F900E45CB8 /* View */,
+				80FADB6D2284B4EF00E45CB8 /* Controller */,
+				80FADB5B2284B49800E45CB8 /* AppDelegate.swift */,
+				80FADB622284B49900E45CB8 /* Assets.xcassets */,
+				80FADB672284B49900E45CB8 /* Info.plist */,
+			);
+			path = ExtremeCoupon;
+			sourceTree = "<group>";
+		};
+		80FADB6D2284B4EF00E45CB8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				80FADB5D2284B49800E45CB8 /* HomeViewController.swift */,
+				80FADB6F2284B80500E45CB8 /* CalcDiscountViewController.swift */,
+				80FADB712284B82000E45CB8 /* AddNewCouponViewController.swift */,
+				809CE0E52285FD0900E7A765 /* BarcodeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		80FADB6E2284B4F900E45CB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				80FADB5F2284B49800E45CB8 /* Main.storyboard */,
+				80FADB642284B49900E45CB8 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		80FADB732284B88D00E45CB8 /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				80FADB742284B8A600E45CB8 /* RoundedTextField.swift */,
+				80FADB762284BC3700E45CB8 /* RoundedButton.swift */,
+				3CB1A36422856BF200620E0D /* ShadowView.swift */,
+			);
+			path = "Custom View";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80FADB572284B49800E45CB8 /* ExtremeCoupon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80FADB6A2284B49900E45CB8 /* Build configuration list for PBXNativeTarget "ExtremeCoupon" */;
+			buildPhases = (
+				80FADB542284B49800E45CB8 /* Sources */,
+				80FADB552284B49800E45CB8 /* Frameworks */,
+				80FADB562284B49800E45CB8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExtremeCoupon;
+			productName = ExtremeCoupon;
+			productReference = 80FADB582284B49800E45CB8 /* ExtremeCoupon.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80FADB502284B49800E45CB8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Christian Dobrovolny";
+				TargetAttributes = {
+					80FADB572284B49800E45CB8 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 80FADB532284B49800E45CB8 /* Build configuration list for PBXProject "ExtremeCoupon" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80FADB4F2284B49800E45CB8;
+			productRefGroup = 80FADB592284B49800E45CB8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80FADB572284B49800E45CB8 /* ExtremeCoupon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80FADB562284B49800E45CB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80FADB662284B49900E45CB8 /* LaunchScreen.storyboard in Resources */,
+				80FADB632284B49900E45CB8 /* Assets.xcassets in Resources */,
+				80FADB612284B49800E45CB8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80FADB542284B49800E45CB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80FADB702284B80500E45CB8 /* CalcDiscountViewController.swift in Sources */,
+				80FADB772284BC3700E45CB8 /* RoundedButton.swift in Sources */,
+				3C057CBF22857EE900ADD413 /* Rating.swift in Sources */,
+				3C057CC22285976D00ADD413 /* Utility.swift in Sources */,
+				80FADB5E2284B49800E45CB8 /* HomeViewController.swift in Sources */,
+				809CE0E62285FD0900E7A765 /* BarcodeViewController.swift in Sources */,
+				3C057CBD22857EB000ADD413 /* Coupon.swift in Sources */,
+				3CB1B81F228579EA00634902 /* CouponTableViewCell.swift in Sources */,
+				80FADB722284B82000E45CB8 /* AddNewCouponViewController.swift in Sources */,
+				80FADB752284B8A600E45CB8 /* RoundedTextField.swift in Sources */,
+				80FADB5C2284B49800E45CB8 /* AppDelegate.swift in Sources */,
+				3CB1A36522856BF200620E0D /* ShadowView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		80FADB5F2284B49800E45CB8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80FADB602284B49800E45CB8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		80FADB642284B49900E45CB8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80FADB652284B49900E45CB8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		80FADB682284B49900E45CB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		80FADB692284B49900E45CB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80FADB6B2284B49900E45CB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HHW7DDMM36;
+				INFOPLIST_FILE = ExtremeCoupon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.christian.dobrovolny.ExtremeCoupon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80FADB6C2284B49900E45CB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HHW7DDMM36;
+				INFOPLIST_FILE = ExtremeCoupon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.christian.dobrovolny.ExtremeCoupon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80FADB532284B49800E45CB8 /* Build configuration list for PBXProject "ExtremeCoupon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80FADB682284B49900E45CB8 /* Debug */,
+				80FADB692284B49900E45CB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80FADB6A2284B49900E45CB8 /* Build configuration list for PBXNativeTarget "ExtremeCoupon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80FADB6B2284B49900E45CB8 /* Debug */,
+				80FADB6C2284B49900E45CB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 80FADB502284B49800E45CB8 /* Project object */;
+}
