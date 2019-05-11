@@ -39,7 +39,10 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CouponCell", for: indexPath) as! CouponTableViewCell
         
         cell.couponTitleLabel.text = coupons[indexPath.row].title
-        cell.couponRatingLabel.text = "\(coupons[indexPath.row].rating.upVote) %"
+        if let rating = coupons[indexPath.row].rating {
+            cell.couponRatingLabel.text = "\(rating.upVote) %"
+        }
+        
         cell.couPonDateLabel.text = "gültig bis \(coupons[indexPath.row].date)"
         
         return cell

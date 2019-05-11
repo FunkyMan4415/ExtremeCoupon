@@ -64,7 +64,7 @@ class BarcodeViewController: UIViewController {
         if captureSession.canAddInput(videoInput) {
             captureSession.addInput(videoInput)
         } else {
-            Utility.showAlertController(for: self, with: "Oh nein, dein Gerät unterstützt das Scannen leider nicht :(")
+            Utility.showAlertController(for: self, with: "Fehler", and: "Oh nein, dein Gerät unterstützt das Scannen leider nicht :(")
             captureSession = nil
         }
         // MetadataOutput
@@ -75,7 +75,7 @@ class BarcodeViewController: UIViewController {
             metaDataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             metaDataOutput.metadataObjectTypes = [.code128]
         } else {
-            Utility.showAlertController(for: self, with: "Oh nein, dein Gerät unterstützt das Scannen leider nicht :(")
+            Utility.showAlertController(for: self, with: "Fehler", and: "Oh nein, dein Gerät unterstützt das Scannen leider nicht :(")
             captureSession = nil
         }
         

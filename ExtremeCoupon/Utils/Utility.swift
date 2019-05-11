@@ -9,8 +9,8 @@
 import UIKit
 
 class Utility {
-    static func showAlertController(for controller: UIViewController, with message: String) {
-        let alertController = UIAlertController(title: "Fehler", message: message, preferredStyle: .alert)
+    static func showAlertController(for controller: UIViewController, with title: String, and message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         
         alertController.addAction(alertAction)

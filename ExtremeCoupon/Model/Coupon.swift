@@ -13,5 +13,5 @@ struct Coupon {
     let title: String
     let date: String
     let code: String
-    let rating: Rating
+    let rating: Rating?
 }

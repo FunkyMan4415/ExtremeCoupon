@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AddNewCouponDelegate {
+    func didAddNewCoupon(for coupon: Coupon)
+}
+
 class AddNewCouponViewController: UIViewController {
     
     // MARK: - Properties
@@ -15,10 +19,13 @@ class AddNewCouponViewController: UIViewController {
     @IBOutlet weak var couponTitleTextField: RoundedTextField!
     @IBOutlet weak var couponDateTextField: RoundedTextField!
     
+    var delegate: AddNewCouponDelegate?
+    
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        couponDateTextField.dateInputMode()
         couponCodeTextField.rightButton.addTarget(self, action: #selector(cameraButtonTapped), for: .touchUpInside)
 
     }
@@ -27,6 +34,22 @@ class AddNewCouponViewController: UIViewController {
     // MARK: - Handler
     @IBAction func insertNewCouponButtonTapped(_ sender: UIButton) {
         view.endEditing(true)
+        
+        guard let couponTitleText = couponTitleTextField.text, !couponTitleText.isEmpty else {return}
+        guard let couponDateText = couponDateTextField.text, !couponDateText.isEmpty else {return}
+        guard let couponCodeText = couponCodeTextField.text, !couponCodeText.isEmpty else {return}
+        
+        let coupon = Coupon(title: couponTitleText, date: couponDateText, code: couponCodeText, rating: nil)
+        delegate?.didAddNewCoupon(for: coupon)
+        
+        Utility.showAlertController(for: self, with: "Erfolg", and: "Coupon erfolgreich angelegt")
+        clearAllFields()
+    }
+    
+    func clearAllFields() {
+        couponCodeTextField.text = ""
+        couponTitleTextField.text = ""
+        couponDateTextField.text = ""
     }
     
     @objc

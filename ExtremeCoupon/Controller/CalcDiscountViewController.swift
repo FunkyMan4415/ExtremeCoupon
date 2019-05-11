@@ -30,16 +30,16 @@ class CalcDiscountViewController: UIViewController {
         view.endEditing(true)
         
         guard let currencyText = paidTextField.text, !currencyText.isEmpty else {
-            Utility.showAlertController(for: self, with: "Bitte einen Betrag eingeben")
+            Utility.showAlertController(for: self, with:"Achtung", and: "Bitte einen Betrag eingeben")
             return
         }
         guard let formattedCurrency = numberFormatter.number(from: currencyText) else {
-            Utility.showAlertController(for: self, with: "Bitte einen gültigen Betrag eingeben")
+            Utility.showAlertController(for: self, with:"Achtung", and: "Bitte einen gültigen Betrag eingeben")
             return
         }
         
         guard let earnedPoints = earnedPointsTextField.text, !earnedPoints.isEmpty else {
-            Utility.showAlertController(for: self, with: "Bitte erhaltene Punkte eingeben")
+            Utility.showAlertController(for: self, with:"Achtung", and: "Bitte erhaltene Punkte eingeben")
             return
         }
         
