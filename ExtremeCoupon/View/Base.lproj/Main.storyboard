@@ -175,56 +175,42 @@
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJr-7W-MWB" customClass="ShadowView" customModule="ExtremeCoupon" customModuleProvider="target">
-                                <rect key="frame" x="20" y="632" width="335" height="80"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qXp-SF-3vN">
-                                        <rect key="frame" x="8" y="16" width="319" height="48"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coupon hat funktioniert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="DI9-e9-hUE">
-                                                <rect key="frame" x="0.0" y="0.0" width="244" height="48"/>
-                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="23"/>
-                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbs up" translatesAutoresizingMaskIntoConstraints="NO" id="jbh-mh-bOH">
-                                                <rect key="frame" x="264" y="0.0" width="55" height="48"/>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAr-ui-B0f" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
+                                <rect key="frame" x="20" y="622" width="335" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="qXp-SF-3vN" secondAttribute="trailing" constant="8" id="GUA-0y-OEM"/>
-                                    <constraint firstAttribute="bottom" secondItem="qXp-SF-3vN" secondAttribute="bottom" constant="16" id="Np4-4p-5ei"/>
-                                    <constraint firstItem="qXp-SF-3vN" firstAttribute="top" secondItem="JJr-7W-MWB" secondAttribute="top" constant="16" id="Rkw-TF-IgO"/>
-                                    <constraint firstAttribute="height" constant="80" id="T1L-og-OJM"/>
-                                    <constraint firstItem="qXp-SF-3vN" firstAttribute="leading" secondItem="JJr-7W-MWB" secondAttribute="leading" constant="8" id="tAh-cN-gQj"/>
+                                    <constraint firstAttribute="height" constant="80" id="nkh-Gr-p3s"/>
                                 </constraints>
+                                <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="12"/>
+                                <state key="normal" title="Coupon hat funktioniert" image="thumbs up">
+                                    <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="imageToRight" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                         <size key="value" width="0.0" height="2"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.10000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </view>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="JJr-7W-MWB" firstAttribute="leading" secondItem="gwl-E2-Gaa" secondAttribute="leading" constant="20" id="07G-we-nYo"/>
-                            <constraint firstItem="gwl-E2-Gaa" firstAttribute="trailing" secondItem="JJr-7W-MWB" secondAttribute="trailing" constant="20" id="3om-KI-pkN"/>
+                            <constraint firstItem="gwl-E2-Gaa" firstAttribute="trailing" secondItem="lAr-ui-B0f" secondAttribute="trailing" constant="20" id="9UR-6b-1fS"/>
                             <constraint firstItem="eWs-br-TAG" firstAttribute="centerY" secondItem="MJA-cJ-T5d" secondAttribute="centerY" id="Asb-ap-NLN"/>
                             <constraint firstItem="eWs-br-TAG" firstAttribute="top" secondItem="if2-9t-1S7" secondAttribute="bottom" constant="20" id="UiZ-2w-GwC"/>
                             <constraint firstItem="gwl-E2-Gaa" firstAttribute="trailing" secondItem="if2-9t-1S7" secondAttribute="trailing" constant="20" id="XUM-Ww-Bhh"/>
                             <constraint firstItem="if2-9t-1S7" firstAttribute="leading" secondItem="gwl-E2-Gaa" secondAttribute="leading" constant="20" id="cNm-Da-oyY"/>
-                            <constraint firstItem="JJr-7W-MWB" firstAttribute="top" secondItem="eWs-br-TAG" secondAttribute="bottom" constant="30" id="dL4-3n-OV2"/>
                             <constraint firstItem="if2-9t-1S7" firstAttribute="top" secondItem="gwl-E2-Gaa" secondAttribute="top" constant="20" id="irQ-jG-2dZ"/>
+                            <constraint firstItem="lAr-ui-B0f" firstAttribute="leading" secondItem="gwl-E2-Gaa" secondAttribute="leading" constant="20" id="k7O-Se-yxi"/>
                             <constraint firstItem="eWs-br-TAG" firstAttribute="centerX" secondItem="MJA-cJ-T5d" secondAttribute="centerX" id="nOA-cq-T7i"/>
+                            <constraint firstItem="lAr-ui-B0f" firstAttribute="top" secondItem="eWs-br-TAG" secondAttribute="bottom" constant="20" id="wxE-qT-qwN"/>
                             <constraint firstItem="gwl-E2-Gaa" firstAttribute="trailing" secondItem="eWs-br-TAG" secondAttribute="trailing" constant="20" id="xAm-ck-C2d"/>
                             <constraint firstItem="eWs-br-TAG" firstAttribute="leading" secondItem="gwl-E2-Gaa" secondAttribute="leading" constant="20" id="xZo-nm-xbg"/>
                         </constraints>
@@ -232,11 +218,12 @@
                     </view>
                     <connections>
                         <outlet property="couponCodeImageView" destination="61y-h4-Fx9" id="Mox-Wj-Qvu"/>
+                        <outlet property="couponTitleLabel" destination="if2-9t-1S7" id="Jm4-hy-X9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AsH-47-HzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2608.6956521739135" y="20.758928571428569"/>
+            <point key="canvasLocation" x="2752.8000000000002" y="104.92610837438424"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lS0-Lh-32B">
