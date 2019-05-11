@@ -12,6 +12,7 @@ class CouponDetailViewController: UIViewController {
     @IBOutlet weak var couponCodeImageView: UIImageView!
     var coupon: Coupon!
     @IBOutlet weak var couponTitleLabel: UILabel!
+    @IBOutlet weak var barcodeCodeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class CouponDetailViewController: UIViewController {
         
         couponCodeImageView.image = Barcode.fromString(code: coupon.code)
         couponTitleLabel.text = coupon.title
+        barcodeCodeLabel.text = coupon.code
     }
 
     

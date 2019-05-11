@@ -14,4 +14,5 @@ struct Coupon {
     let date: String
     let code: String
     let rating: Rating?
+    // let market: String?
 }

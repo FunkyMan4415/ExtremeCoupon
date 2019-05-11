@@ -144,18 +144,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWs-br-TAG" customClass="ShadowView" customModule="ExtremeCoupon" customModuleProvider="target">
                                 <rect key="frame" x="20" y="210" width="335" height="392"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61y-h4-Fx9">
-                                        <rect key="frame" x="20" y="118" width="295" height="156"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61y-h4-Fx9">
+                                        <rect key="frame" x="20" y="136" width="295" height="120"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="156" id="dQt-3v-vVL"/>
+                                            <constraint firstAttribute="height" constant="120" id="dQt-3v-vVL"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlQ-jV-jNw">
+                                        <rect key="frame" x="20" y="256" width="295" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="UlQ-jV-jNw" firstAttribute="centerX" secondItem="eWs-br-TAG" secondAttribute="centerX" id="6sj-y6-nHh"/>
                                     <constraint firstItem="61y-h4-Fx9" firstAttribute="leading" secondItem="eWs-br-TAG" secondAttribute="leading" constant="20" id="7Tq-bO-3qT"/>
                                     <constraint firstItem="61y-h4-Fx9" firstAttribute="centerX" secondItem="eWs-br-TAG" secondAttribute="centerX" id="Aaf-gl-bny"/>
+                                    <constraint firstItem="UlQ-jV-jNw" firstAttribute="top" secondItem="61y-h4-Fx9" secondAttribute="bottom" id="JGB-N1-B6p"/>
                                     <constraint firstItem="61y-h4-Fx9" firstAttribute="centerY" secondItem="eWs-br-TAG" secondAttribute="centerY" id="jRN-xK-lio"/>
+                                    <constraint firstItem="UlQ-jV-jNw" firstAttribute="width" secondItem="61y-h4-Fx9" secondAttribute="width" id="qSt-gg-VUS"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -217,6 +226,7 @@
                         <viewLayoutGuide key="safeArea" id="gwl-E2-Gaa"/>
                     </view>
                     <connections>
+                        <outlet property="barcodeCodeLabel" destination="UlQ-jV-jNw" id="NxW-yZ-T7z"/>
                         <outlet property="couponCodeImageView" destination="61y-h4-Fx9" id="Mox-Wj-Qvu"/>
                         <outlet property="couponTitleLabel" destination="if2-9t-1S7" id="Jm4-hy-X9v"/>
                     </connections>
