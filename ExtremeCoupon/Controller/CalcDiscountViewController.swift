@@ -30,7 +30,7 @@ class CalcDiscountViewController: UIViewController {
         view.endEditing(true)
         
         guard let currencyText = paidTextField.text, !currencyText.isEmpty else {
-            Utility.showAlertController(for: self, with:"Achtung", and: "Bitte einen Betrag eingeben")
+            Utility.showAlertController(for: self, with: "Achtung", and: "Bitte einen Betrag eingeben")
             return
         }
         guard let formattedCurrency = numberFormatter.number(from: currencyText) else {

@@ -70,7 +70,7 @@ class AddNewCouponViewController: UIViewController {
     
     @objc
     func addMarktButton() {
-        print("Heurika")
+        Utility.showAlertController(for: self, with: "Neugierig?", and: "Dann sei gespannt, was du hier bald machen kannst")
     }
     
     

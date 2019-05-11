@@ -12,6 +12,8 @@
 		3C057CC22285976D00ADD413 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057CC12285976D00ADD413 /* Utility.swift */; };
 		3CB1A36522856BF200620E0D /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB1A36422856BF200620E0D /* ShadowView.swift */; };
 		3CB1B81F228579EA00634902 /* CouponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB1B81E228579EA00634902 /* CouponTableViewCell.swift */; };
+		80862BFF2287558E001EC9AE /* AddNewMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80862BFD2287558E001EC9AE /* AddNewMarketViewController.swift */; };
+		80862C002287558E001EC9AE /* AddNewMarketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80862BFE2287558E001EC9AE /* AddNewMarketViewController.xib */; };
 		809648F52286DC350062E2AD /* Barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809648F42286DC350062E2AD /* Barcode.swift */; };
 		809648F72286DF080062E2AD /* CouponDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809648F62286DF080062E2AD /* CouponDetailViewController.swift */; };
 		809CE0E62285FD0900E7A765 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809CE0E52285FD0900E7A765 /* BarcodeViewController.swift */; };
@@ -32,6 +34,8 @@
 		3C057CC12285976D00ADD413 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		3CB1A36422856BF200620E0D /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		3CB1B81E228579EA00634902 /* CouponTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponTableViewCell.swift; sourceTree = "<group>"; };
+		80862BFD2287558E001EC9AE /* AddNewMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMarketViewController.swift; sourceTree = "<group>"; };
+		80862BFE2287558E001EC9AE /* AddNewMarketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewMarketViewController.xib; sourceTree = "<group>"; };
 		809648F42286DC350062E2AD /* Barcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
 		809648F62286DF080062E2AD /* CouponDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponDetailViewController.swift; sourceTree = "<group>"; };
 		809CE0E52285FD0900E7A765 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				80FADB712284B82000E45CB8 /* AddNewCouponViewController.swift */,
 				809CE0E52285FD0900E7A765 /* BarcodeViewController.swift */,
 				809648F62286DF080062E2AD /* CouponDetailViewController.swift */,
+				80862BFD2287558E001EC9AE /* AddNewMarketViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				80FADB5F2284B49800E45CB8 /* Main.storyboard */,
+				80862BFE2287558E001EC9AE /* AddNewMarketViewController.xib */,
 				80FADB642284B49900E45CB8 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -207,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80FADB662284B49900E45CB8 /* LaunchScreen.storyboard in Resources */,
+				80862C002287558E001EC9AE /* AddNewMarketViewController.xib in Resources */,
 				80FADB632284B49900E45CB8 /* Assets.xcassets in Resources */,
 				80FADB612284B49800E45CB8 /* Main.storyboard in Resources */,
 			);
@@ -231,6 +238,7 @@
 				3CB1B81F228579EA00634902 /* CouponTableViewCell.swift in Sources */,
 				80FADB722284B82000E45CB8 /* AddNewCouponViewController.swift in Sources */,
 				80FADB752284B8A600E45CB8 /* RoundedTextField.swift in Sources */,
+				80862BFF2287558E001EC9AE /* AddNewMarketViewController.swift in Sources */,
 				80FADB5C2284B49800E45CB8 /* AppDelegate.swift in Sources */,
 				3CB1A36522856BF200620E0D /* ShadowView.swift in Sources */,
 			);
@@ -390,7 +398,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -410,7 +418,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
