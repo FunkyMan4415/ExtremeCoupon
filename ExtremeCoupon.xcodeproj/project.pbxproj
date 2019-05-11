@@ -12,6 +12,8 @@
 		3C057CC22285976D00ADD413 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057CC12285976D00ADD413 /* Utility.swift */; };
 		3CB1A36522856BF200620E0D /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB1A36422856BF200620E0D /* ShadowView.swift */; };
 		3CB1B81F228579EA00634902 /* CouponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB1B81E228579EA00634902 /* CouponTableViewCell.swift */; };
+		80061D00228759BE00BAEC6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80061CFF228759BE00BAEC6A /* GoogleService-Info.plist */; };
+		80061D0222875AC100BAEC6A /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80061D0122875AC100BAEC6A /* FirebaseHelper.swift */; };
 		80862BFF2287558E001EC9AE /* AddNewMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80862BFD2287558E001EC9AE /* AddNewMarketViewController.swift */; };
 		80862C002287558E001EC9AE /* AddNewMarketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80862BFE2287558E001EC9AE /* AddNewMarketViewController.xib */; };
 		809648F52286DC350062E2AD /* Barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809648F42286DC350062E2AD /* Barcode.swift */; };
@@ -38,6 +40,8 @@
 		3CB1A36422856BF200620E0D /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		3CB1B81E228579EA00634902 /* CouponTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponTableViewCell.swift; sourceTree = "<group>"; };
 		68132D4F6D9FF127CC80D627 /* Pods-ExtremeCoupon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExtremeCoupon.debug.xcconfig"; path = "Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon.debug.xcconfig"; sourceTree = "<group>"; };
+		80061CFF228759BE00BAEC6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		80061D0122875AC100BAEC6A /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		80862BFD2287558E001EC9AE /* AddNewMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMarketViewController.swift; sourceTree = "<group>"; };
 		80862BFE2287558E001EC9AE /* AddNewMarketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewMarketViewController.xib; sourceTree = "<group>"; };
 		809648F42286DC350062E2AD /* Barcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
@@ -102,6 +106,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		80061CFE228759B400BAEC6A /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				80061CFF228759BE00BAEC6A /* GoogleService-Info.plist */,
+				80061D0122875AC100BAEC6A /* FirebaseHelper.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		80FADB4F2284B49800E45CB8 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +136,7 @@
 		80FADB5A2284B49800E45CB8 /* ExtremeCoupon */ = {
 			isa = PBXGroup;
 			children = (
+				80061CFE228759B400BAEC6A /* Firebase */,
 				3C057CC02285975F00ADD413 /* Utils */,
 				3C057CBB22857EA200ADD413 /* Model */,
 				3CB1B81D228579C800634902 /* Custom Cell */,
@@ -175,7 +189,6 @@
 				68132D4F6D9FF127CC80D627 /* Pods-ExtremeCoupon.debug.xcconfig */,
 				32EA290644A959EB6A5850E9 /* Pods-ExtremeCoupon.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -190,6 +203,7 @@
 				80FADB542284B49800E45CB8 /* Sources */,
 				80FADB552284B49800E45CB8 /* Frameworks */,
 				80FADB562284B49800E45CB8 /* Resources */,
+				87202CB1C3F8B7CE45909B72 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +254,7 @@
 			files = (
 				80FADB662284B49900E45CB8 /* LaunchScreen.storyboard in Resources */,
 				80862C002287558E001EC9AE /* AddNewMarketViewController.xib in Resources */,
+				80061D00228759BE00BAEC6A /* GoogleService-Info.plist in Resources */,
 				80FADB632284B49900E45CB8 /* Assets.xcassets in Resources */,
 				80FADB612284B49800E45CB8 /* Main.storyboard in Resources */,
 			);
@@ -270,6 +285,32 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		87202CB1C3F8B7CE45909B72 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -277,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80061D0222875AC100BAEC6A /* FirebaseHelper.swift in Sources */,
 				809648F52286DC350062E2AD /* Barcode.swift in Sources */,
 				80FADB702284B80500E45CB8 /* CalcDiscountViewController.swift in Sources */,
 				80FADB772284BC3700E45CB8 /* RoundedButton.swift in Sources */,
