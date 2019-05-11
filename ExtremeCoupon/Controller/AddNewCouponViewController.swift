@@ -31,11 +31,23 @@ class AddNewCouponViewController: UIViewController {
     
     @objc
     func cameraButtonTapped() {
-        let alertController = UIAlertController(title: "Oh Nein :-(", message: "Die Kamerafunktion ist leider noch nicht entwickelt.", preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Schade", style: .default, handler: nil)
-        alertController.addAction(alertAction)
-        present(alertController, animated: true, completion: nil)
+        let barcodeViewController = BarcodeViewController()
+        barcodeViewController.delegate = self
+        present(barcodeViewController, animated: true, completion: nil)
     }
 
 
+}
+
+
+// MARK: - Extension
+extension AddNewCouponViewController: BarcodeScannerDelegate {
+    func didDetectedBarcode(for code: String?) {
+        if let scannedCode = code {
+            couponCodeTextField.text = scannedCode
+        }
+        
+    }
+    
+    
 }
