@@ -23,34 +23,16 @@ class BarcodeViewController: UIViewController {
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         view.backgroundColor = .black
-        initCaptureSession()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        if !captureSession.isRunning {
-            captureSession.startRunning()
+        guard let videoCaptureDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back) else {
+            return
         }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         
-        if captureSession.isRunning {
-            captureSession.stopRunning()
-            
-        }
-    }
-    
-    // MARK: - Handlers
-    
-    func initCaptureSession(){
-        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {return}
-        captureSession = AVCaptureSession()
+       captureSession = AVCaptureSession()
+        
         
         // Video Input
         let videoInput: AVCaptureDeviceInput
@@ -86,7 +68,7 @@ class BarcodeViewController: UIViewController {
         previewLayer.frame = view.bounds
         previewLayer.videoGravity = .resizeAspectFill
         view.layer.addSublayer(previewLayer)
-
+        
         
         captureSession.startRunning()
         
@@ -115,11 +97,39 @@ class BarcodeViewController: UIViewController {
         
         let rectOfInterest = previewLayer.metadataOutputRectConverted(fromLayerRect: scanAreaView.frame)
         metaDataOutput.rectOfInterest = rectOfInterest
+        
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if (captureSession?.isRunning == false) {
+            captureSession.startRunning()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if (captureSession?.isRunning == true) {
+            captureSession.stopRunning()
+            
+        }
+    }
+    
+    // MARK: - Handlers
+    
+    func initCaptureSession(){
+        
     }
     
     @objc
     func dismissScanner() {
-        captureSession.stopRunning()
+        
+            captureSession.stopRunning()
+        
         dismiss(animated: true, completion: nil)
     }
 }

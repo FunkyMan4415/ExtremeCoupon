@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cyO-Oc-YGp">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,43 +15,43 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="ExtremeCoupon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="56L-WE-GnZ">
-                                <rect key="frame" x="0.0" y="201" width="414" height="612"/>
+                                <rect key="frame" x="0.0" y="201" width="375" height="528"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CouponCell" id="ZB9-jt-1rQ" customClass="CouponTableViewCell" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="250"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZB9-jt-1rQ" id="6ee-C3-f5x">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUr-h4-IVh" customClass="ShadowView" customModule="ExtremeCoupon" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="230"/>
+                                                    <rect key="frame" x="20" y="0.0" width="335" height="230"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X-Fach auf den kompletten Einkauf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyj-et-Qcj">
-                                                            <rect key="frame" x="8" y="20" width="358" height="18.5"/>
+                                                            <rect key="frame" x="8" y="20" width="319" height="18.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="15"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gültig bis xx.xx.xxxx" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okp-h3-R9P">
-                                                            <rect key="frame" x="237.5" y="206" width="128.5" height="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gültig bis xx.xx.xxxx" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Okp-h3-R9P">
+                                                            <rect key="frame" x="218" y="206" width="109" height="16"/>
                                                             <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="13"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htb-d7-GHZ">
-                                                            <rect key="frame" x="8" y="206" width="128.5" height="16"/>
+                                                            <rect key="frame" x="8" y="206" width="109" height="16"/>
                                                             <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="13"/>
                                                             <color key="textColor" red="0.30115637790910088" green="0.66666668653488159" blue="0.29715996766691644" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barcode-306926_640" translatesAutoresizingMaskIntoConstraints="NO" id="PoZ-bs-4B3">
-                                                            <rect key="frame" x="67" y="65" width="240" height="100"/>
+                                                            <rect key="frame" x="67" y="65" width="201" height="100"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="100" id="fD5-qk-EuN"/>
                                                             </constraints>
@@ -97,14 +97,16 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="couPonDateLabel" destination="Okp-h3-R9P" id="ByJ-yJ-LlC"/>
+                                            <outlet property="couponCodeImageView" destination="PoZ-bs-4B3" id="Xq3-tM-U4O"/>
                                             <outlet property="couponRatingLabel" destination="htb-d7-GHZ" id="4iy-O4-IcF"/>
                                             <outlet property="couponTitleLabel" destination="Eyj-et-Qcj" id="QOg-08-H7n"/>
+                                            <segue destination="W0q-b6-pkr" kind="show" identifier="couponDetailSegue" id="lgo-5b-eC4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filterung auf:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wq0-Pn-Y3L">
-                                <rect key="frame" x="20" y="160" width="374" height="21"/>
+                                <rect key="frame" x="20" y="160" width="335" height="21"/>
                                 <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -129,7 +131,112 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868.1159420289857" y="20.758928571428569"/>
+            <point key="canvasLocation" x="1780" y="-178"/>
+        </scene>
+        <!--Coupon Detail View Controller-->
+        <scene sceneID="6o5-Kn-K8o">
+            <objects>
+                <viewController id="W0q-b6-pkr" customClass="CouponDetailViewController" customModule="ExtremeCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MJA-cJ-T5d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWs-br-TAG" customClass="ShadowView" customModule="ExtremeCoupon" customModuleProvider="target">
+                                <rect key="frame" x="20" y="210" width="335" height="392"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61y-h4-Fx9">
+                                        <rect key="frame" x="20" y="118" width="295" height="156"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="156" id="dQt-3v-vVL"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="61y-h4-Fx9" firstAttribute="leading" secondItem="eWs-br-TAG" secondAttribute="leading" constant="20" id="7Tq-bO-3qT"/>
+                                    <constraint firstItem="61y-h4-Fx9" firstAttribute="centerX" secondItem="eWs-br-TAG" secondAttribute="centerX" id="Aaf-gl-bny"/>
+                                    <constraint firstItem="61y-h4-Fx9" firstAttribute="centerY" secondItem="eWs-br-TAG" secondAttribute="centerY" id="jRN-xK-lio"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="if2-9t-1S7">
+                                <rect key="frame" x="20" y="160" width="335" height="30"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJr-7W-MWB" customClass="ShadowView" customModule="ExtremeCoupon" customModuleProvider="target">
+                                <rect key="frame" x="20" y="632" width="335" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qXp-SF-3vN">
+                                        <rect key="frame" x="8" y="16" width="319" height="48"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coupon hat funktioniert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="DI9-e9-hUE">
+                                                <rect key="frame" x="0.0" y="0.0" width="244" height="48"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="23"/>
+                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbs up" translatesAutoresizingMaskIntoConstraints="NO" id="jbh-mh-bOH">
+                                                <rect key="frame" x="264" y="0.0" width="55" height="48"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qXp-SF-3vN" secondAttribute="trailing" constant="8" id="GUA-0y-OEM"/>
+                                    <constraint firstAttribute="bottom" secondItem="qXp-SF-3vN" secondAttribute="bottom" constant="16" id="Np4-4p-5ei"/>
+                                    <constraint firstItem="qXp-SF-3vN" firstAttribute="top" secondItem="JJr-7W-MWB" secondAttribute="top" constant="16" id="Rkw-TF-IgO"/>
+                                    <constraint firstAttribute="height" constant="80" id="T1L-og-OJM"/>
+                                    <constraint firstItem="qXp-SF-3vN" firstAttribute="leading" secondItem="JJr-7W-MWB" secondAttribute="leading" constant="8" id="tAh-cN-gQj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JJr-7W-MWB" firstAttribute="leading" secondItem="gwl-E2-Gaa" secondAttribute="leading" constant="20" id="07G-we-nYo"/>
+                            <constraint firstItem="gwl-E2-Gaa" firstAttribute="trailing" secondItem="JJr-7W-MWB" secondAttribute="trailing" constant="20" id="3om-KI-pkN"/>
+                            <constraint firstItem="eWs-br-TAG" firstAttribute="centerY" secondItem="MJA-cJ-T5d" secondAttribute="centerY" id="Asb-ap-NLN"/>
+                            <constraint firstItem="eWs-br-TAG" firstAttribute="top" secondItem="if2-9t-1S7" secondAttribute="bottom" constant="20" id="UiZ-2w-GwC"/>
+                            <constraint firstItem="gwl-E2-Gaa" firstAttribute="trailing" secondItem="if2-9t-1S7" secondAttribute="trailing" constant="20" id="XUM-Ww-Bhh"/>
+                            <constraint firstItem="if2-9t-1S7" firstAttribute="leading" secondItem="gwl-E2-Gaa" secondAttribute="leading" constant="20" id="cNm-Da-oyY"/>
+                            <constraint firstItem="JJr-7W-MWB" firstAttribute="top" secondItem="eWs-br-TAG" secondAttribute="bottom" constant="30" id="dL4-3n-OV2"/>
+                            <constraint firstItem="if2-9t-1S7" firstAttribute="top" secondItem="gwl-E2-Gaa" secondAttribute="top" constant="20" id="irQ-jG-2dZ"/>
+                            <constraint firstItem="eWs-br-TAG" firstAttribute="centerX" secondItem="MJA-cJ-T5d" secondAttribute="centerX" id="nOA-cq-T7i"/>
+                            <constraint firstItem="gwl-E2-Gaa" firstAttribute="trailing" secondItem="eWs-br-TAG" secondAttribute="trailing" constant="20" id="xAm-ck-C2d"/>
+                            <constraint firstItem="eWs-br-TAG" firstAttribute="leading" secondItem="gwl-E2-Gaa" secondAttribute="leading" constant="20" id="xZo-nm-xbg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gwl-E2-Gaa"/>
+                    </view>
+                    <connections>
+                        <outlet property="couponCodeImageView" destination="61y-h4-Fx9" id="Mox-Wj-Qvu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AsH-47-HzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2608.6956521739135" y="20.758928571428569"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lS0-Lh-32B">
@@ -157,14 +264,14 @@
             <objects>
                 <viewController id="qyt-uG-ech" customClass="CalcDiscountViewController" customModule="ExtremeCoupon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PRP-zD-Otj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jQG-fm-6Hd">
-                                <rect key="frame" x="37" y="168" width="340" height="260"/>
+                                <rect key="frame" x="37" y="168" width="301" height="260"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bezahler Betrag" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpE-gY-8Py" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="301" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -181,7 +288,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Erhaltene Punkte" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAX-wt-7Fj" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="70" width="340" height="50"/>
+                                        <rect key="frame" x="0.0" y="70" width="301" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -198,13 +305,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="YfE-PR-k2l">
-                                        <rect key="frame" x="0.0" y="140" width="340" height="50"/>
+                                        <rect key="frame" x="0.0" y="140" width="301" height="50"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="40"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yE-ab-hD5" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="210" width="340" height="50"/>
+                                        <rect key="frame" x="0.0" y="210" width="301" height="50"/>
                                         <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="20"/>
                                         <state key="normal" title="Rabatt errechnen">
@@ -247,16 +354,16 @@
         <!--Neuen Coupon anlegen-->
         <scene sceneID="S8N-zY-0MW">
             <objects>
-                <viewController id="6Ji-RQ-oaj" customClass="AddNewCouponViewController" customModule="ExtremeCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewCoupon" id="6Ji-RQ-oaj" customClass="AddNewCouponViewController" customModule="ExtremeCoupon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IFE-gH-9pV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-4R-Dxw">
-                                <rect key="frame" x="37" y="168" width="340" height="260"/>
+                                <rect key="frame" x="37" y="168" width="301" height="260"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coupon Titel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-nk-hG6" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="301" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -273,7 +380,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gültig bis" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fsk-vp-y2z" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="70" width="340" height="50"/>
+                                        <rect key="frame" x="0.0" y="70" width="301" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -290,7 +397,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coupon Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nLH-an-2mX" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="140" width="340" height="50"/>
+                                        <rect key="frame" x="0.0" y="140" width="301" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -308,7 +415,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5O-Nr-hu0" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="210" width="340" height="50"/>
+                                        <rect key="frame" x="0.0" y="210" width="301" height="50"/>
                                         <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="20"/>
                                         <state key="normal" title="Coupon anlegen">
@@ -357,8 +464,9 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="2RJ-9f-qqS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="97"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="97"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <color key="barTintColor" red="0.96862751245498657" green="0.96862751245498657" blue="0.96862751245498657" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="40"/>
@@ -380,7 +488,7 @@
                     <tabBarItem key="tabBarItem" title="Rabatt Rechner" image="Rabatt_rechner" id="wKe-6y-CsO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MCp-Q1-lOU">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="25"/>
@@ -402,7 +510,7 @@
                     <tabBarItem key="tabBarItem" title="Neuen Coupon" image="neuer_coupon" id="NCV-Tv-r87"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s6P-gT-K3k">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="25"/>
@@ -424,5 +532,6 @@
         <image name="barcode-306926_640" width="640" height="352"/>
         <image name="camera" width="25" height="20"/>
         <image name="neuer_coupon" width="38" height="38"/>
+        <image name="thumbs up" width="50" height="48"/>
     </resources>
 </document>

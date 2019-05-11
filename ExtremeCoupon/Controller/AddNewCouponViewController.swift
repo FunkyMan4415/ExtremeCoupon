@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol AddNewCouponDelegate {
     func didAddNewCoupon(for coupon: Coupon)
@@ -54,8 +55,14 @@ class AddNewCouponViewController: UIViewController {
     
     @objc
     func cameraButtonTapped() {
+        guard let _ = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back) else {
+            Utility.showAlertController(for: self, with: "Oh nein", and: "Dein Gerät unterstützt die Kamerafunktion leider nicht :-(")
+            return
+        }
+        
         let barcodeViewController = BarcodeViewController()
         barcodeViewController.delegate = self
+        
         present(barcodeViewController, animated: true, completion: nil)
     }
 
