@@ -23,6 +23,7 @@ class BarcodeViewController: UIViewController {
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         view.backgroundColor = .black
         initCaptureSession()
@@ -89,16 +90,37 @@ class BarcodeViewController: UIViewController {
         
         captureSession.startRunning()
         
+        
+        let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
+        let statusBarColor = UIColor(white: 1, alpha: 1)
+        statusBarView.backgroundColor = statusBarColor
+        view.addSubview(statusBarView)
+        
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height;
+        let navigationbar = UINavigationBar(frame: CGRect(x: 0, y: statusBarHeight, width: view.frame.width, height: 44))
+        let navigationItem = UINavigationItem()
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissScanner))
+        navigationbar.items = [navigationItem]
+        navigationbar.backgroundColor = UIColor(white: 1, alpha: 1)
+        view.addSubview(navigationbar)
+        
         let scanAreaView = UIView()
         let width = view.bounds.width - 80
         scanAreaView.layer.borderColor = UIColor.green.cgColor
-        scanAreaView.frame = CGRect(x: view.bounds.midX - (width/2), y: view.bounds.midY - 100, width: width, height: 200)
+        scanAreaView.frame = CGRect(x: view.bounds.midX - (width/2), y: view.bounds.midY - 75, width: width, height: 150)
         scanAreaView.layer.borderWidth = 2
         view.addSubview(scanAreaView)
         view.bringSubviewToFront(scanAreaView)
         
         let rectOfInterest = previewLayer.metadataOutputRectConverted(fromLayerRect: scanAreaView.frame)
         metaDataOutput.rectOfInterest = rectOfInterest
+    }
+    
+    @objc
+    func dismissScanner() {
+        captureSession.stopRunning()
+        dismiss(animated: true, completion: nil)
     }
 }
 
