@@ -9,5 +9,6 @@ target 'ExtremeCoupon' do
   pod 'Firebase/Core'
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
+  pod 'SVProgressHUD'
 
 end

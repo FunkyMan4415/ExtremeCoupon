@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import SVProgressHUD
 
 
 class HomeViewController: UIViewController {
@@ -22,7 +23,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         
-        
+        SVProgressHUD.show(withStatus: "Lade Coupons")
         
         FirebaseHelper.couponReference.observe(.value) { (snapshot) in
             self.coupons.removeAll()
@@ -36,6 +37,7 @@ class HomeViewController: UIViewController {
                 }
             }
             self.tableView.reloadData()
+            SVProgressHUD.dismiss()
         }
     }
     
