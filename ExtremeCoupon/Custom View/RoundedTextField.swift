@@ -42,20 +42,20 @@ class RoundedTextField: UITextField {
         }
     }
     
-    let rightButton = UIButton(type: .custom)
+    let leftButton = UIButton(type: .custom)
     
     @IBInspectable
     var image: UIImage? {
         didSet {
-            rightViewMode = UITextField.ViewMode.always
+            leftViewMode = UITextField.ViewMode.always
         
-            rightButton.setImage(self.image, for: .normal)
-            rightButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -30, bottom: 0, right: 0)
-            rightButton.frame = CGRect(x: CGFloat(self.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(30))
-            self.rightView = rightButton
+            leftButton.setImage(self.image, for: .normal)
+            leftButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+            leftButton.frame = CGRect(x: CGFloat(0), y: CGFloat(5), width: CGFloat(30), height: CGFloat(30))
+            self.leftView = leftButton
         }
     }
-
+    
     // MARK: - Handler
     override func awakeFromNib() {
         self.addToolbar()
@@ -72,6 +72,7 @@ class RoundedTextField: UITextField {
 }
 
 extension RoundedTextField {
+    
     func addToolbar() {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 44))
         let doneButton = UIBarButtonItem(title: "Fertig", style: .plain, target: self, action: #selector(doneButtonTapped))
@@ -86,6 +87,10 @@ extension RoundedTextField {
     }
     
     
+//    func appendAddBarButton(to toolbar: UIToolbar, for action: Selector?) {
+//        let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(action))
+//    }
+    
     func dateInputMode() {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
@@ -98,5 +103,12 @@ extension RoundedTextField {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
         self.text = dateFormatter.string(from: datePicker.date)
+    }
+    
+    func marktInputMode(delegate: UIPickerViewDelegate, dataSource: UIPickerViewDataSource) {
+        let picker = UIPickerView()
+        picker.delegate = delegate
+        picker.dataSource = dataSource
+        self.inputView = picker
     }
 }

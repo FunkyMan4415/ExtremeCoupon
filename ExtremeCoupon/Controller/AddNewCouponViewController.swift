@@ -19,16 +19,21 @@ class AddNewCouponViewController: UIViewController {
     @IBOutlet weak var couponCodeTextField: RoundedTextField!
     @IBOutlet weak var couponTitleTextField: RoundedTextField!
     @IBOutlet weak var couponDateTextField: RoundedTextField!
+    @IBOutlet weak var marktTextField: RoundedTextField!
     
     var delegate: AddNewCouponDelegate?
+    let markt = ["a","b", "c","d","e","f"]
     
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         
         couponDateTextField.dateInputMode()
-        couponCodeTextField.rightButton.addTarget(self, action: #selector(cameraButtonTapped), for: .touchUpInside)
-
+        couponCodeTextField.leftButton.addTarget(self, action: #selector(cameraButtonTapped), for: .touchUpInside)
+        marktTextField.marktInputMode(delegate: self, dataSource: self)
+        
+        // append add Button to toolbar
+        appendAddNewMarktBarButton()
     }
     
     
@@ -47,11 +52,27 @@ class AddNewCouponViewController: UIViewController {
         clearAllFields()
     }
     
+    
+    func appendAddNewMarktBarButton() {
+        if let toolbar = marktTextField.inputAccessoryView as? UIToolbar {
+            let newMarktLabel = UIBarButtonItem(title: "Neuen Markt hinzufügen", style: .done, target: self, action: #selector(addMarktButton))
+            toolbar.items?.append(newMarktLabel)
+        }
+        
+    }
+    
     func clearAllFields() {
         couponCodeTextField.text = ""
         couponTitleTextField.text = ""
         couponDateTextField.text = ""
+        marktTextField.text = ""
     }
+    
+    @objc
+    func addMarktButton() {
+        print("Heurika")
+    }
+    
     
     @objc
     func cameraButtonTapped() {
@@ -79,5 +100,26 @@ extension AddNewCouponViewController: BarcodeScannerDelegate {
         
     }
     
+    
+}
+
+extension AddNewCouponViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 4
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return markt[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        marktTextField.text = markt[row]
+    }
     
 }

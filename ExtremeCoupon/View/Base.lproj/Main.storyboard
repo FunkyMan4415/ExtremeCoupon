@@ -357,10 +357,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-4R-Dxw">
-                                <rect key="frame" x="37" y="168" width="301" height="260"/>
+                                <rect key="frame" x="37" y="168" width="301" height="310"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coupon Titel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-nk-hG6" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="301" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coupon Titel" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-nk-hG6" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="301" height="46"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -376,8 +376,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gültig bis" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fsk-vp-y2z" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="70" width="301" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gültig bis" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fsk-vp-y2z" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="66" width="301" height="46"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -393,8 +393,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coupon Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nLH-an-2mX" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="140" width="301" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coupon Code" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nLH-an-2mX" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="132" width="301" height="46"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -411,8 +411,25 @@
                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="camera"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Supermarkt auswählen" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8og-zP-kX9" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="198" width="301" height="46"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.10000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5O-Nr-hu0" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="210" width="301" height="50"/>
+                                        <rect key="frame" x="0.0" y="264" width="301" height="46"/>
                                         <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="20"/>
                                         <state key="normal" title="Coupon anlegen">
@@ -422,6 +439,12 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.10000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="insertNewCouponButtonTapped:" destination="6Ji-RQ-oaj" eventType="touchUpInside" id="ikD-KA-x8G"/>
@@ -429,7 +452,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="260" id="B0d-ka-Cr9"/>
+                                    <constraint firstAttribute="height" constant="310" id="B0d-ka-Cr9"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -446,6 +469,7 @@
                         <outlet property="couponCodeTextField" destination="nLH-an-2mX" id="h7p-bz-2oU"/>
                         <outlet property="couponDateTextField" destination="fsk-vp-y2z" id="Evt-81-ghg"/>
                         <outlet property="couponTitleTextField" destination="qMd-nk-hG6" id="TTW-ZL-Fx8"/>
+                        <outlet property="marktTextField" destination="8og-zP-kX9" id="4tL-JK-BB1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pcc-6m-Rcn" userLabel="First Responder" sceneMemberID="firstResponder"/>
