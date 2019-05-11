@@ -9,10 +9,6 @@
 import UIKit
 import AVFoundation
 
-protocol AddNewCouponDelegate {
-    func didAddNewCoupon(for coupon: Coupon)
-}
-
 class AddNewCouponViewController: UIViewController {
     
     // MARK: - Properties
@@ -21,7 +17,6 @@ class AddNewCouponViewController: UIViewController {
     @IBOutlet weak var couponDateTextField: RoundedTextField!
     @IBOutlet weak var marktTextField: RoundedTextField!
     
-    var delegate: AddNewCouponDelegate?
     let markt = ["a","b", "c","d","e","f"]
     
     // MARK: - Init
@@ -46,7 +41,8 @@ class AddNewCouponViewController: UIViewController {
         guard let couponCodeText = couponCodeTextField.text, !couponCodeText.isEmpty else {return}
         
         let coupon = Coupon(title: couponTitleText, date: couponDateText, code: couponCodeText, rating: nil)
-        delegate?.didAddNewCoupon(for: coupon)
+        
+        FirebaseHelper.saveCoupon(coupon)
         
         Utility.showAlertController(for: self, with: "Erfolg", and: "Coupon erfolgreich angelegt")
         clearAllFields()

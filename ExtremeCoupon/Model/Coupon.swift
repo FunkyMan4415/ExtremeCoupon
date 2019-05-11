@@ -15,4 +15,14 @@ struct Coupon {
     let code: String
     let rating: Rating?
     // let market: String?
+    
+    
+    
+    static func loadCoupon(_ data: Dictionary<String, AnyObject>) -> Coupon? {
+        guard let title = data["title"] as? String else { return nil }
+        guard let date = data["date"] as? String else { return nil}
+        guard let code = data["code"] as? String else { return nil}
+        
+     return Coupon(title: title, date: date, code: code, rating: nil)
+    }
 }
