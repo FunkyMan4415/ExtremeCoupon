@@ -10,5 +10,7 @@ target 'ExtremeCoupon' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
   pod 'SVProgressHUD'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
 end

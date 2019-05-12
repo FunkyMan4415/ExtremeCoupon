@@ -42,10 +42,18 @@ class AddNewCouponViewController: UIViewController {
         
         let coupon = Coupon(title: couponTitleText, date: couponDateText, code: couponCodeText, rating: nil)
         
-        FirebaseHelper.saveCoupon(coupon)
+        FirebaseHelper.isCouponAlreadyInDatabase(coupon) { (exists) in
+            if exists {
+                Utility.showAlertController(for: self, with: "Ups!", and: "Diesen Coupon scheint es schon zu geben")
+            } else {
+                FirebaseHelper.saveCoupon(coupon)
+                Utility.showAlertController(for: self, with: "Erfolg", and: "Coupon erfolgreich angelegt")
+                self.clearAllFields()
+            }
+        }
         
-        Utility.showAlertController(for: self, with: "Erfolg", and: "Coupon erfolgreich angelegt")
-        clearAllFields()
+        
+        
     }
     
     
@@ -82,8 +90,8 @@ class AddNewCouponViewController: UIViewController {
         
         present(barcodeViewController, animated: true, completion: nil)
     }
-
-
+    
+    
 }
 
 

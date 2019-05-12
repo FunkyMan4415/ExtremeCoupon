@@ -36,4 +36,22 @@ enum FirebaseHelper {
             }
         }
     }
+    
+    static func isCouponAlreadyInDatabase(_ searchedCoupon: Coupon, with completion: @escaping (Bool) -> ()) {
+        couponReference.observeSingleEvent(of: .value) { (snapshot) in
+            if let data = snapshot.children.allObjects as? [DataSnapshot] {
+                for entry in data {
+                    if let entryData = entry.value as? Dictionary<String, AnyObject> {
+                        if let coupon = Coupon.loadCoupon(entryData) {
+                            if searchedCoupon.code == coupon.code {
+                                completion(true)
+                                return
+                            }
+                        }
+                    }
+                }
+            }
+            completion(false)
+        }
+    }
 }
