@@ -24,7 +24,8 @@ enum FirebaseHelper {
             "uuid" : coupon.uuid as AnyObject,
             "title" : coupon.title as AnyObject,
             "date" : coupon.date.description as AnyObject,
-            "code" : coupon.code as AnyObject
+            "code" : coupon.code as AnyObject,
+            "market": coupon.market as AnyObject
         ]
         
         return coupon
@@ -45,9 +46,19 @@ enum FirebaseHelper {
         return rating
     }
     
+    private static func newMarketEntry(for market: Market) -> Dictionary<String, AnyObject> {
+        let market = [
+            "uuid" : market.uuid as AnyObject,
+            "title" : market.title as AnyObject
+        ]
+        
+        return market
+    }
+    
     static func saveCoupon(_ coupon: Coupon) {
         let id = couponReference.child(coupon.uuid)
         let rating = id.child("Rating")
+        
         id.setValue(newEntry(for: coupon)) { (error, databaseReference) in
             if let error = error {
                 print("ERROR: \(#function): \(error.localizedDescription)")
@@ -87,15 +98,8 @@ enum FirebaseHelper {
         }
     }
     
-    private static func newMarketEntry(for market: Market) -> Dictionary<String, AnyObject> {
-        let market = [
-            "title" : market.title as AnyObject
-        ]
-        
-        return market
-    }
     static func addNewMarket(_ market: Market) {
-        let id = marketReference.childByAutoId()
+        let id = marketReference.child(market.uuid)
         let marketEntry = newMarketEntry(for: market)
         id.setValue(marketEntry) { (error, databaseReference) in
             if let error = error {
@@ -111,8 +115,8 @@ enum FirebaseHelper {
             if let data = snapshot.children.allObjects as? [DataSnapshot] {
                 for entry in data {
                     if let entryData = entry.value as? Dictionary<String,AnyObject> {
-                        if let title = entryData["title"] as? String {
-                            markets.append(Market(title: title))
+                        if let marketData = Market.loadMarket(entryData) {
+                            markets.append(marketData)
                         }
                     }
                 }

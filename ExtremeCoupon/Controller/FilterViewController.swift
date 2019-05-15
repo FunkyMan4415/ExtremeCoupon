@@ -10,18 +10,17 @@ import UIKit
 
 
 protocol FilterDelegate {
-    func didAddFilter(_ filter: String?)
-    func didRemoveFilter(_ filter: String?)
+    func didAddFilter(_ filter: Market?)
+    func didRemoveFilter(_ filter: Market?)
 }
 
 class FilterViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var selectedMarkets = [String]()
-    
+    var selectedMarket: String?
     var delegate: FilterDelegate?
-
     var markets = [Market]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -43,9 +42,8 @@ extension FilterViewController : UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath)
         cell.textLabel?.text = markets[indexPath.row].title
         
-        
-        for market in selectedMarkets {
-            if cell.textLabel?.text == market {
+        if let filterValue = selectedMarket {
+            if cell.textLabel?.text == filterValue {
                 cell.accessoryType = .checkmark
             }
         }
@@ -56,14 +54,33 @@ extension FilterViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         
+        
+        for i in tableView.indexPathsForVisibleRows! {
+            if i != indexPath {
+                let c = tableView.cellForRow(at: i)
+                c?.accessoryType = .none
+            }
+            
+        }
+        
         if cell?.accessoryType == .checkmark {
             cell?.accessoryType = .none
-            delegate?.didRemoveFilter(cell?.textLabel?.text)
+            delegate?.didAddFilter(nil)
         } else {
             cell?.accessoryType = .checkmark
-            delegate?.didAddFilter(cell?.textLabel?.text)
+            delegate?.didAddFilter(markets[indexPath.row])
         }
         
         
+        
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        cell?.accessoryType = .none
+        delegate?.didRemoveFilter(nil)
     }
 }

@@ -18,17 +18,34 @@ class HomeViewController: UIViewController {
     
     var coupons = [Coupon]()
     var couponForSegue: Coupon?
-    var filterText = [String]()
+    var filter: String?
+    var filterValue: String?
+    
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         
         
         SVProgressHUD.show(withStatus: "Lade Coupons")
+        var query: DatabaseQuery!
+        if let filter = filter {
+            if let filterValue = filterValue {
+                query = FirebaseHelper.couponReference.queryOrdered(byChild: filter).queryEqual(toValue: filterValue)
+            } else {
+                query = FirebaseHelper.couponReference.queryOrdered(byChild: filter)
+            }
+        } else {
+            query = FirebaseHelper.couponReference
+        }
         
-        FirebaseHelper.couponReference.observe(.value) { (snapshot) in
+        
+        query.observe(.value) { (snapshot) in
             self.coupons.removeAll()
             if let entries = snapshot.children.allObjects as? [DataSnapshot] {
                 for entry in entries {
@@ -44,7 +61,7 @@ class HomeViewController: UIViewController {
             }
             
             self.coupons = self.coupons.sorted(by: { (c1, c2) -> Bool in
-               c1.date < c2.date
+                c1.date < c2.date
             })
             self.tableView.reloadData()
             SVProgressHUD.dismiss()
@@ -63,7 +80,7 @@ class HomeViewController: UIViewController {
         if segue.identifier == "filterSegue" {
             let filterVC = segue.destination as! FilterViewController
             filterVC.delegate = self
-            filterVC.selectedMarkets = filterText
+            filterVC.selectedMarket = filterValue
         }
     }
     
@@ -92,19 +109,19 @@ extension HomeViewController : CouponTableViewCellDelegate {
 }
 
 extension HomeViewController : FilterDelegate {
-    func didAddFilter(_ filter: String?) {
-        filterText.append(filter!)
-        filterLabel.text = filterText.joined(separator: ", ")
+    func didAddFilter(_ market: Market?) {
+        if let _ = market {
+            filterValue = market?.title
+            filterLabel.text = filterValue
+            filter = "market"
+        } else {
+            filterLabel.text = "Kein Filter ausgewählt"
+            filter = nil
+        }       
     }
     
-    func didRemoveFilter(_ filter: String?) {
-        for (index, _) in filterText.enumerated() {
-            if filterText[index] == filter! {
-                filterText.remove(at: index)
-                filterLabel.text = filterText.joined(separator: ", ")
-                return
-            }
-        }
+    func didRemoveFilter(_ market: Market?) {
+        filter = nil
     }
     
     
