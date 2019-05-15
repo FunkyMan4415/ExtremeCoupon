@@ -15,9 +15,11 @@ protocol CouponTableViewCellDelegate {
 class CouponTableViewCell: UITableViewCell {
     @IBOutlet weak var couponTitleLabel: UILabel!
     @IBOutlet weak var couPonDateLabel: UILabel!
-    @IBOutlet weak var couponRatingLabel: UILabel!
+    @IBOutlet weak var couponUpVote: UILabel!
     @IBOutlet weak var couponCodeImageView: UIImageView!
+    @IBOutlet weak var totalVoteLabel: UILabel!
     
+    @IBOutlet weak var couponDownVote: UILabel!
     var delegate: CouponTableViewCellDelegate?
     var coupon: Coupon?
     override func awakeFromNib() {
@@ -29,7 +31,9 @@ class CouponTableViewCell: UITableViewCell {
         
         couponTitleLabel.text = coupon.title
         if let rating = coupon.rating, rating.totalVote > 0 {
-            couponRatingLabel.text = "\(rating.upVote * 100 / rating.totalVote) %"
+            couponUpVote.text = "\(rating.upVote * 100 / rating.totalVote) %"
+            couponDownVote.text = "\(rating.downVote * 100 / rating.totalVote) %"
+            totalVoteLabel.text = "( \(rating.totalVote) )"
         }
         
         couponCodeImageView.image = Barcode.fromString(code: coupon.code)
