@@ -86,25 +86,6 @@ extension RoundedTextField {
         self.endEditing(true)
     }
     
-    
-//    func appendAddBarButton(to toolbar: UIToolbar, for action: Selector?) {
-//        let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(action))
-//    }
-    
-    func dateInputMode() {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        datePicker.addTarget(self, action: #selector(addDateText), for: .valueChanged)
-        self.inputView = datePicker
-    }
-    
-    @objc
-    func addDateText(_ datePicker: UIDatePicker){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        self.text = dateFormatter.string(from: datePicker.date)
-    }
-    
     func marktInputMode(delegate: UIPickerViewDelegate, dataSource: UIPickerViewDataSource) {
         let picker = UIPickerView()
         picker.delegate = delegate

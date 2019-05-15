@@ -14,6 +14,8 @@
 		3CB1B81F228579EA00634902 /* CouponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB1B81E228579EA00634902 /* CouponTableViewCell.swift */; };
 		80061D00228759BE00BAEC6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80061CFF228759BE00BAEC6A /* GoogleService-Info.plist */; };
 		80061D0222875AC100BAEC6A /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80061D0122875AC100BAEC6A /* FirebaseHelper.swift */; };
+		800633EB22887094005B8216 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800633EA22887094005B8216 /* FilterViewController.swift */; };
+		800633ED2288717A005B8216 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800633EC2288717A005B8216 /* Market.swift */; };
 		80862BFF2287558E001EC9AE /* AddNewMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80862BFD2287558E001EC9AE /* AddNewMarketViewController.swift */; };
 		80862C002287558E001EC9AE /* AddNewMarketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80862BFE2287558E001EC9AE /* AddNewMarketViewController.xib */; };
 		809648F52286DC350062E2AD /* Barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809648F42286DC350062E2AD /* Barcode.swift */; };
@@ -42,6 +44,8 @@
 		68132D4F6D9FF127CC80D627 /* Pods-ExtremeCoupon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExtremeCoupon.debug.xcconfig"; path = "Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon.debug.xcconfig"; sourceTree = "<group>"; };
 		80061CFF228759BE00BAEC6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80061D0122875AC100BAEC6A /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
+		800633EA22887094005B8216 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		800633EC2288717A005B8216 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		80862BFD2287558E001EC9AE /* AddNewMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMarketViewController.swift; sourceTree = "<group>"; };
 		80862BFE2287558E001EC9AE /* AddNewMarketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewMarketViewController.xib; sourceTree = "<group>"; };
 		809648F42286DC350062E2AD /* Barcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 				3C057CBC22857EB000ADD413 /* Coupon.swift */,
 				3C057CBE22857EE900ADD413 /* Rating.swift */,
 				809648F42286DC350062E2AD /* Barcode.swift */,
+				800633EC2288717A005B8216 /* Market.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				809CE0E52285FD0900E7A765 /* BarcodeViewController.swift */,
 				809648F62286DF080062E2AD /* CouponDetailViewController.swift */,
 				80862BFD2287558E001EC9AE /* AddNewMarketViewController.swift */,
+				800633EA22887094005B8216 /* FilterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 				80061D0222875AC100BAEC6A /* FirebaseHelper.swift in Sources */,
 				809648F52286DC350062E2AD /* Barcode.swift in Sources */,
 				80FADB702284B80500E45CB8 /* CalcDiscountViewController.swift in Sources */,
+				800633EB22887094005B8216 /* FilterViewController.swift in Sources */,
 				80FADB772284BC3700E45CB8 /* RoundedButton.swift in Sources */,
 				3C057CBF22857EE900ADD413 /* Rating.swift in Sources */,
 				809648F72286DF080062E2AD /* CouponDetailViewController.swift in Sources */,
@@ -355,6 +362,7 @@
 				80862BFF2287558E001EC9AE /* AddNewMarketViewController.swift in Sources */,
 				80FADB5C2284B49800E45CB8 /* AppDelegate.swift in Sources */,
 				3CB1A36522856BF200620E0D /* ShadowView.swift in Sources */,
+				800633ED2288717A005B8216 /* Market.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

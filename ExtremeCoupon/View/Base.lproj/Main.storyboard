@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="56L-WE-GnZ">
-                                <rect key="frame" x="0.0" y="201" width="375" height="528"/>
+                                <rect key="frame" x="0.0" y="214" width="375" height="515"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CouponCell" id="ZB9-jt-1rQ" customClass="CouponTableViewCell" customModule="ExtremeCoupon" customModuleProvider="target">
@@ -105,8 +105,36 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filterung auf:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wq0-Pn-Y3L">
-                                <rect key="frame" x="20" y="160" width="335" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyg-a9-StQ" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
+                                <rect key="frame" x="275" y="161" width="80" height="33"/>
+                                <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="C5l-Gf-wST"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
+                                <state key="normal" title="Filter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="MqA-OT-HQN" kind="show" identifier="filterSegue" id="H72-2R-w3i"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kein Filter ausgewählt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wq0-Pn-Y3L">
+                                <rect key="frame" x="20" y="161" width="235" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="iUb-2i-V2q"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -116,22 +144,74 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="56L-WE-GnZ" secondAttribute="bottom" id="4u7-fF-mds"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="56L-WE-GnZ" secondAttribute="trailing" id="8pg-Wo-6qU"/>
-                            <constraint firstItem="wq0-Pn-Y3L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GyG-YZ-h0L"/>
-                            <constraint firstItem="56L-WE-GnZ" firstAttribute="top" secondItem="wq0-Pn-Y3L" secondAttribute="bottom" constant="20" id="H0F-F5-Owz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wq0-Pn-Y3L" secondAttribute="trailing" constant="20" id="Pt5-Fi-HW4"/>
-                            <constraint firstItem="wq0-Pn-Y3L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="cQY-5P-35o"/>
+                            <constraint firstItem="Zyg-a9-StQ" firstAttribute="leading" secondItem="wq0-Pn-Y3L" secondAttribute="trailing" constant="20" id="I5k-oh-exF"/>
+                            <constraint firstItem="wq0-Pn-Y3L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KAz-fr-naV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zyg-a9-StQ" secondAttribute="trailing" constant="20" id="Lad-J0-zF6"/>
+                            <constraint firstItem="wq0-Pn-Y3L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="SI8-I9-TgN"/>
                             <constraint firstItem="56L-WE-GnZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eei-re-Zpe"/>
+                            <constraint firstItem="Zyg-a9-StQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="et5-bd-fVI"/>
+                            <constraint firstItem="56L-WE-GnZ" firstAttribute="top" secondItem="wq0-Pn-Y3L" secondAttribute="bottom" constant="20" id="qIS-ea-i7e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Aktuelle Coupons" id="a4H-sG-8be"/>
                     <connections>
+                        <outlet property="filterLabel" destination="wq0-Pn-Y3L" id="3rb-tk-Q9Q"/>
                         <outlet property="tableView" destination="56L-WE-GnZ" id="C09-Vw-4ZJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1780" y="-178"/>
+            <point key="canvasLocation" x="1780" y="-178.07881773399015"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="VGg-76-wYs">
+            <objects>
+                <viewController id="MqA-OT-HQN" customClass="FilterViewController" customModule="ExtremeCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QH9-gh-Bp4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aaE-2D-5Nb">
+                                <rect key="frame" x="0.0" y="140" width="375" height="589"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterCell" textLabel="nbR-Wl-5i8" style="IBUITableViewCellStyleDefault" id="XxL-e6-nyE">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XxL-e6-nyE" id="Y5P-K6-PDh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nbR-Wl-5i8">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.666666666666664"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96852236986160278" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aaE-2D-5Nb" firstAttribute="top" secondItem="z3v-ec-YlY" secondAttribute="top" id="83K-Vm-1GX"/>
+                            <constraint firstItem="z3v-ec-YlY" firstAttribute="bottom" secondItem="aaE-2D-5Nb" secondAttribute="bottom" id="NBG-YZ-39O"/>
+                            <constraint firstItem="aaE-2D-5Nb" firstAttribute="leading" secondItem="z3v-ec-YlY" secondAttribute="leading" id="O6F-tV-ULf"/>
+                            <constraint firstItem="z3v-ec-YlY" firstAttribute="trailing" secondItem="aaE-2D-5Nb" secondAttribute="trailing" id="qmv-F0-LFn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="z3v-ec-YlY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="aaE-2D-5Nb" id="rNl-Ev-WWq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="66g-pe-yWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2751" y="-553"/>
         </scene>
         <!--Coupon Detail View Controller-->
         <scene sceneID="6o5-Kn-K8o">
@@ -184,42 +264,77 @@
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAr-ui-B0f" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nem-yA-AgW">
                                 <rect key="frame" x="20" y="622" width="335" height="80"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="nkh-Gr-p3s"/>
-                                </constraints>
-                                <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="12"/>
-                                <state key="normal" title="Coupon hat funktioniert" image="thumbs up">
-                                    <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="imageToRight" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="0.0" height="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAr-ui-B0f" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="163.66666666666666" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="12"/>
+                                        <state key="normal" title="Hat funktioniert">
+                                            <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="imageToRight" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="couponButtonTapped:" destination="W0q-b6-pkr" eventType="touchUpInside" id="gVb-iq-utl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZZ-gF-28R" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
+                                        <rect key="frame" x="171.66666666666663" y="0.0" width="163.33333333333337" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="5sj-TI-2jI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="12"/>
+                                        <state key="normal" title="Hat nicht funktioniert">
+                                            <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="imageToRight" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="couponButtonTapped:" destination="W0q-b6-pkr" eventType="touchUpInside" id="g28-Sk-6Lu"/>
+                                            <action selector="couponNotWorkButtonTapped:" destination="W0q-b6-pkr" eventType="touchUpInside" id="ZwW-og-0Rv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gwl-E2-Gaa" firstAttribute="trailing" secondItem="lAr-ui-B0f" secondAttribute="trailing" constant="20" id="9UR-6b-1fS"/>
+                            <constraint firstItem="nem-yA-AgW" firstAttribute="top" secondItem="eWs-br-TAG" secondAttribute="bottom" constant="20" id="12Z-YQ-lxH"/>
+                            <constraint firstItem="nem-yA-AgW" firstAttribute="leading" secondItem="gwl-E2-Gaa" secondAttribute="leading" constant="20" id="5hL-Nm-tNQ"/>
                             <constraint firstItem="eWs-br-TAG" firstAttribute="centerY" secondItem="MJA-cJ-T5d" secondAttribute="centerY" id="Asb-ap-NLN"/>
                             <constraint firstItem="eWs-br-TAG" firstAttribute="top" secondItem="if2-9t-1S7" secondAttribute="bottom" constant="20" id="UiZ-2w-GwC"/>
+                            <constraint firstItem="gwl-E2-Gaa" firstAttribute="trailing" secondItem="nem-yA-AgW" secondAttribute="trailing" constant="20" id="Wbg-zA-RDg"/>
                             <constraint firstItem="gwl-E2-Gaa" firstAttribute="trailing" secondItem="if2-9t-1S7" secondAttribute="trailing" constant="20" id="XUM-Ww-Bhh"/>
                             <constraint firstItem="if2-9t-1S7" firstAttribute="leading" secondItem="gwl-E2-Gaa" secondAttribute="leading" constant="20" id="cNm-Da-oyY"/>
                             <constraint firstItem="if2-9t-1S7" firstAttribute="top" secondItem="gwl-E2-Gaa" secondAttribute="top" constant="20" id="irQ-jG-2dZ"/>
-                            <constraint firstItem="lAr-ui-B0f" firstAttribute="leading" secondItem="gwl-E2-Gaa" secondAttribute="leading" constant="20" id="k7O-Se-yxi"/>
                             <constraint firstItem="eWs-br-TAG" firstAttribute="centerX" secondItem="MJA-cJ-T5d" secondAttribute="centerX" id="nOA-cq-T7i"/>
-                            <constraint firstItem="lAr-ui-B0f" firstAttribute="top" secondItem="eWs-br-TAG" secondAttribute="bottom" constant="20" id="wxE-qT-qwN"/>
                             <constraint firstItem="gwl-E2-Gaa" firstAttribute="trailing" secondItem="eWs-br-TAG" secondAttribute="trailing" constant="20" id="xAm-ck-C2d"/>
                             <constraint firstItem="eWs-br-TAG" firstAttribute="leading" secondItem="gwl-E2-Gaa" secondAttribute="leading" constant="20" id="xZo-nm-xbg"/>
                         </constraints>
@@ -485,7 +600,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="2RJ-9f-qqS">
-                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="97"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <color key="barTintColor" red="0.96862751245498657" green="0.96862751245498657" blue="0.96862751245498657" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -553,6 +668,5 @@
         <image name="barcode-306926_640" width="640" height="352"/>
         <image name="camera" width="25" height="20"/>
         <image name="neuer_coupon" width="38" height="38"/>
-        <image name="thumbs up" width="50" height="48"/>
     </resources>
 </document>

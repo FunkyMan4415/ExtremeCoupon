@@ -17,13 +17,18 @@ class AddNewCouponViewController: UIViewController {
     @IBOutlet weak var couponDateTextField: RoundedTextField!
     @IBOutlet weak var marktTextField: RoundedTextField!
     
-    let markt = ["a","b", "c","d","e","f"]
+    var market = [Market]()
+    var couponDate: Date?
     
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
+        market.removeAll()
+        FirebaseHelper.getAllMarkets { (markets) in
+            self.market = markets
+        }
         
-        couponDateTextField.dateInputMode()
+        dateInputMode()
         couponCodeTextField.leftButton.addTarget(self, action: #selector(cameraButtonTapped), for: .touchUpInside)
         marktTextField.marktInputMode(delegate: self, dataSource: self)
         
@@ -33,14 +38,34 @@ class AddNewCouponViewController: UIViewController {
     
     
     // MARK: - Handler
+    func dateInputMode() {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(addDateText), for: .valueChanged)
+        
+        couponDateTextField.inputView = datePicker
+    }
+    
+    @objc
+    func addDateText(_ datePicker: UIDatePicker){
+        couponDate = datePicker.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        couponDateTextField.text = dateFormatter.string(from: datePicker.date)
+    }
+    
+    
     @IBAction func insertNewCouponButtonTapped(_ sender: UIButton) {
         view.endEditing(true)
         
         guard let couponTitleText = couponTitleTextField.text, !couponTitleText.isEmpty else {return}
         guard let couponDateText = couponDateTextField.text, !couponDateText.isEmpty else {return}
         guard let couponCodeText = couponCodeTextField.text, !couponCodeText.isEmpty else {return}
+
         
-        let coupon = Coupon(title: couponTitleText, date: couponDateText, code: couponCodeText, rating: nil)
+        let currentDay = Calendar.current.startOfDay(for: couponDate!)
+        
+        let coupon = Coupon(uuid: NSUUID().uuidString, title: couponTitleText, date: currentDay, code: couponCodeText, rating: Rating())
         
         FirebaseHelper.isCouponAlreadyInDatabase(coupon) { (exists) in
             if exists {
@@ -74,7 +99,9 @@ class AddNewCouponViewController: UIViewController {
     
     @objc
     func addMarktButton() {
-        Utility.showAlertController(for: self, with: "Neugierig?", and: "Dann sei gespannt, was du hier bald machen kannst")
+        let addNewMarketVC = AddNewMarketViewController()
+        navigationController?.pushViewController(addNewMarketVC, animated: true)
+//        Utility.showAlertController(for: self, with: "Neugierig?", and: "Dann sei gespannt, was du hier bald machen kannst")
     }
     
     
@@ -119,11 +146,11 @@ extension AddNewCouponViewController: UIPickerViewDataSource, UIPickerViewDelega
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return markt[row]
+        return market[row].title
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        marktTextField.text = markt[row]
+        marktTextField.text = market[row].title
     }
     
 }

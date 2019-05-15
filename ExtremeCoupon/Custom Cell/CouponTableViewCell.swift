@@ -28,12 +28,12 @@ class CouponTableViewCell: UITableViewCell {
     func configure(for coupon: Coupon, and delegate: CouponTableViewCellDelegate) {
         
         couponTitleLabel.text = coupon.title
-        if let rating = coupon.rating {
-            couponRatingLabel.text = "\(rating.upVote) %"
+        if let rating = coupon.rating, rating.totalVote > 0 {
+            couponRatingLabel.text = "\(rating.upVote * 100 / rating.totalVote) %"
         }
         
         couponCodeImageView.image = Barcode.fromString(code: coupon.code)
-        couPonDateLabel.text = "gültig bis \(coupon.date)"
+        couPonDateLabel.text = "gültig bis \(FormattedDate.formatDateToString(coupon.date))"
         
         self.delegate = delegate
         self.coupon = coupon

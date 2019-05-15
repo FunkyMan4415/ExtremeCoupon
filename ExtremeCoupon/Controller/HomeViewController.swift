@@ -14,14 +14,17 @@ import SVProgressHUD
 class HomeViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var filterLabel: UILabel!
     
     var coupons = [Coupon]()
     var couponForSegue: Coupon?
-    
+    var filterText = [String]()
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        
+        
         
         SVProgressHUD.show(withStatus: "Lade Coupons")
         
@@ -31,11 +34,18 @@ class HomeViewController: UIViewController {
                 for entry in entries {
                     if let couponData = entry.value as? Dictionary<String, AnyObject> {
                         if let coupon = Coupon.loadCoupon(couponData) {
-                            self.coupons.append(coupon)
+                            let currentDate = Calendar.current.startOfDay(for: Date())
+                            if currentDate <= coupon.date {
+                                self.coupons.append(coupon)
+                            }
                         }
                     }
                 }
             }
+            
+            self.coupons = self.coupons.sorted(by: { (c1, c2) -> Bool in
+               c1.date < c2.date
+            })
             self.tableView.reloadData()
             SVProgressHUD.dismiss()
         }
@@ -48,6 +58,12 @@ class HomeViewController: UIViewController {
                 let detailVC = segue.destination as! CouponDetailViewController
                 detailVC.coupon = coupon
             }
+        }
+        
+        if segue.identifier == "filterSegue" {
+            let filterVC = segue.destination as! FilterViewController
+            filterVC.delegate = self
+            filterVC.selectedMarkets = filterText
         }
     }
     
@@ -73,4 +89,23 @@ extension HomeViewController : CouponTableViewCellDelegate {
             couponForSegue = coupon
         }
     }
+}
+
+extension HomeViewController : FilterDelegate {
+    func didAddFilter(_ filter: String?) {
+        filterText.append(filter!)
+        filterLabel.text = filterText.joined(separator: ", ")
+    }
+    
+    func didRemoveFilter(_ filter: String?) {
+        for (index, _) in filterText.enumerated() {
+            if filterText[index] == filter! {
+                filterText.remove(at: index)
+                filterLabel.text = filterText.joined(separator: ", ")
+                return
+            }
+        }
+    }
+    
+    
 }

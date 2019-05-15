@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddNewMarketViewController" customModule="ExtremeCoupon" customModuleProvider="target">
             <connections>
+                <outlet property="marketTitle" destination="Ayc-WJ-S1P" id="8gq-an-f9C"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +20,56 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ayc-WJ-S1P" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
+                    <rect key="frame" x="20" y="433" width="374" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.20000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="0.10000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-Gj-aG3" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
+                    <rect key="frame" x="20" y="483" width="374" height="30"/>
+                    <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Neuen Markt Anlegen">
+                        <color key="titleColor" red="0.96852236989999996" green="0.96868795159999999" blue="0.96851199870000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.20000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="0.10000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addNewMarketButtonTapped:" destination="-1" eventType="touchUpInside" id="Y04-tP-ILv"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bd4-Gj-aG3" firstAttribute="width" secondItem="Ayc-WJ-S1P" secondAttribute="width" id="02Z-a7-gvC"/>
+                <constraint firstItem="bd4-Gj-aG3" firstAttribute="top" secondItem="Ayc-WJ-S1P" secondAttribute="bottom" constant="20" id="Hfx-lm-6gf"/>
+                <constraint firstItem="Ayc-WJ-S1P" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="WXr-Hg-miW"/>
+                <constraint firstItem="Ayc-WJ-S1P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="aoZ-AS-GqZ"/>
+                <constraint firstItem="Ayc-WJ-S1P" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jQu-VK-iz1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ayc-WJ-S1P" secondAttribute="trailing" constant="20" id="kJz-Da-V4C"/>
+                <constraint firstItem="bd4-Gj-aG3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="wLb-hx-FI7"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>

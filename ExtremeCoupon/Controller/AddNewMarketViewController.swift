@@ -10,13 +10,19 @@ import UIKit
 
 class AddNewMarketViewController: UIViewController {
 
+    @IBOutlet weak var marketTitle: RoundedTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print("LOADED ADD NEW MARKET")
     }
 
-
+    @IBAction func addNewMarketButtonTapped(_ sender: RoundedButton) {
+        let market = Market(title: marketTitle.text!)
+        FirebaseHelper.addNewMarket(market)
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

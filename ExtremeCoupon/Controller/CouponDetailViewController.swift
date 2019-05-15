@@ -23,7 +23,33 @@ class CouponDetailViewController: UIViewController {
         barcodeCodeLabel.text = coupon.code
     }
 
+    @IBAction func couponButtonTapped(_ sender: RoundedButton) {
+        updateVoting(true)
+    }
+    
+    @IBAction func couponNotWorkButtonTapped(_ sender: RoundedButton) {
+        updateVoting(false)
+    }
     
     
+    func updateVoting(_ success: Bool) {
+        if let rating = coupon.rating {
+            if success {
+                rating.upVote += 1
+            } else {
+                rating.downVote += 1
+            }
+            
+            rating.totalVote += 1
+            coupon.rating = rating
+            
+            FirebaseHelper.updateCoupon(coupon) { (success) in
+                if success {
+                    self.navigationController?.popViewController(animated: true)
+                    
+                }
+            }
+        }
+    }
 
 }
