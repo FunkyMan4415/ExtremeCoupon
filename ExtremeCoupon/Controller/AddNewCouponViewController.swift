@@ -24,12 +24,14 @@ class AddNewCouponViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         market.removeAll()
+        
         FirebaseHelper.getAllMarkets { (markets) in
             self.market = markets
         }
         
         dateInputMode()
         couponCodeTextField.leftButton.addTarget(self, action: #selector(cameraButtonTapped), for: .touchUpInside)
+        couponCodeTextField.delegate = self
         marktTextField.marktInputMode(delegate: self, dataSource: self)
         
         // append add Button to toolbar
@@ -164,7 +166,15 @@ extension AddNewCouponViewController : AddNewMarketDelegate {
             
         }
     }
-    
-    
-    
+}
+
+extension AddNewCouponViewController : UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var str = string.replacingOccurrences(of: "tel:", with: "")
+        str = str.replacingOccurrences(of: "%20", with: "")
+        str = str.replacingOccurrences(of: " ", with: "")
+        
+        textField.text = str
+        return false
+    }
 }
