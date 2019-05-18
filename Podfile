@@ -9,6 +9,7 @@ target 'ExtremeCoupon' do
   pod 'Firebase/Core'
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
+  pod 'Firebase/InAppMessagingDisplay'
   pod 'SVProgressHUD'
   pod 'Fabric'
   pod 'Crashlytics'

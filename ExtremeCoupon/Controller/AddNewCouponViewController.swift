@@ -19,14 +19,20 @@ class AddNewCouponViewController: UIViewController {
     
     var market = [Market]()
     var couponDate: Date?
+    var cachedMarkets: [Market]?
     
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
-        market.removeAll()
         
-        FirebaseHelper.getAllMarkets { (markets) in
-            self.market = markets
+        
+        market.removeAll()
+        if let cached = FirebaseHelper.getCachedMarkets() {
+            self.market = cached
+        } else {
+            FirebaseHelper.getAllMarkets { (markets) in
+                self.market = markets
+            }
         }
         
         dateInputMode()
@@ -160,11 +166,12 @@ extension AddNewCouponViewController: UIPickerViewDataSource, UIPickerViewDelega
 
 extension AddNewCouponViewController : AddNewMarketDelegate {
     func didUpdateNewMarket(_ market: Market) {
-        FirebaseHelper.getAllMarkets { (markets) in
-            self.market.removeAll()
-            self.market = markets
-            
-        }
+       
+            FirebaseHelper.getAllMarkets { (markets) in
+                 self.market.removeAll()
+                self.market = markets
+            }
+        
     }
 }
 
@@ -173,8 +180,8 @@ extension AddNewCouponViewController : UITextFieldDelegate {
         var str = string.replacingOccurrences(of: "tel:", with: "")
         str = str.replacingOccurrences(of: "%20", with: "")
         str = str.replacingOccurrences(of: " ", with: "")
-        
-        textField.text = str
+    
+        textField.text?.append(str)
         return false
     }
 }

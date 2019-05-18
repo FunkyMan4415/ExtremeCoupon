@@ -18,6 +18,8 @@ enum FirebaseHelper {
     private static let databaseReference = Database.database().reference()
     static let couponReference = databaseReference.child(FirebaseStrings.couponReference)
     static let marketReference = databaseReference.child(FirebaseStrings.marketsReference)
+    static let marketCache = NSCache<NSString, AnyObject>()
+    private static var marketDatas = [Market]()
     
     static func newEntry(for coupon: Coupon) -> Dictionary<String, AnyObject>{
         let coupon = [
@@ -80,6 +82,11 @@ enum FirebaseHelper {
             completion(true)
         }
     }
+    
+    static func deleteCoupon(_ coupon: Coupon) {
+        couponReference.child(coupon.uuid).setValue(nil)
+    }
+    
     static func isCouponAlreadyInDatabase(_ searchedCoupon: Coupon, with completion: @escaping (Bool) -> ()) {
         couponReference.observeSingleEvent(of: .value) { (snapshot) in
             if let data = snapshot.children.allObjects as? [DataSnapshot] {
@@ -106,22 +113,34 @@ enum FirebaseHelper {
                 print("ERROR: \(#function): \(error.localizedDescription)")
             }
         }
-        
     }
     
     static func getAllMarkets(completion: @escaping ([Market]) -> ()){
         var markets = [Market]()
-        marketReference.observeSingleEvent(of: .value) { (snapshot) in
+       
+        marketReference.observe(.value) { (snapshot) in
+            marketDatas.removeAll()
+            marketCache.removeAllObjects()
             if let data = snapshot.children.allObjects as? [DataSnapshot] {
                 for entry in data {
                     if let entryData = entry.value as? Dictionary<String,AnyObject> {
                         if let marketData = Market.loadMarket(entryData) {
                             markets.append(marketData)
+                            marketDatas.append(marketData)
                         }
                     }
                 }
             }
-            completion(markets)
+            marketCache.setObject(marketDatas as AnyObject, forKey: "markets")
+            completion(marketDatas)
+        }
+    }
+    
+    static func getCachedMarkets() -> [Market]? {
+        if let cachedMarkets = marketCache.object(forKey: "markets") as? [Market] {
+            return cachedMarkets
+        } else {
+            return nil
         }
     }
 }

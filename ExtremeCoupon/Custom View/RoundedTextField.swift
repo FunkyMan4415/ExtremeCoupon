@@ -64,7 +64,7 @@ class RoundedTextField: UITextField {
     
     
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-        if action.description == "paste:" || action.description == "copy:" {
+        if action.description == "paste:"{
             return true
         }
         return super.canPerformAction(action, withSender: sender)

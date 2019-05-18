@@ -17,35 +17,23 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var filterLabel: UILabel!
     
     var coupons = [Coupon]()
+    var filteredCoupons = [Coupon]()
     var couponForSegue: Coupon?
     var filter: String?
-    var filterValue: String?
+    var filterValues = [String]()
+
     
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-        
+        load()
+     }
+ 
+    func load() {
         SVProgressHUD.show(withStatus: "Lade Coupons")
-        var query: DatabaseQuery!
-        if let filter = filter {
-            if let filterValue = filterValue {
-                query = FirebaseHelper.couponReference.queryOrdered(byChild: filter).queryEqual(toValue: filterValue)
-            } else {
-                query = FirebaseHelper.couponReference.queryOrdered(byChild: filter)
-            }
-        } else {
-            query = FirebaseHelper.couponReference
-        }
-        
-        
-        query.observe(.value) { (snapshot) in
+        FirebaseHelper.couponReference.observe(.value) { (snapshot) in
+       
             self.coupons.removeAll()
             if let entries = snapshot.children.allObjects as? [DataSnapshot] {
                 for entry in entries {
@@ -54,18 +42,33 @@ class HomeViewController: UIViewController {
                             let currentDate = Calendar.current.startOfDay(for: Date())
                             if currentDate <= coupon.date {
                                 self.coupons.append(coupon)
+                            } else {
+                                FirebaseHelper.deleteCoupon(coupon)
                             }
                         }
                     }
                 }
+                self.filterCoupons()
             }
-            
-            self.coupons = self.coupons.sorted(by: { (c1, c2) -> Bool in
-                c1.date < c2.date
-            })
-            self.tableView.reloadData()
             SVProgressHUD.dismiss()
         }
+    }
+    
+    
+    func filterCoupons() {
+        if filter != nil {
+            filteredCoupons = coupons.filter({ (coupon) -> Bool in
+                filterValues.contains(coupon.market)
+            })
+        } else {
+            filteredCoupons = coupons
+        }
+        
+        self.filteredCoupons = self.filteredCoupons.sorted(by: { (c1, c2) -> Bool in
+            c1.date < c2.date
+        })
+        
+        self.tableView.reloadData()
     }
     
     // MARK: - Handler
@@ -80,7 +83,7 @@ class HomeViewController: UIViewController {
         if segue.identifier == "filterSegue" {
             let filterVC = segue.destination as! FilterViewController
             filterVC.delegate = self
-            filterVC.selectedMarket = filterValue
+            filterVC.selectedMarkets = filterValues
         }
     }
     
@@ -89,13 +92,13 @@ class HomeViewController: UIViewController {
     // MARK: - Extension
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coupons.count
+        return filteredCoupons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CouponCell", for: indexPath) as! CouponTableViewCell
         
-        cell.configure(for: coupons[indexPath.row], and: self)
+        cell.configure(for: filteredCoupons[indexPath.row], and: self)
         return cell
     }
 }
@@ -109,20 +112,25 @@ extension HomeViewController : CouponTableViewCellDelegate {
 }
 
 extension HomeViewController : FilterDelegate {
-    func didAddFilter(_ market: Market?) {
-        if let _ = market {
-            filterValue = market?.title
-            filterLabel.text = filterValue
+    func didAddFilter(_ title: String, add: Bool) {
+        if add {
+            filterValues.append(title)
+            filterLabel.text = filterValues.joined(separator: ", ")
             filter = "market"
         } else {
-            filterLabel.text = "Kein Filter ausgewählt"
-            filter = nil
-        }       
+            for (i, value) in filterValues.enumerated() {
+                if value == title {
+                    filterValues.remove(at: i)
+                    continue
+                }
+            }
+            if filterValues.count == 0 {
+                filter = nil
+                filterLabel.text = "Kein Filer ausgewählt"
+            } else {
+                filterLabel.text = filterValues.joined(separator: ", ")
+            }
+        }
+        filterCoupons()
     }
-    
-    func didRemoveFilter(_ market: Market?) {
-        filter = nil
-    }
-    
-    
 }
