@@ -21,25 +21,50 @@ class HomeViewController: UIViewController {
     var couponForSegue: Coupon?
     var filter: String?
     var filterValues = [String]()
-
+    var today: Date!
     
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        load()
-     }
- 
-    func load() {
         SVProgressHUD.show(withStatus: "Lade Coupons")
+        serverTime { (date) in
+            self.today = date
+            
+            self.load()
+        }
+    }
+    
+    func serverTime(completion: @escaping (_ getData: Date?) -> ()) {
+        let url = URL(string: "https://www.google.com")
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let httpResponse = response as? HTTPURLResponse {
+                    if let contentType = httpResponse.allHeaderFields["Date"] as? String {
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+                        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+                        dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss z"
+                        let serverTime = dateFormatter.date(from: contentType)
+                        completion(serverTime!)
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    
+    func load() {
+        
         FirebaseHelper.couponReference.observe(.value) { (snapshot) in
-       
+            
             self.coupons.removeAll()
             if let entries = snapshot.children.allObjects as? [DataSnapshot] {
                 for entry in entries {
                     if let couponData = entry.value as? Dictionary<String, AnyObject> {
                         if let coupon = Coupon.loadCoupon(couponData) {
-                            let currentDate = Calendar.current.startOfDay(for: Date())
+                            let currentDate = Calendar.current.startOfDay(for: self.today)
                             if currentDate <= coupon.date {
                                 self.coupons.append(coupon)
                             } else {
@@ -89,7 +114,7 @@ class HomeViewController: UIViewController {
     
 }
 
-    // MARK: - Extension
+// MARK: - Extension
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredCoupons.count
