@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cyO-Oc-YGp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YgQ-YC-tRw">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -208,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aaE-2D-5Nb">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="141" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterCell" textLabel="nbR-Wl-5i8" style="IBUITableViewCellStyleDefault" id="XxL-e6-nyE">
@@ -405,6 +405,109 @@
             </objects>
             <point key="canvasLocation" x="3418.125" y="20.070422535211268"/>
         </scene>
+        <!--Login Register View Controller-->
+        <scene sceneID="Y8k-ID-NZt">
+            <objects>
+                <viewController storyboardIdentifier="loginViewController" id="YgQ-YC-tRw" customClass="LoginRegisterViewController" customModule="ExtremeCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sdo-ot-EjK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vx-D8-ZIa" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
+                                <rect key="frame" x="20" y="232" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YMt-vv-cqy"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passwort" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pdq-gE-7Br" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
+                                <rect key="frame" x="20" y="302" width="374" height="50"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d2F-mK-WNb">
+                                <rect key="frame" x="20" y="124" width="374" height="29"/>
+                                <segments>
+                                    <segment title="Login"/>
+                                    <segment title="Registrieren"/>
+                                </segments>
+                                <color key="tintColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentControllTapped:" destination="YgQ-YC-tRw" eventType="valueChanged" id="z0p-WG-L15"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRU-qw-o8V" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
+                                <rect key="frame" x="20" y="423" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="20"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginRegisterButtonTapped:" destination="YgQ-YC-tRw" eventType="touchUpInside" id="OYR-yD-k76"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96068006753921509" green="0.96084433794021606" blue="0.96066969633102417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="d2F-mK-WNb" firstAttribute="top" secondItem="KvF-vU-Sb9" secondAttribute="top" constant="80" id="5Vv-Cj-sZs"/>
+                            <constraint firstItem="sRU-qw-o8V" firstAttribute="centerY" secondItem="sdo-ot-EjK" secondAttribute="centerY" id="8kz-hm-0w8"/>
+                            <constraint firstItem="sRU-qw-o8V" firstAttribute="width" secondItem="Pdq-gE-7Br" secondAttribute="width" id="CBO-qt-CjG"/>
+                            <constraint firstItem="0vx-D8-ZIa" firstAttribute="top" secondItem="d2F-mK-WNb" secondAttribute="bottom" constant="80" id="MLF-B7-anB"/>
+                            <constraint firstItem="sRU-qw-o8V" firstAttribute="centerX" secondItem="sdo-ot-EjK" secondAttribute="centerX" id="Pzx-eO-gAj"/>
+                            <constraint firstItem="d2F-mK-WNb" firstAttribute="leading" secondItem="KvF-vU-Sb9" secondAttribute="leading" constant="20" id="gJN-Jb-1qC"/>
+                            <constraint firstItem="Pdq-gE-7Br" firstAttribute="top" secondItem="0vx-D8-ZIa" secondAttribute="bottom" constant="20" id="lby-51-J3V"/>
+                            <constraint firstItem="KvF-vU-Sb9" firstAttribute="trailing" secondItem="d2F-mK-WNb" secondAttribute="trailing" constant="20" id="oRA-et-Bfh"/>
+                            <constraint firstItem="0vx-D8-ZIa" firstAttribute="leading" secondItem="KvF-vU-Sb9" secondAttribute="leading" constant="20" id="pzH-hP-OA7"/>
+                            <constraint firstItem="KvF-vU-Sb9" firstAttribute="trailing" secondItem="Pdq-gE-7Br" secondAttribute="trailing" constant="20" id="t37-FI-CHc"/>
+                            <constraint firstItem="sRU-qw-o8V" firstAttribute="height" secondItem="Pdq-gE-7Br" secondAttribute="height" id="vQf-JN-uzf"/>
+                            <constraint firstItem="Pdq-gE-7Br" firstAttribute="leading" secondItem="KvF-vU-Sb9" secondAttribute="leading" constant="20" id="yMT-TF-3rE"/>
+                            <constraint firstItem="Pdq-gE-7Br" firstAttribute="height" secondItem="0vx-D8-ZIa" secondAttribute="height" id="yZr-en-D5e"/>
+                            <constraint firstItem="KvF-vU-Sb9" firstAttribute="trailing" secondItem="0vx-D8-ZIa" secondAttribute="trailing" constant="20" id="zye-06-FSO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KvF-vU-Sb9"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="0vx-D8-ZIa" id="kVC-QN-IFb"/>
+                        <outlet property="loginRegisterButton" destination="sRU-qw-o8V" id="Xwa-zU-L2C"/>
+                        <outlet property="passwordTextField" destination="Pdq-gE-7Br" id="LF1-tC-tPZ"/>
+                        <segue destination="cyO-Oc-YGp" kind="show" identifier="HomeSegue" id="yfB-LF-UZt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R4J-uf-fvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-878.26086956521749" y="18.75"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lS0-Lh-32B">
             <objects>
@@ -420,6 +523,7 @@
                         <segue destination="lG8-Ar-KPY" kind="relationship" relationship="viewControllers" id="vYg-VU-BxX"/>
                         <segue destination="t3K-td-5wU" kind="relationship" relationship="viewControllers" id="SyM-EJ-qSk"/>
                         <segue destination="hyg-P2-WTT" kind="relationship" relationship="viewControllers" id="lGq-yy-LzR"/>
+                        <segue destination="Yug-Fz-Dfr" kind="relationship" relationship="viewControllers" id="bON-gz-fpO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzY-ls-DYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -674,7 +778,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pcc-6m-Rcn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1850.7246376811595" y="1542.8571428571429"/>
+            <point key="canvasLocation" x="1868" y="1339"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="mG5-09-ks4">
+            <objects>
+                <viewController id="raD-wY-66d" customClass="ProfileViewController" customModule="ExtremeCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3be-OD-QqO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rY-wf-C17">
+                                <rect key="frame" x="321" y="108" width="73" height="30"/>
+                                <state key="normal" title="Ausloggen">
+                                    <color key="titleColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="raD-wY-66d" eventType="touchUpInside" id="J3c-zx-BOC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96068006750000001" green="0.96084433790000001" blue="0.96066969629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1rY-wf-C17" firstAttribute="top" secondItem="sZb-Gy-7Xc" secondAttribute="top" constant="20" id="S7R-Dk-LAW"/>
+                            <constraint firstItem="sZb-Gy-7Xc" firstAttribute="trailing" secondItem="1rY-wf-C17" secondAttribute="trailing" constant="20" id="pXh-qw-Z93"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sZb-Gy-7Xc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hbY-WO-Oha"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="raJ-gc-ecU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1867" y="2026"/>
         </scene>
         <!--Aktuelle Coupons-->
         <scene sceneID="kAs-rL-tf9">
@@ -706,7 +841,7 @@
         <scene sceneID="dmF-gW-3P5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t3K-td-5wU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Rabatt Rechner" image="Rabatt_rechner" id="wKe-6y-CsO"/>
+                    <tabBarItem key="tabBarItem" title="Rabatt Rechner" image="rabatt_rechner" id="wKe-6y-CsO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MCp-Q1-lOU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -728,7 +863,7 @@
         <scene sceneID="TrP-Ad-5G1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hyg-P2-WTT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Neuen Coupon" image="neuer_coupon" id="NCV-Tv-r87"/>
+                    <tabBarItem key="tabBarItem" title="Neuen Coupon" image="add_coupon" id="NCV-Tv-r87"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s6P-gT-K3k">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -746,14 +881,34 @@
             </objects>
             <point key="canvasLocation" x="958" y="1339"/>
         </scene>
+        <!--Profil-->
+        <scene sceneID="gUy-A9-Qse">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yug-Fz-Dfr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profil" image="Profile" selectedImage="Profile" id="o98-wY-QMV"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tj6-Ub-1J8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="raD-wY-66d" kind="relationship" relationship="rootViewController" id="KrH-0Z-FYF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X59-qn-5Gk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="2026"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Rabatt_rechner" width="30" height="38"/>
-        <image name="aktuelle_coupons" width="52" height="38"/>
+        <image name="Profile" width="30" height="29"/>
+        <image name="add_coupon" width="29" height="29"/>
+        <image name="aktuelle_coupons" width="37" height="29"/>
         <image name="barcode-306926_640" width="640" height="352"/>
         <image name="camera" width="25" height="20"/>
         <image name="downVote" width="30" height="29"/>
-        <image name="neuer_coupon" width="38" height="38"/>
+        <image name="rabatt_rechner" width="24" height="29"/>
         <image name="upVote" width="30" height="29"/>
     </resources>
 </document>

@@ -17,15 +17,17 @@
 		80061D0222875AC100BAEC6A /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80061D0122875AC100BAEC6A /* FirebaseHelper.swift */; };
 		800633EB22887094005B8216 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800633EA22887094005B8216 /* FilterViewController.swift */; };
 		800633ED2288717A005B8216 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800633EC2288717A005B8216 /* Market.swift */; };
+		807750912290AFEF00878AF2 /* LoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807750902290AFEF00878AF2 /* LoginRegisterViewController.swift */; };
 		80862BFF2287558E001EC9AE /* AddNewMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80862BFD2287558E001EC9AE /* AddNewMarketViewController.swift */; };
 		80862C002287558E001EC9AE /* AddNewMarketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80862BFE2287558E001EC9AE /* AddNewMarketViewController.xib */; };
 		809648F52286DC350062E2AD /* Barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809648F42286DC350062E2AD /* Barcode.swift */; };
 		809648F72286DF080062E2AD /* CouponDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809648F62286DF080062E2AD /* CouponDetailViewController.swift */; };
 		809CE0E62285FD0900E7A765 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809CE0E52285FD0900E7A765 /* BarcodeViewController.swift */; };
+		80C0D5422291896F007F181E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C0D5412291896F007F181E /* Assets.xcassets */; };
+		80C0D5442291903C007F181E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0D5432291903C007F181E /* ProfileViewController.swift */; };
 		80FADB5C2284B49800E45CB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FADB5B2284B49800E45CB8 /* AppDelegate.swift */; };
 		80FADB5E2284B49800E45CB8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FADB5D2284B49800E45CB8 /* HomeViewController.swift */; };
 		80FADB612284B49800E45CB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FADB5F2284B49800E45CB8 /* Main.storyboard */; };
-		80FADB632284B49900E45CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80FADB622284B49900E45CB8 /* Assets.xcassets */; };
 		80FADB662284B49900E45CB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FADB642284B49900E45CB8 /* LaunchScreen.storyboard */; };
 		80FADB702284B80500E45CB8 /* CalcDiscountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FADB6F2284B80500E45CB8 /* CalcDiscountViewController.swift */; };
 		80FADB722284B82000E45CB8 /* AddNewCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FADB712284B82000E45CB8 /* AddNewCouponViewController.swift */; };
@@ -44,17 +46,19 @@
 		80061D0122875AC100BAEC6A /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		800633EA22887094005B8216 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		800633EC2288717A005B8216 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		807750902290AFEF00878AF2 /* LoginRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterViewController.swift; sourceTree = "<group>"; };
 		80862BFD2287558E001EC9AE /* AddNewMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMarketViewController.swift; sourceTree = "<group>"; };
 		80862BFE2287558E001EC9AE /* AddNewMarketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewMarketViewController.xib; sourceTree = "<group>"; };
 		809648F42286DC350062E2AD /* Barcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
 		809648F62286DF080062E2AD /* CouponDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponDetailViewController.swift; sourceTree = "<group>"; };
 		809CE0E52285FD0900E7A765 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		80B64F62036E9AE1A5279E6A /* Pods-ExtremeCoupon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExtremeCoupon.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon.release.xcconfig"; sourceTree = "<group>"; };
+		80C0D5412291896F007F181E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80C0D5432291903C007F181E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		80FADB582284B49800E45CB8 /* ExtremeCoupon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtremeCoupon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FADB5B2284B49800E45CB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80FADB5D2284B49800E45CB8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		80FADB602284B49800E45CB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		80FADB622284B49900E45CB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80FADB652284B49900E45CB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80FADB672284B49900E45CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80FADB6F2284B80500E45CB8 /* CalcDiscountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcDiscountViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 		80FADB4F2284B49800E45CB8 = {
 			isa = PBXGroup;
 			children = (
+				80C0D5412291896F007F181E /* Assets.xcassets */,
 				80FADB5A2284B49800E45CB8 /* ExtremeCoupon */,
 				80FADB592284B49800E45CB8 /* Products */,
 				F6784C91F0D6D8D01652D977 /* Pods */,
@@ -141,7 +146,6 @@
 				80FADB6E2284B4F900E45CB8 /* View */,
 				80FADB6D2284B4EF00E45CB8 /* Controller */,
 				80FADB5B2284B49800E45CB8 /* AppDelegate.swift */,
-				80FADB622284B49900E45CB8 /* Assets.xcassets */,
 				80FADB672284B49900E45CB8 /* Info.plist */,
 			);
 			path = ExtremeCoupon;
@@ -157,6 +161,8 @@
 				809648F62286DF080062E2AD /* CouponDetailViewController.swift */,
 				80862BFD2287558E001EC9AE /* AddNewMarketViewController.swift */,
 				800633EA22887094005B8216 /* FilterViewController.swift */,
+				807750902290AFEF00878AF2 /* LoginRegisterViewController.swift */,
+				80C0D5432291903C007F181E /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -263,8 +269,8 @@
 				80FADB662284B49900E45CB8 /* LaunchScreen.storyboard in Resources */,
 				80862C002287558E001EC9AE /* AddNewMarketViewController.xib in Resources */,
 				80061D00228759BE00BAEC6A /* GoogleService-Info.plist in Resources */,
-				80FADB632284B49900E45CB8 /* Assets.xcassets in Resources */,
 				80FADB612284B49800E45CB8 /* Main.storyboard in Resources */,
+				80C0D5422291896F007F181E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +307,8 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -311,6 +318,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -318,7 +326,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7DE25C3B96891532E1520968 /* [CP] Copy Pods Resources */ = {
@@ -329,7 +337,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInAppMessagingDisplay/InAppMessagingDisplayResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -340,7 +348,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		80061D0322877C1B00BAEC6A /* ShellScript */ = {
@@ -370,12 +378,14 @@
 			files = (
 				80061D0222875AC100BAEC6A /* FirebaseHelper.swift in Sources */,
 				809648F52286DC350062E2AD /* Barcode.swift in Sources */,
+				80C0D5442291903C007F181E /* ProfileViewController.swift in Sources */,
 				80FADB702284B80500E45CB8 /* CalcDiscountViewController.swift in Sources */,
 				800633EB22887094005B8216 /* FilterViewController.swift in Sources */,
 				80FADB772284BC3700E45CB8 /* RoundedButton.swift in Sources */,
 				3C057CBF22857EE900ADD413 /* Rating.swift in Sources */,
 				809648F72286DF080062E2AD /* CouponDetailViewController.swift in Sources */,
 				3C057CC22285976D00ADD413 /* Utility.swift in Sources */,
+				807750912290AFEF00878AF2 /* LoginRegisterViewController.swift in Sources */,
 				80FADB5E2284B49800E45CB8 /* HomeViewController.swift in Sources */,
 				809CE0E62285FD0900E7A765 /* BarcodeViewController.swift in Sources */,
 				3C057CBD22857EB000ADD413 /* Coupon.swift in Sources */,
