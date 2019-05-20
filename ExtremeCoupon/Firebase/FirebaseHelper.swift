@@ -27,7 +27,8 @@ enum FirebaseHelper {
             "title" : coupon.title as AnyObject,
             "date" : coupon.date.description as AnyObject,
             "code" : coupon.code as AnyObject,
-            "market": coupon.market as AnyObject
+            "market": coupon.market as AnyObject,
+            "username": coupon.username as AnyObject
         ]
         
         return coupon

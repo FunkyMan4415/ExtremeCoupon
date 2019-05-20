@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import FirebaseAuth
 
 class AddNewCouponViewController: UIViewController {
     
@@ -70,10 +71,12 @@ class AddNewCouponViewController: UIViewController {
         guard let couponDateText = couponDateUntilTextField.text, !couponDateText.isEmpty else {return}
         guard let couponCodeText = couponCodeTextField.text, !couponCodeText.isEmpty else {return}
         guard let couponMarketText = marktTextField.text, !couponMarketText.isEmpty else {return}
-        
+
         let currentDay = Calendar.current.startOfDay(for: couponDate!)
         
-        let coupon = Coupon(uuid: NSUUID().uuidString, title: couponTitleText, date: currentDay, code: couponCodeText, rating: Rating(), market: couponMarketText)
+        let user = Auth.auth().currentUser
+        
+        let coupon = Coupon(uuid: NSUUID().uuidString, title: couponTitleText, date: currentDay, code: couponCodeText, rating: Rating(), market: couponMarketText, username: (user?.displayName)!)
         
         FirebaseHelper.isCouponAlreadyInDatabase(coupon) { (exists) in
             if exists {

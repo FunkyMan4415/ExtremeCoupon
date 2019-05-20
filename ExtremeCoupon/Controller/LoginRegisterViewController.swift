@@ -8,16 +8,20 @@
 
 import UIKit
 import FirebaseAuth
+import SVProgressHUD
 
 class LoginRegisterViewController: UIViewController {
     
+    @IBOutlet weak var displayNameTextField: RoundedTextField!
     @IBOutlet var emailTextField: RoundedTextField!
     @IBOutlet weak var passwordTextField: RoundedTextField!
     @IBOutlet weak var loginRegisterButton: RoundedButton!
     
+    var emailVerificationViewController = EmailVerificationViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        displayNameTextField.isHidden = true
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "loginViewController") 
         UIApplication.shared.keyWindow?.rootViewController = viewController
@@ -27,21 +31,30 @@ class LoginRegisterViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let _ = UserDefaults.standard.object(forKey: "userId") {
+            if let verified = UserDefaults.standard.object(forKey: "EmailVerification") as? Bool, !verified {
+                self.displayEmailVerificationView()
+            }
             performSegue(withIdentifier: "HomeSegue", sender: true)
+        } else {
+            emailVerificationViewController.view.removeFromSuperview()
         }
     }
     
     @IBAction func segmentControllTapped(_ sender: UISegmentedControl) {
-        loginRegisterButton.setTitle(sender.titleForSegment(at: sender.selectedSegmentIndex), for: .normal)
+        let title = sender.titleForSegment(at: sender.selectedSegmentIndex)
+        loginRegisterButton.setTitle(title, for: .normal)
+        
+        displayNameTextField.isHidden = (title == "Login")
     }
     
     
     @IBAction func loginRegisterButtonTapped(_ sender: RoundedButton) {
+        guard let displayName = displayNameTextField.text, !displayName.isEmpty else {return}
         guard let email = emailTextField.text, !email.isEmpty else {return }
         guard let password = passwordTextField.text, !password.isEmpty else {return}
         
-        
         if sender.titleLabel?.text == "Login" {
+            SVProgressHUD.show(withStatus: "Wird eingeloggt...")
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 if let error = error {
                     if let code = AuthErrorCode(rawValue: error._code) {
@@ -58,6 +71,13 @@ class LoginRegisterViewController: UIViewController {
                 }else {
                     if let user = user {
                         UserDefaults.standard.set(user.user.uid, forKey: "userId")
+                        UserDefaults.standard.set(false, forKey: "EmailVerification")
+                        SVProgressHUD.dismiss()
+                        
+                        if !user.user.isEmailVerified {
+                            self.displayEmailVerificationView()
+                        }
+                        
                         self.performSegue(withIdentifier: "HomeSegue", sender: nil)
                     }
                 }
@@ -66,8 +86,6 @@ class LoginRegisterViewController: UIViewController {
             }
             
         } else {
-
-            
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                 if let error = error {
                     if let code = AuthErrorCode(rawValue: error._code) {
@@ -83,9 +101,26 @@ class LoginRegisterViewController: UIViewController {
                     }
                     
                 } else {
+                    
                     if let user = result {
+                        user.user.sendEmailVerification(completion: { (error) in
+                            if let error = error {
+                                print("error \(error.localizedDescription)")
+                            }
+                        })
+                        
                         UserDefaults.standard.set(user.user.uid, forKey: "userId")
-//                        Auth.auth().sendSignInLink(toEmail: email, actionCodeSettings: ActionCodeSettings().self , completion: nil)
+                        UserDefaults.standard.set(false, forKey: "EmailVerification")
+                        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                        changeRequest?.displayName = displayName
+                        
+                        changeRequest?.commitChanges(completion: { (error) in
+                            if let error = error {
+                                print("WHOOPS \(error.localizedDescription)")
+                            }
+                        })
+                        
+                        self.displayEmailVerificationView()
                         self.performSegue(withIdentifier: "HomeSegue", sender: nil)
                     }
                 }
@@ -93,14 +128,25 @@ class LoginRegisterViewController: UIViewController {
         }
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func displayEmailVerificationView() {
+        if let window = UIApplication.shared.keyWindow {
+            emailVerificationViewController.view.frame = CGRect(x: 0, y: self.view.bounds.maxY - emailVerificationViewController.view.bounds.height - 60, width: self.view.bounds.width, height: 60)
+            
+            window.addSubview(emailVerificationViewController.view)
+            
+            emailVerificationViewController.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(isEmailVerified)))
+        }
+    }
     
+    @objc
+    func isEmailVerified() {
+        if let currentUser = Auth.auth().currentUser {
+            currentUser.reload(completion: nil)
+            if currentUser.isEmailVerified {
+                emailVerificationViewController.view.removeFromSuperview()
+                emailVerificationViewController.removeFromParent()
+                UserDefaults.standard.set(true, forKey: "EmailVerification")
+            }
+        }
+    }
 }

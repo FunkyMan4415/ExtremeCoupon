@@ -20,7 +20,8 @@ class CouponTableViewCell: UITableViewCell {
     @IBOutlet weak var totalVoteLabel: UILabel!
     @IBOutlet weak var couponDownVote: UILabel!
     @IBOutlet weak var marketLabel: UILabel!
-
+    @IBOutlet weak var userDisplayNameLabel: UILabel!
+    
     var delegate: CouponTableViewCellDelegate?
     var coupon: Coupon?
     override func awakeFromNib() {
@@ -31,6 +32,7 @@ class CouponTableViewCell: UITableViewCell {
     func configure(for coupon: Coupon, and delegate: CouponTableViewCellDelegate) {
         marketLabel.text = coupon.market
         couponTitleLabel.text = coupon.title
+        userDisplayNameLabel.text = coupon.username
         if let rating = coupon.rating, rating.totalVote > 0, (rating.upVote > 0 || rating.downVote > 0) {
             couponUpVote.text = "\(rating.upVote * 100 / rating.totalVote) %"
             couponDownVote.text = "\(rating.downVote * 100 / rating.totalVote) %"

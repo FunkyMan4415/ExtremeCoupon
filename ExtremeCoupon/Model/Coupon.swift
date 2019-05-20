@@ -34,6 +34,7 @@ struct Coupon {
     let code: String
     var rating: Rating?
     var market: String
+    let username: String
     
     
     
@@ -45,9 +46,14 @@ struct Coupon {
         guard let rating = data["Rating"] as? Dictionary<String, AnyObject> else {return nil}
         guard let market = data["market"] as? String else { return nil}
         
+        var displayName = ""
+        if let username = data["username"] as? String {
+            displayName = username
+        }
+        
         let rate = Rating.loadRating(rating)
         let date = FormattedDate.formatStringToDate(unformattedDate)
         
-        return Coupon(uuid: uuid, title: title, date: date, code: code, rating: rate, market: market)
+        return Coupon(uuid: uuid, title: title, date: date, code: code, rating: rate, market: market, username: displayName)
     }
 }
