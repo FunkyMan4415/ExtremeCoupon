@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="56L-WE-GnZ">
-                                <rect key="frame" x="0.0" y="217" width="414" height="596"/>
+                                <rect key="frame" x="0.0" y="213" width="414" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CouponCell" id="ZB9-jt-1rQ" customClass="CouponTableViewCell" customModule="ExtremeCoupon" customModuleProvider="target">
@@ -152,7 +152,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyg-a9-StQ" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
-                                <rect key="frame" x="314" y="164" width="80" height="36"/>
+                                <rect key="frame" x="314" y="160" width="80" height="36"/>
                                 <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="C5l-Gf-wST"/>
@@ -177,7 +177,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kein Filter ausgewählt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wq0-Pn-Y3L">
-                                <rect key="frame" x="20" y="164" width="274" height="33"/>
+                                <rect key="frame" x="20" y="160" width="274" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="iUb-2i-V2q"/>
                                 </constraints>
@@ -570,6 +570,16 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5C-Qj-nDq">
+                                <rect key="frame" x="20" y="452" width="374" height="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                <state key="normal" title="Einloggen als Anonymer Nutzer">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="anonymousLoginButtonTapped:" destination="YgQ-YC-tRw" eventType="touchUpInside" id="IXk-Yn-NqI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96068006753921509" green="0.96084433794021606" blue="0.96066969633102417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -579,8 +589,11 @@
                             <constraint firstItem="Pdq-gE-7Br" firstAttribute="top" secondItem="0vx-D8-ZIa" secondAttribute="bottom" constant="20" id="8Rm-lf-H47"/>
                             <constraint firstItem="0vx-D8-ZIa" firstAttribute="leading" secondItem="KvF-vU-Sb9" secondAttribute="leading" constant="20" id="Dfp-OJ-IF7"/>
                             <constraint firstItem="KvF-vU-Sb9" firstAttribute="trailing" secondItem="qDq-9D-esv" secondAttribute="trailing" constant="20" id="HXK-K5-fTP"/>
+                            <constraint firstItem="y5C-Qj-nDq" firstAttribute="top" secondItem="sRU-qw-o8V" secondAttribute="bottom" constant="20" id="I2g-cU-ewf"/>
                             <constraint firstItem="sRU-qw-o8V" firstAttribute="leading" secondItem="KvF-vU-Sb9" secondAttribute="leading" constant="20" id="Loh-5w-j4d"/>
+                            <constraint firstItem="KvF-vU-Sb9" firstAttribute="trailing" secondItem="y5C-Qj-nDq" secondAttribute="trailing" constant="20" id="THA-F2-qYG"/>
                             <constraint firstItem="qDq-9D-esv" firstAttribute="top" secondItem="d2F-mK-WNb" secondAttribute="bottom" constant="50" id="Y2K-Xy-wgY"/>
+                            <constraint firstItem="y5C-Qj-nDq" firstAttribute="leading" secondItem="KvF-vU-Sb9" secondAttribute="leading" constant="20" id="YZI-1Z-OI5"/>
                             <constraint firstItem="0vx-D8-ZIa" firstAttribute="top" secondItem="qDq-9D-esv" secondAttribute="bottom" constant="20" id="dWp-ad-U9V"/>
                             <constraint firstItem="d2F-mK-WNb" firstAttribute="leading" secondItem="KvF-vU-Sb9" secondAttribute="leading" constant="20" id="gJN-Jb-1qC"/>
                             <constraint firstItem="KvF-vU-Sb9" firstAttribute="trailing" secondItem="Pdq-gE-7Br" secondAttribute="trailing" constant="20" id="gjv-Lk-nzo"/>
@@ -603,10 +616,10 @@
             </objects>
             <point key="canvasLocation" x="-878.26086956521749" y="18.75"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab View Controller-->
         <scene sceneID="lS0-Lh-32B">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cyO-Oc-YGp" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cyO-Oc-YGp" customClass="TabViewController" customModule="ExtremeCoupon" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ccz-se-Fuo">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -615,6 +628,7 @@
                         <color key="selectedImageTintColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
+                        <outlet property="tabbar" destination="Ccz-se-Fuo" id="sgi-Jc-Xfe"/>
                         <segue destination="lG8-Ar-KPY" kind="relationship" relationship="viewControllers" id="vYg-VU-BxX"/>
                         <segue destination="t3K-td-5wU" kind="relationship" relationship="viewControllers" id="SyM-EJ-qSk"/>
                         <segue destination="hyg-P2-WTT" kind="relationship" relationship="viewControllers" id="lGq-yy-LzR"/>
@@ -915,7 +929,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="2RJ-9f-qqS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="100"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <color key="barTintColor" red="0.96862751245498657" green="0.96862751245498657" blue="0.96862751245498657" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

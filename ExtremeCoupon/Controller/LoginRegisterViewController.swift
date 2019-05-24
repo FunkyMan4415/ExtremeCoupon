@@ -131,6 +131,21 @@ class LoginRegisterViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func anonymousLoginButtonTapped(_ sender: UIButton) {
+        Auth.auth().signInAnonymously { (user, error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            
+            if let user = user {
+                UserDefaults.standard.set(true, forKey: "anonymousLogin")
+                UserDefaults.standard.set(user.user.uid, forKey: "userId")
+                self.performSegue(withIdentifier: "HomeSegue", sender: nil)
+            }
+        }
+    }
+    
     func displayEmailVerificationView() {
         if let window = UIApplication.shared.keyWindow {
             emailVerificationViewController.view.frame = CGRect(x: 0, y: self.view.bounds.maxY - emailVerificationViewController.view.bounds.height - 60, width: self.view.bounds.width, height: 60)

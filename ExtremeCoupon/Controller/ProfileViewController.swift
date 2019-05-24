@@ -25,6 +25,7 @@ class ProfileViewController: UIViewController {
         if let _ = UserDefaults.standard.object(forKey: "userId") {
             UserDefaults.standard.set(nil, forKey: "userId")
             UserDefaults.standard.set(false, forKey: "onboardingCompleted")
+            UserDefaults.standard.set(false, forKey: "anonymousLogin") 
             dismiss(animated: true, completion: nil)
         }
     }
