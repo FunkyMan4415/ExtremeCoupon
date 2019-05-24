@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YgQ-YC-tRw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="56L-WE-GnZ">
-                                <rect key="frame" x="0.0" y="213" width="414" height="600"/>
+                                <rect key="frame" x="0.0" y="217" width="414" height="596"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CouponCell" id="ZB9-jt-1rQ" customClass="CouponTableViewCell" customModule="ExtremeCoupon" customModuleProvider="target">
@@ -33,20 +33,20 @@
                                                     <rect key="frame" x="20" y="0.0" width="374" height="230"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X-Fach auf den kompletten Einkauf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyj-et-Qcj">
-                                                            <rect key="frame" x="8" y="20" width="358" height="18.5"/>
-                                                            <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="15"/>
+                                                            <rect key="frame" x="8" y="20" width="358" height="20.5"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barcode-306926_640" translatesAutoresizingMaskIntoConstraints="NO" id="PoZ-bs-4B3">
-                                                            <rect key="frame" x="30" y="63.5" width="314" height="100"/>
+                                                            <rect key="frame" x="30" y="65.5" width="314" height="100"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="100" id="cQV-mo-5A0"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3k-ia-tpR">
-                                                            <rect key="frame" x="8" y="40" width="358" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="8" y="39" width="358" height="23.5"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -58,25 +58,25 @@
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="htb-d7-GHZ">
                                                                             <rect key="frame" x="0.0" y="0.0" width="23.5" height="50"/>
-                                                                            <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="13"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                                             <color key="textColor" red="0.18135508894920349" green="0.73645102977752686" blue="0.072213955223560333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="P8v-4e-Tby">
                                                                             <rect key="frame" x="27.5" y="0.0" width="23.5" height="50"/>
-                                                                            <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="13"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                                             <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="vWa-eG-u0f">
                                                                             <rect key="frame" x="55" y="0.0" width="24" height="50"/>
-                                                                            <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="13"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                                             <color key="textColor" red="0.76078431372549016" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbV-Zt-Eva">
                                                                             <rect key="frame" x="83" y="0.0" width="17" height="50"/>
-                                                                            <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="10"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
                                                                             <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -86,14 +86,14 @@
                                                                     </constraints>
                                                                 </stackView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anonymous" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="xQ7-D8-NOy">
-                                                                    <rect key="frame" x="150" y="34" width="58.5" height="16"/>
-                                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="13"/>
+                                                                    <rect key="frame" x="150" y="32" width="66" height="18"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gültig bis xx.xx.xxxx" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Okp-h3-R9P">
-                                                                    <rect key="frame" x="258.5" y="34" width="99.5" height="16"/>
-                                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="13"/>
+                                                                    <rect key="frame" x="266" y="32" width="92" height="18"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -152,12 +152,12 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyg-a9-StQ" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
-                                <rect key="frame" x="314" y="160" width="80" height="33"/>
+                                <rect key="frame" x="314" y="164" width="80" height="36"/>
                                 <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="C5l-Gf-wST"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="Filter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -177,11 +177,11 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kein Filter ausgewählt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wq0-Pn-Y3L">
-                                <rect key="frame" x="20" y="160" width="274" height="33"/>
+                                <rect key="frame" x="20" y="164" width="274" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="iUb-2i-V2q"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -273,14 +273,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBf-rH-ig9">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="if2-9t-1S7">
-                                                <rect key="frame" x="132" y="8" width="56.5" height="30"/>
-                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="if2-9t-1S7">
+                                                <rect key="frame" x="20" y="8" width="280" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
                                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWs-br-TAG" customClass="ShadowView" customModule="ExtremeCoupon" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="58" width="280" height="300"/>
+                                                <rect key="frame" x="20" y="62.5" width="280" height="300"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61y-h4-Fx9">
                                                         <rect key="frame" x="20" y="90" width="240" height="120"/>
@@ -289,8 +289,8 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlQ-jV-jNw">
-                                                        <rect key="frame" x="20" y="218" width="240" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <rect key="frame" x="20" y="218" width="240" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -319,7 +319,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAr-ui-B0f" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="378" width="100" height="65"/>
+                                                <rect key="frame" x="20" y="382.5" width="100" height="65"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="PdB-US-dbM"/>
@@ -347,7 +347,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZZ-gF-28R" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
-                                                <rect key="frame" x="200" y="378" width="100" height="65"/>
+                                                <rect key="frame" x="200" y="382.5" width="100" height="65"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" image="downVote">
@@ -373,6 +373,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="eWs-br-TAG" firstAttribute="leading" secondItem="bBf-rH-ig9" secondAttribute="leading" constant="20" id="0Dc-3g-KrL"/>
+                                            <constraint firstItem="if2-9t-1S7" firstAttribute="leading" secondItem="bBf-rH-ig9" secondAttribute="leading" constant="20" id="1Mm-nV-xRb"/>
                                             <constraint firstItem="lAr-ui-B0f" firstAttribute="top" secondItem="eWs-br-TAG" secondAttribute="bottom" constant="20" id="7k8-l8-eiw"/>
                                             <constraint firstItem="lAr-ui-B0f" firstAttribute="leading" secondItem="bBf-rH-ig9" secondAttribute="leading" constant="20" id="7z8-2M-T3B"/>
                                             <constraint firstItem="sZZ-gF-28R" firstAttribute="top" secondItem="eWs-br-TAG" secondAttribute="bottom" constant="20" id="PCw-Tf-Aaa"/>
@@ -381,6 +382,7 @@
                                             <constraint firstItem="sZZ-gF-28R" firstAttribute="width" secondItem="lAr-ui-B0f" secondAttribute="width" id="YUC-ef-rHm"/>
                                             <constraint firstItem="if2-9t-1S7" firstAttribute="centerX" secondItem="bBf-rH-ig9" secondAttribute="centerX" id="cjp-YB-mgG"/>
                                             <constraint firstItem="eWs-br-TAG" firstAttribute="top" secondItem="if2-9t-1S7" secondAttribute="bottom" constant="20" id="fQ2-l6-E1t"/>
+                                            <constraint firstAttribute="trailing" secondItem="if2-9t-1S7" secondAttribute="trailing" constant="20" id="jc7-3a-30A"/>
                                             <constraint firstItem="eWs-br-TAG" firstAttribute="centerX" secondItem="bBf-rH-ig9" secondAttribute="centerX" id="oXv-o9-1Gk"/>
                                             <constraint firstItem="sZZ-gF-28R" firstAttribute="height" secondItem="lAr-ui-B0f" secondAttribute="height" id="vMU-bQ-Jc7"/>
                                         </constraints>
@@ -394,7 +396,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96862745098039216" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bBf-rH-ig9" firstAttribute="width" secondItem="MJA-cJ-T5d" secondAttribute="width" id="Tu0-1x-Avq"/>
                             <constraint firstItem="bBf-rH-ig9" firstAttribute="height" secondItem="MJA-cJ-T5d" secondAttribute="height" id="VXw-xt-poK"/>
@@ -416,6 +418,54 @@
             </objects>
             <point key="canvasLocation" x="3418.125" y="20.070422535211268"/>
         </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="dtt-Mg-k1Y">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingView" id="YH7-FN-wfb" customClass="OnboardingViewController" customModule="ExtremeCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="crL-Ex-Eud">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8Q-jo-dry" customClass="OnboardingView" customModule="ExtremeCoupon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkQ-1y-kmk" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
+                                <rect key="frame" x="20" y="712" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="f13-pn-aMo"/>
+                                </constraints>
+                                <state key="normal" title="Jetzt Registrieren">
+                                    <color key="titleColor" red="0.96068006750000001" green="0.96084433790000001" blue="0.96066969629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButtonTapped:" destination="YH7-FN-wfb" eventType="touchUpInside" id="u4e-Pa-zgc"/>
+                                    <segue destination="YgQ-YC-tRw" kind="show" id="Hvn-8L-8eh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="I8Q-jo-dry" firstAttribute="leading" secondItem="IBP-Xl-d1X" secondAttribute="leading" id="5mp-yQ-qMf"/>
+                            <constraint firstItem="dkQ-1y-kmk" firstAttribute="leading" secondItem="IBP-Xl-d1X" secondAttribute="leading" constant="20" id="U6J-C1-eSh"/>
+                            <constraint firstItem="I8Q-jo-dry" firstAttribute="trailing" secondItem="IBP-Xl-d1X" secondAttribute="trailing" id="YDx-WY-zSE"/>
+                            <constraint firstItem="IBP-Xl-d1X" firstAttribute="trailing" secondItem="dkQ-1y-kmk" secondAttribute="trailing" constant="20" id="YPv-QY-7qK"/>
+                            <constraint firstItem="IBP-Xl-d1X" firstAttribute="bottom" secondItem="dkQ-1y-kmk" secondAttribute="bottom" constant="100" id="cX6-TA-JCJ"/>
+                            <constraint firstAttribute="bottom" secondItem="I8Q-jo-dry" secondAttribute="bottom" id="l7M-vG-0VZ"/>
+                            <constraint firstItem="I8Q-jo-dry" firstAttribute="top" secondItem="crL-Ex-Eud" secondAttribute="top" id="qbU-Yb-k7i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IBP-Xl-d1X"/>
+                    </view>
+                    <connections>
+                        <outlet property="onboardingView" destination="I8Q-jo-dry" id="aRD-ka-C6I"/>
+                        <outlet property="registerButton" destination="dkQ-1y-kmk" id="0Ks-Bu-Qu2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BjW-u1-91t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1765.217391304348" y="14.732142857142856"/>
+        </scene>
         <!--Login Register View Controller-->
         <scene sceneID="Y8k-ID-NZt">
             <objects>
@@ -425,12 +475,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRU-qw-o8V" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
-                                <rect key="frame" x="20" y="442" width="374" height="50"/>
+                                <rect key="frame" x="20" y="382" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="oP2-dq-UFv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -450,12 +500,12 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vx-D8-ZIa" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
-                                <rect key="frame" x="20" y="302" width="374" height="50"/>
+                                <rect key="frame" x="20" y="242" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Vqs-LL-Zb3"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -469,8 +519,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d2F-mK-WNb">
-                                <rect key="frame" x="20" y="124" width="374" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="d2F-mK-WNb">
+                                <rect key="frame" x="20" y="94" width="374" height="29"/>
                                 <segments>
                                     <segment title="Login"/>
                                     <segment title="Registrieren"/>
@@ -481,12 +531,12 @@
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qDq-9D-esv" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
-                                <rect key="frame" x="20" y="232" width="374" height="50"/>
+                                <rect key="frame" x="20" y="172" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3Qw-Vb-G4p"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -501,12 +551,12 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passwort" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pdq-gE-7Br" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
-                                <rect key="frame" x="20" y="372" width="374" height="50"/>
+                                <rect key="frame" x="20" y="312" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="6U5-RR-9Ku"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -525,12 +575,12 @@
                         <constraints>
                             <constraint firstItem="qDq-9D-esv" firstAttribute="leading" secondItem="KvF-vU-Sb9" secondAttribute="leading" constant="20" id="0fk-OO-gfy"/>
                             <constraint firstItem="sRU-qw-o8V" firstAttribute="top" secondItem="Pdq-gE-7Br" secondAttribute="bottom" constant="20" id="2Fs-Ea-ccs"/>
-                            <constraint firstItem="d2F-mK-WNb" firstAttribute="top" secondItem="KvF-vU-Sb9" secondAttribute="top" constant="80" id="5Vv-Cj-sZs"/>
+                            <constraint firstItem="d2F-mK-WNb" firstAttribute="top" secondItem="KvF-vU-Sb9" secondAttribute="top" constant="50" id="5Vv-Cj-sZs"/>
                             <constraint firstItem="Pdq-gE-7Br" firstAttribute="top" secondItem="0vx-D8-ZIa" secondAttribute="bottom" constant="20" id="8Rm-lf-H47"/>
                             <constraint firstItem="0vx-D8-ZIa" firstAttribute="leading" secondItem="KvF-vU-Sb9" secondAttribute="leading" constant="20" id="Dfp-OJ-IF7"/>
                             <constraint firstItem="KvF-vU-Sb9" firstAttribute="trailing" secondItem="qDq-9D-esv" secondAttribute="trailing" constant="20" id="HXK-K5-fTP"/>
                             <constraint firstItem="sRU-qw-o8V" firstAttribute="leading" secondItem="KvF-vU-Sb9" secondAttribute="leading" constant="20" id="Loh-5w-j4d"/>
-                            <constraint firstItem="qDq-9D-esv" firstAttribute="top" secondItem="d2F-mK-WNb" secondAttribute="bottom" constant="80" id="Y2K-Xy-wgY"/>
+                            <constraint firstItem="qDq-9D-esv" firstAttribute="top" secondItem="d2F-mK-WNb" secondAttribute="bottom" constant="50" id="Y2K-Xy-wgY"/>
                             <constraint firstItem="0vx-D8-ZIa" firstAttribute="top" secondItem="qDq-9D-esv" secondAttribute="bottom" constant="20" id="dWp-ad-U9V"/>
                             <constraint firstItem="d2F-mK-WNb" firstAttribute="leading" secondItem="KvF-vU-Sb9" secondAttribute="leading" constant="20" id="gJN-Jb-1qC"/>
                             <constraint firstItem="KvF-vU-Sb9" firstAttribute="trailing" secondItem="Pdq-gE-7Br" secondAttribute="trailing" constant="20" id="gjv-Lk-nzo"/>
@@ -561,7 +611,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ccz-se-Fuo">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
@@ -589,7 +639,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bezahler Betrag" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpE-gY-8Py" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="340" height="50"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -606,7 +656,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Erhaltene Punkte" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAX-wt-7Fj" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="70" width="340" height="50"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -622,14 +672,14 @@
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="YfE-PR-k2l">
                                         <rect key="frame" x="0.0" y="140" width="340" height="50"/>
-                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="40"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="40"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yE-ab-hD5" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="210" width="340" height="50"/>
                                         <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                         <state key="normal" title="Rabatt errechnen">
                                             <color key="titleColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -687,7 +737,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coupon Titel" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-nk-hG6" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -707,7 +757,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gültig bis" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fsk-vp-y2z" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                                                 <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
+                                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -723,10 +773,10 @@
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coupon Code" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nLH-an-2mX" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coupon Code" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nLH-an-2mX" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="140" width="374" height="50"/>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -744,7 +794,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Supermarkt auswählen" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8og-zP-kX9" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="210" width="374" height="50"/>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -761,7 +811,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5O-Nr-hu0" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="280" width="374" height="50"/>
                                                         <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                                         <state key="normal" title="Coupon anlegen">
                                                             <color key="titleColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -843,7 +893,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.96068006750000001" green="0.96084433790000001" blue="0.96066969629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1rY-wf-C17" firstAttribute="top" secondItem="sZb-Gy-7Xc" secondAttribute="top" constant="20" id="7eX-9I-hSC"/>
                             <constraint firstItem="sZb-Gy-7Xc" firstAttribute="trailing" secondItem="1rY-wf-C17" secondAttribute="trailing" constant="20" id="Xxh-HO-rPx"/>
@@ -865,12 +915,12 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="2RJ-9f-qqS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="97"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <color key="barTintColor" red="0.96862751245498657" green="0.96862751245498657" blue="0.96862751245498657" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="40"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="40"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -892,7 +942,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="25"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -914,7 +964,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="25"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

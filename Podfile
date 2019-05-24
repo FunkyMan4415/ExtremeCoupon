@@ -14,5 +14,6 @@ target 'ExtremeCoupon' do
   pod 'SVProgressHUD'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'paper-onboarding'
 
 end

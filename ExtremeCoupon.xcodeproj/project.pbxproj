@@ -25,6 +25,8 @@
 		809648F52286DC350062E2AD /* Barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809648F42286DC350062E2AD /* Barcode.swift */; };
 		809648F72286DF080062E2AD /* CouponDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809648F62286DF080062E2AD /* CouponDetailViewController.swift */; };
 		809CE0E62285FD0900E7A765 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809CE0E52285FD0900E7A765 /* BarcodeViewController.swift */; };
+		80A524D72295A07600206B46 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A524D62295A07600206B46 /* OnboardingView.swift */; };
+		80A524D92295A12500206B46 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A524D82295A12500206B46 /* OnboardingViewController.swift */; };
 		80C0D5422291896F007F181E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C0D5412291896F007F181E /* Assets.xcassets */; };
 		80C0D5442291903C007F181E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0D5432291903C007F181E /* ProfileViewController.swift */; };
 		80FADB5C2284B49800E45CB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FADB5B2284B49800E45CB8 /* AppDelegate.swift */; };
@@ -56,6 +58,8 @@
 		809648F42286DC350062E2AD /* Barcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
 		809648F62286DF080062E2AD /* CouponDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponDetailViewController.swift; sourceTree = "<group>"; };
 		809CE0E52285FD0900E7A765 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
+		80A524D62295A07600206B46 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		80A524D82295A12500206B46 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		80B64F62036E9AE1A5279E6A /* Pods-ExtremeCoupon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExtremeCoupon.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExtremeCoupon/Pods-ExtremeCoupon.release.xcconfig"; sourceTree = "<group>"; };
 		80C0D5412291896F007F181E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80C0D5432291903C007F181E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 				807750902290AFEF00878AF2 /* LoginRegisterViewController.swift */,
 				80C0D5432291903C007F181E /* ProfileViewController.swift */,
 				805DF88D229321BD00075D23 /* EmailVerificationViewController.swift */,
+				80A524D62295A07600206B46 /* OnboardingView.swift */,
+				80A524D82295A12500206B46 /* OnboardingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -320,6 +326,7 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -330,6 +337,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -387,6 +395,7 @@
 				809648F52286DC350062E2AD /* Barcode.swift in Sources */,
 				80C0D5442291903C007F181E /* ProfileViewController.swift in Sources */,
 				80FADB702284B80500E45CB8 /* CalcDiscountViewController.swift in Sources */,
+				80A524D92295A12500206B46 /* OnboardingViewController.swift in Sources */,
 				805DF88F229321BD00075D23 /* EmailVerificationViewController.swift in Sources */,
 				800633EB22887094005B8216 /* FilterViewController.swift in Sources */,
 				80FADB772284BC3700E45CB8 /* RoundedButton.swift in Sources */,
@@ -404,6 +413,7 @@
 				80FADB5C2284B49800E45CB8 /* AppDelegate.swift in Sources */,
 				3CB1A36522856BF200620E0D /* ShadowView.swift in Sources */,
 				800633ED2288717A005B8216 /* Market.swift in Sources */,
+				80A524D72295A07600206B46 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

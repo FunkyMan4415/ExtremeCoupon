@@ -21,18 +21,20 @@ class LoginRegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        displayNameTextField.isHidden = true
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "loginViewController") 
-        UIApplication.shared.keyWindow?.rootViewController = viewController
+        displayNameTextField.isHidden = false
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        //let viewController = mainStoryboard.instantiateViewController(withIdentifier: "loginViewController")
+//        UIApplication.shared.keyWindow?.rootViewController = viewController
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let _ = UserDefaults.standard.object(forKey: "userId") {
-            if let verified = UserDefaults.standard.object(forKey: "EmailVerification") as? Bool, !verified {
-                self.displayEmailVerificationView()
+            if let currentUser = Auth.auth().currentUser {
+                if !currentUser.isEmailVerified {
+                    self.displayEmailVerificationView()
+                }
             }
             performSegue(withIdentifier: "HomeSegue", sender: true)
         } else {
@@ -49,7 +51,6 @@ class LoginRegisterViewController: UIViewController {
     
     
     @IBAction func loginRegisterButtonTapped(_ sender: RoundedButton) {
-        guard let displayName = displayNameTextField.text, !displayName.isEmpty else {return}
         guard let email = emailTextField.text, !email.isEmpty else {return }
         guard let password = passwordTextField.text, !password.isEmpty else {return}
         
@@ -86,6 +87,8 @@ class LoginRegisterViewController: UIViewController {
             }
             
         } else {
+            guard let displayName = displayNameTextField.text, !displayName.isEmpty else {return}
+            
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                 if let error = error {
                     if let code = AuthErrorCode(rawValue: error._code) {
