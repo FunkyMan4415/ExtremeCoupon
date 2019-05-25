@@ -38,13 +38,13 @@ class AddNewCouponViewController: UIViewController {
         
         dateInputMode()
         couponCodeTextField.leftButton.addTarget(self, action: #selector(cameraButtonTapped), for: .touchUpInside)
+        couponCodeTextField.addTarget(self, action: #selector(checkCoupon), for: .editingDidEnd)
         couponCodeTextField.delegate = self
         marktTextField.marktInputMode(delegate: self, dataSource: self)
         
         // append add Button to toolbar
         appendAddNewMarktBarButton()
     }
-    
     
     // MARK: - Handler
     func dateInputMode() {
@@ -96,7 +96,8 @@ class AddNewCouponViewController: UIViewController {
     func appendAddNewMarktBarButton() {
         if let toolbar = marktTextField.inputAccessoryView as? UIToolbar {
             let newMarktLabel = UIBarButtonItem(title: "Neuen Markt hinzufügen", style: .done, target: self, action: #selector(addMarktButton))
-            toolbar.items?.append(newMarktLabel)
+            toolbar.items?.insert(newMarktLabel, at: 0)
+            
         }
         
     }
@@ -130,20 +131,39 @@ class AddNewCouponViewController: UIViewController {
         present(barcodeViewController, animated: true, completion: nil)
     }
     
+    @objc
+    func checkCoupon(_ t: UITextField) {
+        if let detection = detectMarket(for: t.text!) {
+            self.marktTextField.text = detection
+        }
+    }
     
+    
+    func detectMarket(for coupon: String) -> String? {
+        guard let market = CouponIdentifier.checkCouponNumber(couponNumber: coupon) else {return nil}
+
+        if market == CouponMarket.customerNumber {
+            Utility.showAlertController(for: self, with: "Ups", and: "Dieser Coupon scheint eine Kundennummer zu sein. Bitte überprüfe deinen Code erneut.")
+            return nil
+        } else {
+            return market.rawValue.capitalized
+        }
+    }
 }
 
 
 // MARK: - Extension
 extension AddNewCouponViewController: BarcodeScannerDelegate {
     func didDetectedBarcode(for code: String?) {
+        dismiss(animated: true, completion: nil)
         if let scannedCode = code {
+            if let market = detectMarket(for: scannedCode) {
+                marktTextField.text = market
+            }
             couponCodeTextField.text = scannedCode
         }
         
     }
-    
-    
 }
 
 extension AddNewCouponViewController: UIPickerViewDataSource, UIPickerViewDelegate {
@@ -155,9 +175,7 @@ extension AddNewCouponViewController: UIPickerViewDataSource, UIPickerViewDelega
         return market.count
     }
     
-    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
         return market[row].title
     }
     

@@ -412,6 +412,8 @@
                         <outlet property="barcodeCodeLabel" destination="UlQ-jV-jNw" id="NxW-yZ-T7z"/>
                         <outlet property="couponCodeImageView" destination="61y-h4-Fx9" id="Mox-Wj-Qvu"/>
                         <outlet property="couponTitleLabel" destination="if2-9t-1S7" id="Jm4-hy-X9v"/>
+                        <outlet property="downVoteButton" destination="sZZ-gF-28R" id="7Uj-XQ-Qpo"/>
+                        <outlet property="upVoteButton" destination="lAr-ui-B0f" id="VAq-ud-OfW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AsH-47-HzR" userLabel="First Responder" sceneMemberID="firstResponder"/>

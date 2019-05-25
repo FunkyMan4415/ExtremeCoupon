@@ -31,7 +31,7 @@ class LoginRegisterViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let _ = UserDefaults.standard.object(forKey: "userId") {
-            if let currentUser = Auth.auth().currentUser {
+            if let currentUser = Auth.auth().currentUser, !currentUser.isAnonymous {
                 if !currentUser.isEmailVerified {
                     self.displayEmailVerificationView()
                 }

@@ -13,6 +13,8 @@ class CouponDetailViewController: UIViewController {
     var coupon: Coupon!
     @IBOutlet weak var couponTitleLabel: UILabel!
     @IBOutlet weak var barcodeCodeLabel: UILabel!
+    @IBOutlet weak var upVoteButton: RoundedButton!
+    @IBOutlet weak var downVoteButton: RoundedButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,13 @@ class CouponDetailViewController: UIViewController {
         couponCodeImageView.image = Barcode.fromString(code: coupon.code)
         couponTitleLabel.text = coupon.title
         barcodeCodeLabel.text = coupon.code
+        
+        if UserDefaults.standard.bool(forKey: "anonymousLogin") {
+            upVoteButton.isEnabled = false
+            downVoteButton.isEnabled = false
+        }
+        
+        
     }
 
     @IBAction func couponButtonTapped(_ sender: RoundedButton) {

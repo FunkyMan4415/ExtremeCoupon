@@ -55,7 +55,7 @@ class BarcodeViewController: UIViewController {
             captureSession.addOutput(metaDataOutput)
             
             metaDataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            metaDataOutput.metadataObjectTypes = [.code128]
+            metaDataOutput.metadataObjectTypes = [.code128, .ean13]
         } else {
             Utility.showAlertController(for: self, with: "Fehler", and: "Oh nein, dein Gerät unterstützt das Scannen leider nicht :(")
             captureSession = nil

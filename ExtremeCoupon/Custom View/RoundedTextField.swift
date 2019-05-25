@@ -77,7 +77,7 @@ extension RoundedTextField {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 44))
         let doneButton = UIBarButtonItem(title: "Fertig", style: .plain, target: self, action: #selector(doneButtonTapped))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        toolbar.setItems([doneButton, spaceButton], animated: true)
+        toolbar.setItems([spaceButton, doneButton], animated: true)
         self.inputAccessoryView = toolbar
     }
     
