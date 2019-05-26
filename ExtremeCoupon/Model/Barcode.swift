@@ -16,9 +16,10 @@ class Barcode {
             filter.setValue(data, forKey: "inputMessage")
             if let outputImage = filter.outputImage {
                 
-                
                 let transform = CGAffineTransform(scaleX: 10.0, y: 10.0)
                 let scaled = outputImage.transformed(by: transform)
+                
+                
                 return UIImage(ciImage: scaled)
             }
         }
