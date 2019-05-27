@@ -19,7 +19,13 @@ class FilterViewController: UIViewController {
     
     var selectedMarkets: [String]?
     var delegate: FilterDelegate?
-    var markets = [Market]()
+    var markets = [Market]() {
+        didSet {
+            markets = markets.sorted { (m1, m2) -> Bool in
+                m1.title.lowercased() < m2.title.lowercased()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +42,9 @@ class FilterViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    @IBAction func confirmFilterButtonTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

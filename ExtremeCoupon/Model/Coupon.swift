@@ -35,6 +35,7 @@ struct Coupon {
     var rating: Rating?
     var market: String
     let username: String
+    var ignoreForUser: [String]?
     
     
     
@@ -51,9 +52,18 @@ struct Coupon {
             displayName = username
         }
         
+        var userList = [String]()
+        if let ignoreDictionary = data["IgnoreCouponForUids"] as? Dictionary<String, AnyObject>  {
+            for ignoreItem in ignoreDictionary {
+                if let item = ignoreItem.value as? String {
+                    userList.append(item)
+                }
+            }
+        }
+        
         let rate = Rating.loadRating(rating)
         let date = FormattedDate.formatStringToDate(unformattedDate)
         
-        return Coupon(uuid: uuid, title: title, date: date, code: code, rating: rate, market: market, username: displayName)
+        return Coupon(uuid: uuid, title: title, date: date, code: code, rating: rate, market: market, username: displayName, ignoreForUser: userList)
     }
 }

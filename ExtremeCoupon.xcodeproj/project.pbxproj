@@ -11,6 +11,7 @@
 		3C057CBD22857EB000ADD413 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057CBC22857EB000ADD413 /* Coupon.swift */; };
 		3C057CBF22857EE900ADD413 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057CBE22857EE900ADD413 /* Rating.swift */; };
 		3C057CC22285976D00ADD413 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057CC12285976D00ADD413 /* Utility.swift */; };
+		3C745AE3229C041D005029C3 /* RotatedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C745AE2229C041D005029C3 /* RotatedLabel.swift */; };
 		3CB1A36522856BF200620E0D /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB1A36422856BF200620E0D /* ShadowView.swift */; };
 		3CB1B81F228579EA00634902 /* CouponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB1B81E228579EA00634902 /* CouponTableViewCell.swift */; };
 		80061D00228759BE00BAEC6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80061CFF228759BE00BAEC6A /* GoogleService-Info.plist */; };
@@ -45,6 +46,7 @@
 		3C057CBC22857EB000ADD413 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		3C057CBE22857EE900ADD413 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		3C057CC12285976D00ADD413 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		3C745AE2229C041D005029C3 /* RotatedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatedLabel.swift; sourceTree = "<group>"; };
 		3CB1A36422856BF200620E0D /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		3CB1B81E228579EA00634902 /* CouponTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponTableViewCell.swift; sourceTree = "<group>"; };
 		5E93FB7D8F86C02FA301A628 /* Pods_ExtremeCoupon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExtremeCoupon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +203,7 @@
 				80FADB742284B8A600E45CB8 /* RoundedTextField.swift */,
 				80FADB762284BC3700E45CB8 /* RoundedButton.swift */,
 				3CB1A36422856BF200620E0D /* ShadowView.swift */,
+				3C745AE2229C041D005029C3 /* RotatedLabel.swift */,
 			);
 			path = "Custom View";
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				80061D0222875AC100BAEC6A /* FirebaseHelper.swift in Sources */,
 				809648F52286DC350062E2AD /* Barcode.swift in Sources */,
 				80C0D5442291903C007F181E /* ProfileViewController.swift in Sources */,
+				3C745AE3229C041D005029C3 /* RotatedLabel.swift in Sources */,
 				80FADB702284B80500E45CB8 /* CalcDiscountViewController.swift in Sources */,
 				80A524D92295A12500206B46 /* OnboardingViewController.swift in Sources */,
 				805DF88F229321BD00075D23 /* EmailVerificationViewController.swift in Sources */,

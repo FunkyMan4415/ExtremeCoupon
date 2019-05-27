@@ -84,6 +84,11 @@ enum FirebaseHelper {
         }
     }
     
+    static func updateCoupon(_ coupon: Coupon, for userId: String) {
+        let ignoreForUids = "IgnoreCouponForUids"
+        couponReference.child(coupon.uuid).child(ignoreForUids).childByAutoId().setValue(userId)
+    }
+    
     static func deleteCoupon(_ coupon: Coupon) {
         couponReference.child(coupon.uuid).setValue(nil)
     }

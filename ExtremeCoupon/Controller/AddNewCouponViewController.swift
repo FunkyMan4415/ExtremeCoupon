@@ -18,7 +18,13 @@ class AddNewCouponViewController: UIViewController {
     @IBOutlet weak var couponDateUntilTextField: RoundedTextField!
     @IBOutlet weak var marktTextField: RoundedTextField!
     
-    var market = [Market]()
+    var market = [Market]() {
+        didSet {
+            market = market.sorted { (m1, m2) -> Bool in
+                m1.title.lowercased() < m2.title.lowercased()
+            }
+        }
+    }
     var couponDate: Date?
     var cachedMarkets: [Market]?
     
@@ -76,7 +82,7 @@ class AddNewCouponViewController: UIViewController {
         
         let user = Auth.auth().currentUser
         
-        let coupon = Coupon(uuid: NSUUID().uuidString, title: couponTitleText, date: currentDay, code: couponCodeText, rating: Rating(), market: couponMarketText, username: (user?.displayName)!)
+        let coupon = Coupon(uuid: NSUUID().uuidString, title: couponTitleText, date: currentDay, code: couponCodeText, rating: Rating(), market: couponMarketText, username: (user?.displayName)!, ignoreForUser: nil)
         
         FirebaseHelper.isCouponAlreadyInDatabase(coupon) { (exists) in
             if exists {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CouponDetailViewController: UIViewController {
     @IBOutlet weak var couponCodeImageView: UIImageView!
@@ -34,10 +35,22 @@ class CouponDetailViewController: UIViewController {
 
     @IBAction func couponButtonTapped(_ sender: RoundedButton) {
         updateVoting(true)
+        
+        // remove coupon for user....
+        if let currentUser = Auth.auth().currentUser {
+            let uid = currentUser.uid
+            FirebaseHelper.updateCoupon(coupon, for: uid)
+        }
     }
     
     @IBAction func couponNotWorkButtonTapped(_ sender: RoundedButton) {
         updateVoting(false)
+        
+        // remove Coupon for User.....
+        if let currentUser = Auth.auth().currentUser {
+            let uid = currentUser.uid
+            FirebaseHelper.updateCoupon(coupon, for: uid)
+        }
     }
     
     

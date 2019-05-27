@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol CouponTableViewCellDelegate {
     func didSelectCoupon(for cell: CouponTableViewCell)
@@ -21,6 +22,7 @@ class CouponTableViewCell: UITableViewCell {
     @IBOutlet weak var couponDownVote: UILabel!
     @IBOutlet weak var marketLabel: UILabel!
     @IBOutlet weak var userDisplayNameLabel: UILabel!
+    @IBOutlet weak var alreadsyUsedView: ShadowView!
     
     var delegate: CouponTableViewCellDelegate?
     var coupon: Coupon?
@@ -28,7 +30,7 @@ class CouponTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     func configure(for coupon: Coupon, and delegate: CouponTableViewCellDelegate) {
         marketLabel.text = coupon.market
         couponTitleLabel.text = coupon.title
@@ -46,6 +48,19 @@ class CouponTableViewCell: UITableViewCell {
         couponCodeImageView.image = Barcode.fromString(code: coupon.code)
         couPonDateLabel.text = "gültig bis \(FormattedDate.formatDateToString(coupon.date))"
         
+        if let currentUser = Auth.auth().currentUser {
+            let uid = currentUser.uid
+            if let ignoreList = coupon.ignoreForUser {
+                if ignoreList.contains(uid) {
+                    alreadsyUsedView.alpha = 1
+                    isUserInteractionEnabled = false
+                } else {
+                    alreadsyUsedView.alpha = 0
+                    isUserInteractionEnabled = true
+                }
+            }
+        }
+        
         self.delegate = delegate
         self.coupon = coupon
     }
@@ -60,5 +75,5 @@ class CouponTableViewCell: UITableViewCell {
         
     }
     
-
+    
 }

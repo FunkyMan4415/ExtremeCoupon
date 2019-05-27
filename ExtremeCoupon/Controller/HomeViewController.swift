@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import SVProgressHUD
+import FirebaseAuth
 
 
 class HomeViewController: UIViewController {
@@ -27,6 +28,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         SVProgressHUD.show(withStatus: "Lade Coupons")
         serverTime { (date) in
             self.today = date
@@ -73,11 +75,12 @@ class HomeViewController: UIViewController {
                         }
                     }
                 }
-                self.filterCoupons()
             }
-            SVProgressHUD.dismiss()
+            self.filterCoupons()
         }
+        SVProgressHUD.dismiss()
     }
+    
     
     
     func filterCoupons() {
@@ -126,6 +129,35 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(for: filteredCoupons[indexPath.row], and: self)
         return cell
     }
+    
+    
+//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//
+//        let reportAction = UIContextualAction(style: .normal, title: "Zum Merkzettel") { (action, view, completion) in
+//
+//        }
+//
+//        reportAction.backgroundColor = UIColor.blue
+//        let conf = UISwipeActionsConfiguration(actions: [reportAction])
+//        conf.performsFirstActionWithFullSwipe = false
+//
+//        let cell = tableView.cellForRow(at: indexPath)
+//        conf.accessibilityFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
+//
+//        return conf
+//    }
+//
+//
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let reportAction = UIContextualAction(style: .normal, title: "Melden") { (action, view, completion) in
+//        }
+//
+//        reportAction.backgroundColor = UIColor.blue
+//
+//
+//        return UISwipeActionsConfiguration(actions: [reportAction])
+//    }
+    
 }
 
 extension HomeViewController : CouponTableViewCellDelegate {

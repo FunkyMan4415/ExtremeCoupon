@@ -125,19 +125,52 @@
                                                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                             <size key="value" width="0.0" height="2"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="blurView" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZb-ZO-F0t" customClass="ShadowView" customModule="ExtremeCoupon" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="230"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bereits eingesetzt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Os3-oe-3rw" customClass="RotatedLabel" customModule="ExtremeCoupon" customModuleProvider="target">
+                                                            <rect key="frame" x="35.440146324992639" y="18.138119259376353" width="303.11970735001478" height="194.22376148124727"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="34"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="transformation">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Os3-oe-3rw" firstAttribute="centerX" secondItem="EZb-ZO-F0t" secondAttribute="centerX" id="J7M-wy-2Kg"/>
+                                                        <constraint firstItem="Os3-oe-3rw" firstAttribute="centerY" secondItem="EZb-ZO-F0t" secondAttribute="centerY" id="Orh-qS-ZyY"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="blurView" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="EZb-ZO-F0t" secondAttribute="bottom" constant="20" id="2u7-a6-GFd"/>
                                                 <constraint firstAttribute="bottom" secondItem="NUr-h4-IVh" secondAttribute="bottom" constant="20" id="ENN-BJ-yVj"/>
                                                 <constraint firstItem="NUr-h4-IVh" firstAttribute="leading" secondItem="6ee-C3-f5x" secondAttribute="leading" constant="20" id="NMn-nG-0Sk"/>
                                                 <constraint firstAttribute="trailing" secondItem="NUr-h4-IVh" secondAttribute="trailing" constant="20" id="Qg0-B3-MLS"/>
                                                 <constraint firstItem="NUr-h4-IVh" firstAttribute="top" secondItem="6ee-C3-f5x" secondAttribute="top" id="Tsw-E1-CFn"/>
+                                                <constraint firstAttribute="trailing" secondItem="EZb-ZO-F0t" secondAttribute="trailing" constant="20" id="VF4-He-5VI"/>
+                                                <constraint firstItem="EZb-ZO-F0t" firstAttribute="top" secondItem="6ee-C3-f5x" secondAttribute="top" id="YBN-yq-SaU"/>
+                                                <constraint firstItem="EZb-ZO-F0t" firstAttribute="leading" secondItem="6ee-C3-f5x" secondAttribute="leading" constant="20" id="bdb-yp-kHh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="alreadsyUsedView" destination="EZb-ZO-F0t" id="Frk-XI-8Ki"/>
                                             <outlet property="couPonDateLabel" destination="Okp-h3-R9P" id="ByJ-yJ-LlC"/>
                                             <outlet property="couponCodeImageView" destination="PoZ-bs-4B3" id="Xq3-tM-U4O"/>
                                             <outlet property="couponDownVote" destination="vWa-eG-u0f" id="Sva-bh-rUO"/>
@@ -151,7 +184,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyg-a9-StQ" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyg-a9-StQ" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
                                 <rect key="frame" x="314" y="160" width="80" height="36"/>
                                 <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -200,7 +233,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Aktuelle Coupons" id="a4H-sG-8be"/>
+                    <navigationItem key="navigationItem" title="Aktuelle Coupons" id="a4H-sG-8be">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" style="plain" id="Lxk-Zg-GJH">
+                            <color key="tintColor" red="0.73634296655654907" green="0.58746039867401123" blue="0.36464834213256836" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="MqA-OT-HQN" kind="show" identifier="filterSegue" id="PT4-Pd-67E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="filterLabel" destination="wq0-Pn-Y3L" id="3rb-tk-Q9Q"/>
                         <outlet property="tableView" destination="56L-WE-GnZ" id="C09-Vw-4ZJ"/>
@@ -219,7 +259,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aaE-2D-5Nb">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterCell" textLabel="nbR-Wl-5i8" style="IBUITableViewCellStyleDefault" id="XxL-e6-nyE">
@@ -244,20 +284,28 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96852236986160278" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aaE-2D-5Nb" firstAttribute="top" secondItem="z3v-ec-YlY" secondAttribute="top" id="83K-Vm-1GX"/>
                             <constraint firstItem="z3v-ec-YlY" firstAttribute="bottom" secondItem="aaE-2D-5Nb" secondAttribute="bottom" id="NBG-YZ-39O"/>
                             <constraint firstItem="aaE-2D-5Nb" firstAttribute="leading" secondItem="z3v-ec-YlY" secondAttribute="leading" id="O6F-tV-ULf"/>
+                            <constraint firstItem="aaE-2D-5Nb" firstAttribute="top" secondItem="QH9-gh-Bp4" secondAttribute="top" id="bc7-rZ-cyj"/>
                             <constraint firstItem="z3v-ec-YlY" firstAttribute="trailing" secondItem="aaE-2D-5Nb" secondAttribute="trailing" id="qmv-F0-LFn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z3v-ec-YlY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ZcJ-83-84r">
+                        <barButtonItem key="rightBarButtonItem" title="Filter Anwenden" id="quW-ws-aMk">
+                            <color key="tintColor" red="0.73634296659999998" green="0.5874603987" blue="0.36464834210000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="confirmFilterButtonTapped:" destination="MqA-OT-HQN" id="jTD-8C-jgF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="aaE-2D-5Nb" id="rNl-Ev-WWq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66g-pe-yWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2751" y="-553"/>
+            <point key="canvasLocation" x="2750.7246376811595" y="-553.125"/>
         </scene>
         <!--Coupon Detail View Controller-->
         <scene sceneID="6o5-Kn-K8o">
@@ -268,7 +316,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mex-hu-8Vg">
-                                <rect key="frame" x="0.0" y="140" width="320" height="777"/>
+                                <rect key="frame" x="0.0" y="144" width="320" height="773"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBf-rH-ig9">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
@@ -1022,4 +1070,7 @@
         <image name="rabatt_rechner" width="24" height="29"/>
         <image name="upVote" width="30" height="29"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PT4-Pd-67E"/>
+    </inferredMetricsTieBreakers>
 </document>

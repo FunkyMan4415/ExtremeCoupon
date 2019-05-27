@@ -39,5 +39,4 @@ class ShadowView: UIView {
             layer.shadowOpacity = self.shadowOpacity
         }
     }
-
 }
