@@ -9,13 +9,18 @@
 import UIKit
 import FirebaseAuth
 
+protocol CouponDetailViewDelegate {
+    func didUsedCoupon(coupon: Coupon)
+}
+
 class CouponDetailViewController: UIViewController {
     @IBOutlet weak var couponCodeImageView: UIImageView!
-    var coupon: Coupon!
     @IBOutlet weak var couponTitleLabel: UILabel!
     @IBOutlet weak var barcodeCodeLabel: UILabel!
     @IBOutlet weak var upVoteButton: RoundedButton!
     @IBOutlet weak var downVoteButton: RoundedButton!
+    var coupon: Coupon!
+    var delegate: CouponDetailViewDelegate? 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +60,7 @@ class CouponDetailViewController: UIViewController {
     
     
     func updateVoting(_ success: Bool) {
+        delegate?.didUsedCoupon(coupon: coupon)
         if let rating = coupon.rating {
             if success {
                 rating.upVote += 1

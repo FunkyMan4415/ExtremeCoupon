@@ -28,7 +28,8 @@ class CouponTableViewCell: UITableViewCell {
     var coupon: Coupon?
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
+        self.backgroundColor = UIColor(displayP3Red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
     }
     
     func configure(for coupon: Coupon, and delegate: CouponTableViewCellDelegate) {

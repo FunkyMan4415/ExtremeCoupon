@@ -26,18 +26,26 @@ enum FormattedDate {
     }
 }
 
+enum CodingKeys: String, CodingKey {
+    case uuid
+    case title
+    case date
+    case code
+    case rating
+    case market
+    case username
+    case ignoreForUser
+}
 
 struct Coupon {
-    let uuid: String
-    let title: String
+    var uuid: String
+    var title: String
     var date: Date
-    let code: String
+    var code: String
     var rating: Rating?
     var market: String
-    let username: String
+    var username: String
     var ignoreForUser: [String]?
-    
-    
     
     static func loadCoupon(_ data: Dictionary<String, AnyObject>) -> Coupon? {
         guard let uuid = data["uuid"] as? String else { return nil }
@@ -65,5 +73,41 @@ struct Coupon {
         let date = FormattedDate.formatStringToDate(unformattedDate)
         
         return Coupon(uuid: uuid, title: title, date: date, code: code, rating: rate, market: market, username: displayName, ignoreForUser: userList)
+    }
+}
+
+extension Coupon : Codable {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        uuid = try container.decode(String.self, forKey: .uuid)
+        title = try container.decode(String.self, forKey: .title)
+        date = try container.decode(Date.self, forKey: .date)
+        code = try container.decode(String.self, forKey: .code)
+        username = try container.decode(String.self, forKey: .username)
+        market = try container.decode(String.self, forKey: .market)
+        ignoreForUser = try container.decode([String].self, forKey: .ignoreForUser)
+        
+        let ratingData = try container.decode(Data.self, forKey: .rating)
+        rating = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(ratingData) as? Rating ?? Rating.init()
+        
+        
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(uuid, forKey: .uuid)
+        try container.encode(title, forKey: .title)
+        try container.encode(date, forKey: .date)
+        try container.encode(code, forKey: .code)
+        try container.encode(username, forKey: .username)
+        try container.encode(market, forKey: .market)
+        try container.encode(ignoreForUser, forKey: .ignoreForUser)
+        
+        if let rate = rating {
+            let rating = try NSKeyedArchiver.archivedData(withRootObject: rate, requiringSecureCoding: false)
+            try container.encode(rating, forKey: .rating)
+        }
     }
 }

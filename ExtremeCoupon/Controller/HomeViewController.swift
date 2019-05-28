@@ -17,23 +17,52 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterLabel: UILabel!
     
-    var coupons = [Coupon]()
-    var filteredCoupons = [Coupon]()
-    var couponForSegue: Coupon?
-    var filter: String?
-    var filterValues = [String]()
-    var today: Date!
-    
+     var coupons = [Coupon]()
+     var filteredCoupons = [Coupon]()
+     var couponForSegue: Coupon?
+     var filter: String?
+     var filterValues = [String]()
+     var today: Date!
+     var observing = false
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nib = UINib(nibName: ReusableCells.couponCell, bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: ReusableCells.couponCell)
+        
         tableView.dataSource = self
         tableView.delegate = self
-        SVProgressHUD.show(withStatus: "Lade Coupons")
-        serverTime { (date) in
-            self.today = date
-            
-            self.load()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(checkInternet), name: .didReceiveInternet, object: nil)
+
+        if Connectivity.isConnectedToInternet {
+            SVProgressHUD.show(withStatus: "Lade Coupons")
+            serverTime { (date) in
+                self.today = date
+                
+                self.observing = self.load()
+            }
+        } else {
+            SVProgressHUD.showInfo(withStatus: "Kein Internet, eingeschränkter Zugriff")
+        }
+    }
+    
+    @objc
+    func checkInternet(_ notification: Notification) {
+        if notification.object as! Bool {
+            if !observing {
+                
+                
+                SVProgressHUD.show(withStatus: "Lade Coupons")
+                serverTime { (date) in
+                    self.today = date
+                    
+                    _ = self.load()
+                }
+            }
+        } else {
+            SVProgressHUD.showInfo(withStatus: "Kein Internet, eingeschränkter Zugriff")
         }
     }
     
@@ -57,7 +86,7 @@ class HomeViewController: UIViewController {
     }
     
     
-    func load() {
+    func load() -> Bool{
         
         FirebaseHelper.couponReference.observe(.value) { (snapshot) in
             
@@ -78,7 +107,7 @@ class HomeViewController: UIViewController {
             }
             self.filterCoupons()
         }
-        SVProgressHUD.dismiss()
+        return true
     }
     
     
@@ -95,20 +124,20 @@ class HomeViewController: UIViewController {
         self.filteredCoupons = self.filteredCoupons.sorted(by: { (c1, c2) -> Bool in
             c1.date < c2.date
         })
-        
         self.tableView.reloadData()
+        SVProgressHUD.dismiss()
     }
     
     // MARK: - Handler
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "couponDetailSegue" {
+        if segue.identifier == Segues.couponDetail {
             if let coupon = couponForSegue {
                 let detailVC = segue.destination as! CouponDetailViewController
                 detailVC.coupon = coupon
             }
         }
         
-        if segue.identifier == "filterSegue" {
+        if segue.identifier == Segues.filter {
             let filterVC = segue.destination as! FilterViewController
             filterVC.delegate = self
             filterVC.selectedMarkets = filterValues
@@ -124,39 +153,67 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CouponCell", for: indexPath) as! CouponTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ReusableCells.couponCell, for: indexPath) as! CouponTableViewCell
+        
+        
         
         cell.configure(for: filteredCoupons[indexPath.row], and: self)
         return cell
     }
     
     
-//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//
-//        let reportAction = UIContextualAction(style: .normal, title: "Zum Merkzettel") { (action, view, completion) in
-//
-//        }
-//
-//        reportAction.backgroundColor = UIColor.blue
-//        let conf = UISwipeActionsConfiguration(actions: [reportAction])
-//        conf.performsFirstActionWithFullSwipe = false
-//
-//        let cell = tableView.cellForRow(at: indexPath)
-//        conf.accessibilityFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
-//
-//        return conf
-//    }
-//
-//
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! CouponTableViewCell
+        if cell.alreadsyUsedView.alpha == 1 {
+            return nil
+        }
+        
+        let conf: UISwipeActionsConfiguration!
+        if Utility.isCouponAlreadyBookmarked(cell.coupon!.uuid) {
+            let removeFromBookmarkAction = UIContextualAction(style: .normal, title: "Aus dem Merkzettel entfernen") { (action, view, completion) in
+                Utility.deleteSelectedBookmark(cell.coupon!.uuid)
+                SVProgressHUD.showSuccess(withStatus: "Coupon entfernt")
+                SVProgressHUD.dismiss(withDelay: 1.0)
+                completion(true)
+            }
+            removeFromBookmarkAction.backgroundColor = UIColor(named: "delete-color")
+            conf = UISwipeActionsConfiguration(actions: [removeFromBookmarkAction])
+        }else {
+            let reportAction = UIContextualAction(style: .normal, title: "Zum Merkzettel") { (action, view, completion) in
+                Utility.saveBookmark(cell.coupon, with: { (success) in
+                    if success {
+                        SVProgressHUD.showSuccess(withStatus: "Coupon zum Merkzettel hinzugefügt")
+                        SVProgressHUD.dismiss(withDelay: 1.0)
+                    } else {
+                        SVProgressHUD.showError(withStatus: "Hups, da ist etwas schief gelaufen")
+                        SVProgressHUD.dismiss(withDelay: 1.5)
+                        completion(false)
+                    }
+                })
+                
+                completion(true)
+            }
+            reportAction.backgroundColor = UIColor(named: "accent-color")
+            conf = UISwipeActionsConfiguration(actions: [reportAction])
+        }
+        
+        
+        conf.performsFirstActionWithFullSwipe = true
+        return conf
+    }
+    
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
 //        let reportAction = UIContextualAction(style: .normal, title: "Melden") { (action, view, completion) in
+//            Utility.showReportController(controller: self)
+//            completion(true)
 //        }
-//
-//        reportAction.backgroundColor = UIColor.blue
-//
-//
-//        return UISwipeActionsConfiguration(actions: [reportAction])
-//    }
+        
+//        reportAction.backgroundColor = UIColor(displayP3Red: 160/255, green: 50/255, blue: 31/255, alpha: 1)
+        return UISwipeActionsConfiguration(actions: [])
+    }
     
 }
 
@@ -164,6 +221,7 @@ extension HomeViewController : CouponTableViewCellDelegate {
     func didSelectCoupon(for cell: CouponTableViewCell) {
         if let coupon = cell.coupon {
             couponForSegue = coupon
+            performSegue(withIdentifier: Segues.couponDetail, sender: self)
         }
     }
 }

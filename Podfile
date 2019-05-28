@@ -15,5 +15,6 @@ target 'ExtremeCoupon' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'paper-onboarding'
+  pod 'Alamofire'
 
 end

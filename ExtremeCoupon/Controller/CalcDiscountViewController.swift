@@ -14,8 +14,8 @@ class CalcDiscountViewController: UIViewController {
     @IBOutlet weak var earnedPointsTextField: RoundedTextField!
     @IBOutlet weak var discountLabel: UILabel!
    
-    let numberFormatter = NumberFormatter()
-    let centPerPoint: Float = 0.01
+   let numberFormatter = NumberFormatter()
+   let centPerPoint: Float = 0.01
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
