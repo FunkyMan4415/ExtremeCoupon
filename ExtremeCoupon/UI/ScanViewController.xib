@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanViewController" customModule="ExtremeCoupon" customModuleProvider="target">
             <connections>
+                <outlet property="scanArea" destination="1Ia-0M-QQG" id="FSF-at-0fd"/>
                 <outlet property="topbar" destination="6a0-A6-Dyb" id="ZB7-XH-7jj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,11 +26,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6a0-A6-Dyb">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lV-yo-mDT">
-                            <rect key="frame" x="8" y="32" width="30" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                            <state key="normal" title="X">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lV-yo-mDT">
+                            <rect key="frame" x="16" y="36" width="17" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="17" id="9he-aQ-ixV"/>
+                                <constraint firstAttribute="height" constant="18" id="hpE-Jv-pWz"/>
+                            </constraints>
+                            <state key="normal" image="dismiss">
                                 <color key="titleColor" name="lightsteel"/>
                             </state>
                             <connections>
@@ -39,21 +42,41 @@
                     </subviews>
                     <color key="backgroundColor" red="0.76078431372549016" green="0.25490196078431371" blue="0.13725490196078433" alpha="0.79645115469208216" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="7lV-yo-mDT" secondAttribute="bottom" constant="16" id="Edp-VD-4U2"/>
                         <constraint firstAttribute="height" constant="70" id="NLD-so-N79"/>
+                        <constraint firstItem="7lV-yo-mDT" firstAttribute="leading" secondItem="6a0-A6-Dyb" secondAttribute="leading" constant="16" id="rOm-CK-UO8"/>
                     </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ia-0M-QQG" customClass="ScanView" customModule="ExtremeCoupon" customModuleProvider="target">
+                    <rect key="frame" x="60" y="383" width="294" height="130"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="130" id="lfM-jj-hlC"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layerOne" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layerTwo" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layerThree" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layerFour" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="1Ia-0M-QQG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RG1-et-pxF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1Ia-0M-QQG" secondAttribute="trailing" constant="60" id="TEM-ga-XSM"/>
+                <constraint firstItem="1Ia-0M-QQG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Y5o-cx-lcU"/>
                 <constraint firstItem="6a0-A6-Dyb" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="amH-DQ-g8R"/>
                 <constraint firstItem="6a0-A6-Dyb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kqy-H5-Eqg"/>
                 <constraint firstItem="6a0-A6-Dyb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lWL-X6-bub"/>
+                <constraint firstItem="1Ia-0M-QQG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="zj5-Mr-b1x"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="105.79710144927537" y="157.36607142857142"/>
         </view>
     </objects>
     <resources>
+        <image name="dismiss" width="25" height="26"/>
         <namedColor name="lightsteel">
             <color red="0.85098039215686272" green="0.90588235294117647" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

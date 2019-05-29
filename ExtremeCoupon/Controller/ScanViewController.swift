@@ -15,6 +15,7 @@ protocol ScanViewControllerDelegate {
 
 class ScanViewController: UIViewController {
     
+    @IBOutlet weak var scanArea: ScanView!
     @IBOutlet weak var topbar: UIView!
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
@@ -69,16 +70,16 @@ class ScanViewController: UIViewController {
         
         captureSession.startRunning()
         
-        let scanAreaView = UIView()
-        let width = view.bounds.width - 80
+        let imgView = UIImageView()
+        imgView.frame = CGRect(x: scanArea.bounds.minX, y: scanArea.bounds.minY, width: scanArea.frame.width, height: scanArea.frame.height)
+        imgView.image = Barcode.fromString(code: "220000000000000456")
+        imgView.alpha = 0.2
         
-        scanAreaView.frame = CGRect(x: view.bounds.midX - (width/2), y: view.bounds.midY - 75, width: width, height: 150)
+        scanArea.addSubview(imgView)
+        view.addSubview(scanArea)
+        view.bringSubviewToFront(scanArea)
         
-        insertSublayers(scanAreaView)
-        view.addSubview(scanAreaView)
-        view.bringSubviewToFront(scanAreaView)
-        
-        let rectOfInterest = previewLayer.metadataOutputRectConverted(fromLayerRect: scanAreaView.frame)
+        let rectOfInterest = previewLayer.metadataOutputRectConverted(fromLayerRect: scanArea.frame)
         metaDataOutput.rectOfInterest = rectOfInterest
         
         view.bringSubviewToFront(topbar)
@@ -101,65 +102,7 @@ class ScanViewController: UIViewController {
         }
     }
     
-    // MARK: - Handlers
-    func insertSublayers(_ subV: UIView) {
-        let layerOne = CALayer()
-        layerOne.backgroundColor = UIColor(white: 0.667, alpha: 0.5).cgColor
-        layerOne.frame = CGRect(x: subV.bounds.minX, y: subV.bounds.minY - 5, width: 50, height: 5)
-        
-        let layerFive = CALayer()
-        layerFive.backgroundColor = UIColor(white: 0.667, alpha: 0.5).cgColor
-        layerFive.frame = CGRect(x: subV.bounds.minX - 5, y: subV.bounds.minY - 5, width: 5, height: 50)
-        
-        
-        let layerThree = CALayer()
-        layerThree.backgroundColor = UIColor(white: 0.667, alpha: 0.5).cgColor
-        layerThree.frame = CGRect(x: subV.bounds.maxX - 50, y: subV.bounds.minY - 5, width: 50, height: 5)
-        
-        let layerSix = CALayer()
-        layerSix.backgroundColor = UIColor(white: 0.667, alpha: 0.5).cgColor
-        layerSix.frame = CGRect(x: subV.bounds.maxX, y: subV.bounds.minY - 5, width: 5, height: 50)
-        
-        
-        let layerTwo = CALayer()
-        layerTwo.backgroundColor = UIColor(white: 0.667, alpha: 0.5).cgColor
-        layerTwo.frame = CGRect(x: subV.bounds.maxX - 50, y: subV.bounds.maxY, width: 50, height: 5)
-        
-        let layerSeven = CALayer()
-        layerSeven.backgroundColor = UIColor(white: 0.667, alpha: 0.5).cgColor
-        layerSeven.frame = CGRect(x: subV.bounds.maxX, y: subV.bounds.maxY - 45, width: 5, height: 50)
-        
-        let layerFour = CALayer()
-        layerFour.backgroundColor = UIColor(white: 0.667, alpha: 0.5).cgColor
-        layerFour.frame = CGRect(x: subV.bounds.minX, y: subV.bounds.maxY, width: 50, height: 5)
-        
-        let layerEight = CALayer()
-        layerEight.backgroundColor = UIColor(white: 0.667, alpha: 0.5).cgColor
-        
-        layerEight.frame = CGRect(x: subV.bounds.minX - 5, y: subV.bounds.maxY - 45, width: 5, height: 50)
-        
-        
-        subV.layer.addSublayer(layerOne)
-        subV.layer.addSublayer(layerTwo)
-        subV.layer.addSublayer(layerThree)
-        subV.layer.addSublayer(layerFour)
-        subV.layer.addSublayer(layerFive)
-        subV.layer.addSublayer(layerSix)
-        subV.layer.addSublayer(layerSeven)
-        subV.layer.addSublayer(layerEight)
-        
-        
-        
-        let imgView = UIImageView()
-        imgView.frame = CGRect(x: subV.bounds.minX, y: subV.bounds.minY, width: subV.frame.width, height: subV.frame.height)
-        imgView.image = Barcode.fromString(code: "220000000000000456")
-        imgView.alpha = 0.2
-        subV.addSubview(imgView)
-    }
-    
-    func initCaptureSession(){
-        
-    }
+    // MARK: - Handlers    
     @IBAction func dismissScannView(_ sender: Any) {
         dismissScanner()
     }

@@ -23,6 +23,7 @@
 		800633ED2288717A005B8216 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800633EC2288717A005B8216 /* Market.swift */; };
 		801AAD98229EA76400FFDDBE /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801AAD96229EA76400FFDDBE /* ScanViewController.swift */; };
 		801AAD99229EA76400FFDDBE /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801AAD97229EA76400FFDDBE /* ScanViewController.xib */; };
+		801AAD9D229EB48C00FFDDBE /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801AAD9C229EB48C00FFDDBE /* ScanView.swift */; };
 		8032FA282297E49400B136CE /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032FA272297E49400B136CE /* TabViewController.swift */; };
 		8032FA2A2298170D00B136CE /* CouponIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032FA292298170D00B136CE /* CouponIdentifier.swift */; };
 		805DF88F229321BD00075D23 /* EmailVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805DF88D229321BD00075D23 /* EmailVerificationViewController.swift */; };
@@ -65,6 +66,7 @@
 		800633EC2288717A005B8216 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		801AAD96229EA76400FFDDBE /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		801AAD97229EA76400FFDDBE /* ScanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanViewController.xib; sourceTree = "<group>"; };
+		801AAD9C229EB48C00FFDDBE /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		8032FA272297E49400B136CE /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		8032FA292298170D00B136CE /* CouponIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponIdentifier.swift; sourceTree = "<group>"; };
 		805DF88D229321BD00075D23 /* EmailVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationViewController.swift; sourceTree = "<group>"; };
@@ -187,14 +189,13 @@
 				80FB101F229C8746004A87F8 /* BookmarkViewController.swift */,
 				80FADB6F2284B80500E45CB8 /* CalcDiscountViewController.swift */,
 				809648F62286DF080062E2AD /* CouponDetailViewController.swift */,
-				80FADB5D2284B49800E45CB8 /* HomeViewController.swift */,
+				805DF88D229321BD00075D23 /* EmailVerificationViewController.swift */,
 				800633EA22887094005B8216 /* FilterViewController.swift */,
+				80FADB5D2284B49800E45CB8 /* HomeViewController.swift */,
 				807750902290AFEF00878AF2 /* LoginRegisterViewController.swift */,
+				80A524D82295A12500206B46 /* OnboardingViewController.swift */,
 				80C0D5432291903C007F181E /* ProfileViewController.swift */,
 				801AAD96229EA76400FFDDBE /* ScanViewController.swift */,
-				805DF88D229321BD00075D23 /* EmailVerificationViewController.swift */,
-				80A524D62295A07600206B46 /* OnboardingView.swift */,
-				80A524D82295A12500206B46 /* OnboardingViewController.swift */,
 				8032FA272297E49400B136CE /* TabViewController.swift */,
 			);
 			path = Controller;
@@ -218,10 +219,12 @@
 		80FADB732284B88D00E45CB8 /* Custom View */ = {
 			isa = PBXGroup;
 			children = (
+				80A524D62295A07600206B46 /* OnboardingView.swift */,
 				80FADB742284B8A600E45CB8 /* RoundedTextField.swift */,
 				80FADB762284BC3700E45CB8 /* RoundedButton.swift */,
 				3CB1A36422856BF200620E0D /* ShadowView.swift */,
 				3C745AE2229C041D005029C3 /* RotatedLabel.swift */,
+				801AAD9C229EB48C00FFDDBE /* ScanView.swift */,
 			);
 			path = "Custom View";
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				3C057CC22285976D00ADD413 /* Utility.swift in Sources */,
 				807750912290AFEF00878AF2 /* LoginRegisterViewController.swift in Sources */,
 				80FADB5E2284B49800E45CB8 /* HomeViewController.swift in Sources */,
+				801AAD9D229EB48C00FFDDBE /* ScanView.swift in Sources */,
 				801AAD98229EA76400FFDDBE /* ScanViewController.swift in Sources */,
 				3C057CBD22857EB000ADD413 /* Coupon.swift in Sources */,
 				3CB1B81F228579EA00634902 /* CouponTableViewCell.swift in Sources */,

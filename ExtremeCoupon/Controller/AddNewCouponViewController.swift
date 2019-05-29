@@ -18,6 +18,8 @@ class AddNewCouponViewController: UIViewController {
     @IBOutlet weak var couponDateUntilTextField: RoundedTextField!
     @IBOutlet weak var marktTextField: RoundedTextField!
     
+    let scanViewController = ScanViewController()
+    
     var market = [Market]() {
         didSet {
             market = market.sorted { (m1, m2) -> Bool in
@@ -131,11 +133,9 @@ class AddNewCouponViewController: UIViewController {
             return
         }
         
-        let barcodeViewController = ScanViewController()
-        barcodeViewController.delegate = self
-        
-        
-        present(barcodeViewController, animated: true, completion: nil)
+
+        scanViewController.delegate = self
+        present(scanViewController, animated: true, completion: nil)
     }
     
     @objc
