@@ -35,9 +35,14 @@ extension OnboardingViewController: PaperOnboardingDataSource, PaperOnboardingDe
         let warningImage = UIImage(named: "information")!
         let titleFont = UIFont(name: "AvenirNext-Bold", size: 20)!
         let descriptionFont = UIFont(name: "AvenirNext-Regular", size: 13)!
-        let backgroundOne = UIColor(displayP3Red: 249/255, green: 202/255, blue: 167/255, alpha: 1)
-        let backgroundTwo = UIColor(displayP3Red: 168/255, green: 230/255, blue: 207/255, alpha: 1)
-        let backgroundThree = UIColor(displayP3Red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
+//        let backgroundOne = UIColor(displayP3Red: 249/255, green: 202/255, blue: 167/255, alpha: 1)
+//        let backgroundTwo = UIColor(displayP3Red: 168/255, green: 230/255, blue: 207/255, alpha: 1)
+//        let backgroundThree = UIColor(displayP3Red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
+        
+        
+        let backgroundOne = UIColor(named: "brown")!
+        let backgroundTwo = UIColor(named: "darkorange")!
+        let backgroundThree = UIColor(named: "accent-color")!
 //        let backgroundThree = UIColor.white
         
         

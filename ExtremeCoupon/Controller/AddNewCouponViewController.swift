@@ -131,8 +131,9 @@ class AddNewCouponViewController: UIViewController {
             return
         }
         
-        let barcodeViewController = BarcodeViewController()
+        let barcodeViewController = ScanViewController()
         barcodeViewController.delegate = self
+        
         
         present(barcodeViewController, animated: true, completion: nil)
     }
@@ -159,7 +160,7 @@ class AddNewCouponViewController: UIViewController {
 
 
 // MARK: - Extension
-extension AddNewCouponViewController: BarcodeScannerDelegate {
+extension AddNewCouponViewController: ScanViewControllerDelegate {
     func didDetectedBarcode(for code: String?) {
         dismiss(animated: true, completion: nil)
         if let scannedCode = code {

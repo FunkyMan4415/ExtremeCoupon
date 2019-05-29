@@ -50,6 +50,7 @@ class RoundedTextField: UITextField {
             leftViewMode = UITextField.ViewMode.always
         
             leftButton.setImage(self.image, for: .normal)
+
             leftButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
             leftButton.frame = CGRect(x: CGFloat(0), y: CGFloat(5), width: CGFloat(30), height: CGFloat(30))
             self.leftView = leftButton

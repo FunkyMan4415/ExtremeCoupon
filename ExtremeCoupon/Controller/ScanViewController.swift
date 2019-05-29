@@ -1,37 +1,35 @@
 //
-//  BarcodeViewController.swift
+//  ScanViewController.swift
 //  ExtremeCoupon
 //
-//  Created by Christian Dobrovolny on 10.05.19.
+//  Created by Christian Dobrovolny on 29.05.19.
 //  Copyright © 2019 Christian Dobrovolny. All rights reserved.
 //
 
 import UIKit
 import AVFoundation
 
-protocol BarcodeScannerDelegate {
+protocol ScanViewControllerDelegate {
     func didDetectedBarcode(for code: String?)
 }
 
-class BarcodeViewController: UIViewController {
-    // MARK: - Properties
+class ScanViewController: UIViewController {
+    
+    @IBOutlet weak var topbar: UIView!
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     var qrCodeFrameView: UIView!
-    var delegate: BarcodeScannerDelegate?
-    
-    // MARK: - Init
+    var delegate: ScanViewControllerDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         view.backgroundColor = .black
         
         guard let videoCaptureDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back) else {
             return
         }
         
-       captureSession = AVCaptureSession()
+        captureSession = AVCaptureSession()
         
         
         // Video Input
@@ -71,26 +69,10 @@ class BarcodeViewController: UIViewController {
         
         captureSession.startRunning()
         
-        
-        let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
-        let statusBarColor = UIColor(white: 1, alpha: 1)
-        statusBarView.backgroundColor = statusBarColor
-        view.addSubview(statusBarView)
-        
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height;
-        let navigationbar = UINavigationBar(frame: CGRect(x: 0, y: statusBarHeight, width: view.frame.width, height: 44))
-        let navigationItem = UINavigationItem()
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissScanner))
-        navigationbar.items = [navigationItem]
-        navigationbar.backgroundColor = UIColor(white: 1, alpha: 1)
-        view.addSubview(navigationbar)
-        
         let scanAreaView = UIView()
         let width = view.bounds.width - 80
-//        scanAreaView.layer.borderColor = UIColor.green.cgColor
+        
         scanAreaView.frame = CGRect(x: view.bounds.midX - (width/2), y: view.bounds.midY - 75, width: width, height: 150)
-//        scanAreaView.layer.borderWidth = 2
         
         insertSublayers(scanAreaView)
         view.addSubview(scanAreaView)
@@ -99,10 +81,9 @@ class BarcodeViewController: UIViewController {
         let rectOfInterest = previewLayer.metadataOutputRectConverted(fromLayerRect: scanAreaView.frame)
         metaDataOutput.rectOfInterest = rectOfInterest
         
-        
-        
+        view.bringSubviewToFront(topbar)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -179,19 +160,21 @@ class BarcodeViewController: UIViewController {
     func initCaptureSession(){
         
     }
+    @IBAction func dismissScannView(_ sender: Any) {
+        dismissScanner()
+    }
     
     @objc
     func dismissScanner() {
         
-            captureSession.stopRunning()
+        captureSession.stopRunning()
         
         dismiss(animated: true, completion: nil)
     }
 }
 
-
 // MARK: - Extensions
-extension BarcodeViewController : AVCaptureMetadataOutputObjectsDelegate {
+extension ScanViewController : AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         captureSession.stopRunning()
         if let metadataObject = metadataObjects.first {

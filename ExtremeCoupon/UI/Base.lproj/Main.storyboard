@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,9 +20,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="56L-WE-GnZ">
-                                <rect key="frame" x="0.0" y="213" width="414" height="600"/>
-                                <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="193" width="414" height="620"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" name="accent-color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CouponCell" id="ZB9-jt-1rQ" customClass="CouponTableViewCell" customModule="ExtremeCoupon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="250"/>
@@ -38,33 +39,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyg-a9-StQ" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
-                                <rect key="frame" x="314" y="160" width="80" height="36"/>
-                                <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="C5l-Gf-wST"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                <state key="normal" title="Filter">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.10000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="0.0" height="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="MqA-OT-HQN" kind="show" identifier="filterSegue" id="H72-2R-w3i"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kein Filter ausgewählt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wq0-Pn-Y3L">
-                                <rect key="frame" x="20" y="160" width="274" height="33"/>
+                                <rect key="frame" x="20" y="150" width="374" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="iUb-2i-V2q"/>
                                 </constraints>
@@ -73,23 +49,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="56L-WE-GnZ" secondAttribute="bottom" id="4u7-fF-mds"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="56L-WE-GnZ" secondAttribute="trailing" id="8pg-Wo-6qU"/>
-                            <constraint firstItem="Zyg-a9-StQ" firstAttribute="leading" secondItem="wq0-Pn-Y3L" secondAttribute="trailing" constant="20" id="I5k-oh-exF"/>
                             <constraint firstItem="wq0-Pn-Y3L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KAz-fr-naV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zyg-a9-StQ" secondAttribute="trailing" constant="20" id="Lad-J0-zF6"/>
-                            <constraint firstItem="wq0-Pn-Y3L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="SI8-I9-TgN"/>
+                            <constraint firstItem="wq0-Pn-Y3L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="SI8-I9-TgN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wq0-Pn-Y3L" secondAttribute="trailing" constant="20" id="asG-8x-nfU"/>
                             <constraint firstItem="56L-WE-GnZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eei-re-Zpe"/>
-                            <constraint firstItem="Zyg-a9-StQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="et5-bd-fVI"/>
-                            <constraint firstItem="56L-WE-GnZ" firstAttribute="top" secondItem="wq0-Pn-Y3L" secondAttribute="bottom" constant="20" id="qIS-ea-i7e"/>
+                            <constraint firstItem="56L-WE-GnZ" firstAttribute="top" secondItem="wq0-Pn-Y3L" secondAttribute="bottom" constant="10" id="qIS-ea-i7e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Aktuelle Coupons" id="a4H-sG-8be">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" style="plain" id="Lxk-Zg-GJH">
-                            <color key="tintColor" red="0.73725490196078436" green="0.58823529411764708" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <barButtonItem key="rightBarButtonItem" title="Filter" image="filter" style="plain" id="Lxk-Zg-GJH">
+                            <color key="tintColor" name="lightsteel"/>
                             <connections>
                                 <segue destination="MqA-OT-HQN" kind="show" identifier="filterSegue" id="PT4-Pd-67E"/>
                             </connections>
@@ -104,7 +78,7 @@
             </objects>
             <point key="canvasLocation" x="1778.2608695652175" y="-178.79464285714286"/>
         </scene>
-        <!--Filter View Controller-->
+        <!--Filter-->
         <scene sceneID="VGg-76-wYs">
             <objects>
                 <viewController id="MqA-OT-HQN" customClass="FilterViewController" customModule="ExtremeCoupon" customModuleProvider="target" sceneMemberID="viewController">
@@ -145,9 +119,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z3v-ec-YlY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZcJ-83-84r">
+                    <navigationItem key="navigationItem" title="Filter" largeTitleDisplayMode="never" id="ZcJ-83-84r">
                         <barButtonItem key="rightBarButtonItem" title="Filter Anwenden" id="quW-ws-aMk">
-                            <color key="tintColor" red="0.73634296659999998" green="0.5874603987" blue="0.36464834210000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" name="lightsteel"/>
                             <connections>
                                 <action selector="confirmFilterButtonTapped:" destination="MqA-OT-HQN" id="jTD-8C-jgF"/>
                             </connections>
@@ -210,7 +184,7 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
+                                                        <real key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                         <real key="value" value="0.10000000000000001"/>
@@ -234,7 +208,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="imageToRight" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
+                                                        <real key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                         <real key="value" value="0.20000000000000001"/>
@@ -257,7 +231,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="imageToRight" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
+                                                        <real key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                         <real key="value" value="0.20000000000000001"/>
@@ -298,8 +272,8 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <color key="backgroundColor" name="background"/>
+                        <color key="tintColor" name="lightsteel"/>
                         <constraints>
                             <constraint firstItem="bBf-rH-ig9" firstAttribute="width" secondItem="MJA-cJ-T5d" secondAttribute="width" id="Tu0-1x-Avq"/>
                             <constraint firstItem="bBf-rH-ig9" firstAttribute="height" secondItem="MJA-cJ-T5d" secondAttribute="height" id="VXw-xt-poK"/>
@@ -337,7 +311,7 @@
                             </view>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkQ-1y-kmk" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
                                 <rect key="frame" x="20" y="712" width="374" height="50"/>
-                                <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="accent-color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="f13-pn-aMo"/>
                                 </constraints>
@@ -381,13 +355,13 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRU-qw-o8V" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
                                 <rect key="frame" x="20" y="382" width="374" height="50"/>
-                                <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="accent-color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="oP2-dq-UFv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -430,7 +404,7 @@
                                     <segment title="Login"/>
                                     <segment title="Registrieren"/>
                                 </segments>
-                                <color key="tintColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" name="accent-color"/>
                                 <connections>
                                     <action selector="segmentControllTapped:" destination="YgQ-YC-tRw" eventType="valueChanged" id="z0p-WG-L15"/>
                                 </connections>
@@ -529,8 +503,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ccz-se-Fuo">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" name="accent-color"/>
                     </tabBar>
                     <connections>
                         <outlet property="tabbar" destination="Ccz-se-Fuo" id="sgi-Jc-Xfe"/>
@@ -554,16 +528,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jQG-fm-6Hd">
-                                <rect key="frame" x="37" y="168" width="340" height="260"/>
+                                <rect key="frame" x="20" y="138" width="374" height="260"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bezahler Betrag" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpE-gY-8Py" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
+                                                <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                 <real key="value" value="0.10000000000000001"/>
@@ -574,13 +548,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Erhaltene Punkte" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAX-wt-7Fj" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="70" width="340" height="50"/>
+                                        <rect key="frame" x="0.0" y="70" width="374" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
+                                                <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                 <real key="value" value="0.10000000000000001"/>
@@ -591,21 +565,21 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="YfE-PR-k2l">
-                                        <rect key="frame" x="0.0" y="140" width="340" height="50"/>
+                                        <rect key="frame" x="0.0" y="140" width="374" height="50"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="40"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yE-ab-hD5" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="210" width="340" height="50"/>
-                                        <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="210" width="374" height="50"/>
+                                        <color key="backgroundColor" name="accent-color"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                         <state key="normal" title="Rabatt errechnen">
                                             <color key="titleColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
+                                                <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -618,11 +592,11 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
-                            <constraint firstItem="jQG-fm-6Hd" firstAttribute="leading" secondItem="IOO-5Q-Bga" secondAttribute="leading" constant="37" id="7z1-Tt-ms9"/>
-                            <constraint firstItem="IOO-5Q-Bga" firstAttribute="trailing" secondItem="jQG-fm-6Hd" secondAttribute="trailing" constant="37" id="NXO-jZ-BGp"/>
-                            <constraint firstItem="jQG-fm-6Hd" firstAttribute="top" secondItem="IOO-5Q-Bga" secondAttribute="top" constant="80" id="Smf-aR-Vqz"/>
+                            <constraint firstItem="jQG-fm-6Hd" firstAttribute="leading" secondItem="IOO-5Q-Bga" secondAttribute="leading" constant="20" id="7z1-Tt-ms9"/>
+                            <constraint firstItem="IOO-5Q-Bga" firstAttribute="trailing" secondItem="jQG-fm-6Hd" secondAttribute="trailing" constant="20" id="NXO-jZ-BGp"/>
+                            <constraint firstItem="jQG-fm-6Hd" firstAttribute="top" secondItem="IOO-5Q-Bga" secondAttribute="top" constant="50" id="Smf-aR-Vqz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IOO-5Q-Bga"/>
                     </view>
@@ -652,7 +626,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-4R-Dxw">
-                                                <rect key="frame" x="20" y="80" width="374" height="330"/>
+                                                <rect key="frame" x="20" y="50" width="374" height="330"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coupon Titel" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-nk-hG6" customClass="RoundedTextField" customModule="ExtremeCoupon" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -661,7 +635,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="5"/>
+                                                                <real key="value" value="3"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                                 <real key="value" value="0.10000000000000001"/>
@@ -681,7 +655,7 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="5"/>
+                                                                        <real key="value" value="3"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                                         <real key="value" value="0.10000000000000001"/>
@@ -700,7 +674,7 @@
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="5"/>
+                                                                <real key="value" value="3"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                                 <real key="value" value="0.10000000000000001"/>
@@ -718,7 +692,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="5"/>
+                                                                <real key="value" value="3"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                                 <real key="value" value="0.10000000000000001"/>
@@ -730,14 +704,14 @@
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5O-Nr-hu0" customClass="RoundedButton" customModule="ExtremeCoupon" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="280" width="374" height="50"/>
-                                                        <color key="backgroundColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="accent-color"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                                         <state key="normal" title="Coupon anlegen">
                                                             <color key="titleColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="5"/>
+                                                                <real key="value" value="3"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                                 <size key="value" width="0.0" height="2"/>
@@ -759,7 +733,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="gFy-4R-Dxw" secondAttribute="trailing" constant="20" id="QLi-FL-6WT"/>
-                                            <constraint firstItem="gFy-4R-Dxw" firstAttribute="top" secondItem="4Yl-PE-9o4" secondAttribute="top" constant="80" id="YjF-aI-aBG"/>
+                                            <constraint firstItem="gFy-4R-Dxw" firstAttribute="top" secondItem="4Yl-PE-9o4" secondAttribute="top" constant="50" id="YjF-aI-aBG"/>
                                             <constraint firstItem="gFy-4R-Dxw" firstAttribute="leading" secondItem="4Yl-PE-9o4" secondAttribute="leading" constant="20" id="ZfM-8f-v7i"/>
                                         </constraints>
                                     </view>
@@ -772,7 +746,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="5ga-9l-WQu" firstAttribute="leading" secondItem="gdq-Do-1RQ" secondAttribute="leading" id="Cz7-HQ-NTK"/>
                             <constraint firstItem="5ga-9l-WQu" firstAttribute="top" secondItem="gdq-Do-1RQ" secondAttribute="top" id="Rpo-3h-dnn"/>
@@ -806,14 +780,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rY-wf-C17">
                                 <rect key="frame" x="321" y="108" width="73" height="30"/>
                                 <state key="normal" title="Ausloggen">
-                                    <color key="titleColor" red="0.76470588240000004" green="0.58039215690000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" name="accent-color"/>
                                 </state>
                                 <connections>
                                     <action selector="logoutButtonTapped:" destination="raD-wY-66d" eventType="touchUpInside" id="J3c-zx-BOC"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="1rY-wf-C17" firstAttribute="top" secondItem="sZb-Gy-7Xc" secondAttribute="top" constant="20" id="7eX-9I-hSC"/>
                             <constraint firstItem="sZb-Gy-7Xc" firstAttribute="trailing" secondItem="1rY-wf-C17" secondAttribute="trailing" constant="20" id="Xxh-HO-rPx"/>
@@ -853,7 +827,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="XDr-If-Emz" firstAttribute="top" secondItem="L4b-gU-dBb" secondAttribute="top" id="BA9-fB-R7C"/>
                             <constraint firstItem="XDr-If-Emz" firstAttribute="leading" secondItem="L4b-gU-dBb" secondAttribute="leading" id="Lhv-pj-udK"/>
@@ -864,7 +838,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Merkzettel" id="kFe-j6-6kq">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="OMn-Y6-liL">
-                            <color key="tintColor" red="0.73725490196078436" green="0.58823529411764708" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" name="lightsteel"/>
                             <connections>
                                 <action selector="deleteBookmarks:" destination="gN8-Ek-LIL" id="MG4-sR-7Ee"/>
                             </connections>
@@ -883,16 +857,20 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lG8-Ar-KPY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Aktuelle Coupons" image="aktuelle_coupons" id="4vq-UJ-Ig9">
-                        <color key="badgeColor" red="0.76470588235294112" green="0.58039215686274503" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" name="lightsteel"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="2RJ-9f-qqS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                        <color key="barTintColor" red="0.96862751245498657" green="0.96862751245498657" blue="0.96862751245498657" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" name="lightsteel"/>
+                        <color key="barTintColor" name="accent-color"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.85098039219999999" green="0.90588235289999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="40"/>
+                            <color key="textColor" red="0.85098039215686272" green="0.90588235294117647" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -913,8 +891,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MCp-Q1-lOU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="accent-color"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
+                            <color key="textColor" red="0.85098039219999999" green="0.90588235289999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -935,8 +915,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s6P-gT-K3k">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="accent-color"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
+                            <color key="textColor" red="0.85098039219999999" green="0.90588235289999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -957,6 +939,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tj6-Ub-1J8">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="accent-color"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.85098039219999999" green="0.90588235289999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -976,9 +962,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fZ9-X1-X1L">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <color key="tintColor" name="lightsteel"/>
+                        <color key="barTintColor" name="accent-color"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
+                            <color key="textColor" red="0.85098039219999999" green="0.90588235289999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -998,11 +986,20 @@
         <image name="bookmark" width="32" height="29"/>
         <image name="camera" width="25" height="20"/>
         <image name="downVote" width="30" height="29"/>
+        <image name="filter" width="25" height="25"/>
         <image name="rabatt_rechner" width="24" height="29"/>
         <image name="upVote" width="30" height="29"/>
+        <namedColor name="accent-color">
+            <color red="0.76078431372549016" green="0.25490196078431371" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="background">
+            <color red="0.93725490196078431" green="0.93333333333333335" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightsteel">
+            <color red="0.85098039215686272" green="0.90588235294117647" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lgo-5b-eC4"/>
-        <segue reference="H72-2R-w3i"/>
     </inferredMetricsTieBreakers>
 </document>

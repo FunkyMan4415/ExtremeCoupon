@@ -23,7 +23,8 @@ class HomeViewController: UIViewController {
      var filter: String?
      var filterValues = [String]()
      var today: Date!
-     var observing = false
+    var observing = false
+    
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -194,7 +195,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
                 
                 completion(true)
             }
-            reportAction.backgroundColor = UIColor(named: "accent-color")
+            reportAction.backgroundColor = UIColor(named: "darkorange")
             conf = UISwipeActionsConfiguration(actions: [reportAction])
         }
         
