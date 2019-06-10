@@ -139,7 +139,9 @@ class HomeViewController: UIViewController {
         }
         
         if segue.identifier == Segues.filter {
-            let filterVC = segue.destination as! FilterViewController
+            let navigationController = segue.destination as! UINavigationController
+            let filterVC = navigationController.viewControllers.first as! FilterViewController
+            
             filterVC.delegate = self
             filterVC.selectedMarkets = filterValues
         }

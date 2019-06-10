@@ -46,7 +46,7 @@ class CouponTableViewCell: UITableViewCell {
             totalVoteLabel.text = ""
         }
         
-        couponCodeImageView.image = Barcode.fromString(code: coupon.code)
+//        couponCodeImageView.image = Barcode.fromString(code: coupon.code)
         couPonDateLabel.text = "gültig bis \(FormattedDate.formatDateToString(coupon.date))"
         
         if let currentUser = Auth.auth().currentUser {

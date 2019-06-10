@@ -28,6 +28,13 @@ class LoginRegisterViewController: UIViewController {
         
     }
     
+    func presentTabbarController() {
+        let tabbarController = storyboard!.instantiateViewController(identifier: "TabbarViewController") as! TabViewController
+        
+        addChild(tabbarController)
+        view.addSubview(tabbarController.view)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let _ = UserDefaults.standard.object(forKey: "userId") {
@@ -36,7 +43,7 @@ class LoginRegisterViewController: UIViewController {
                     self.displayEmailVerificationView()
                 }
             }
-            performSegue(withIdentifier: "HomeSegue", sender: true)
+            presentTabbarController()
         } else {
             emailVerificationViewController.view.removeFromSuperview()
         }
@@ -79,7 +86,7 @@ class LoginRegisterViewController: UIViewController {
                             self.displayEmailVerificationView()
                         }
                         
-                        self.performSegue(withIdentifier: "HomeSegue", sender: nil)
+                        self.presentTabbarController()
                     }
                 }
                 
@@ -124,7 +131,7 @@ class LoginRegisterViewController: UIViewController {
                         })
                         
                         self.displayEmailVerificationView()
-                        self.performSegue(withIdentifier: "HomeSegue", sender: nil)
+                        self.presentTabbarController()
                     }
                 }
             }
@@ -141,7 +148,7 @@ class LoginRegisterViewController: UIViewController {
             if let user = user {
                 UserDefaults.standard.set(true, forKey: "anonymousLogin")
                 UserDefaults.standard.set(user.user.uid, forKey: "userId")
-                self.performSegue(withIdentifier: "HomeSegue", sender: nil)
+                self.presentTabbarController()
             }
         }
     }

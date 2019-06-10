@@ -16,6 +16,7 @@ enum Segues {
 
 enum ReusableCells {
     static let couponCell = "CouponCell"
+    static let profileCell = "ProfileCell"
 }
 
 class Settings {

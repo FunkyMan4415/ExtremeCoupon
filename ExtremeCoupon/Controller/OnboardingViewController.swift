@@ -19,9 +19,12 @@ class OnboardingViewController: UIViewController {
         onboardingView.delegate = self
     }
     @IBAction func registerButtonTapped(_ sender: RoundedButton) {
-        
+        let loginViewController = storyboard?.instantiateViewController(identifier: "loginViewController") as! LoginRegisterViewController
         UserDefaults.standard.set(true, forKey: "onboardingCompleted")
-            }
+        
+        addChild(loginViewController)
+        self.view.addSubview(loginViewController.view)
+    }
 }
 
 extension OnboardingViewController: PaperOnboardingDataSource, PaperOnboardingDelegate {
@@ -30,36 +33,29 @@ extension OnboardingViewController: PaperOnboardingDataSource, PaperOnboardingDe
     }
     
     func onboardingItem(at index: Int) -> OnboardingItemInfo {
-        let infoImage = UIImage(named: "question")!
-//        let profileImage = UIImage(named: "Profile")!
-        let warningImage = UIImage(named: "information")!
+        let infoImage = UIImage(named: "questionmark")!
+        let warningImage = UIImage(named: "infomark")!
         let titleFont = UIFont(name: "AvenirNext-Bold", size: 20)!
-        let descriptionFont = UIFont(name: "AvenirNext-Regular", size: 13)!
-//        let backgroundOne = UIColor(displayP3Red: 249/255, green: 202/255, blue: 167/255, alpha: 1)
-//        let backgroundTwo = UIColor(displayP3Red: 168/255, green: 230/255, blue: 207/255, alpha: 1)
-//        let backgroundThree = UIColor(displayP3Red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
+        let descriptionFont = UIFont(name: "AvenirNext-Medium", size: 13)!
         
+        let backgroundOne = UIColor(named: "accent-color")!
+        let backgroundTwo = UIColor(named: "lightsteel")!
+        let backgroundThree = UIColor(displayP3Red: 255/255, green: 182/255, blue: 45/255, alpha: 1)
         
-        let backgroundOne = UIColor(named: "brown")!
-        let backgroundTwo = UIColor(named: "darkorange")!
-        let backgroundThree = UIColor(named: "accent-color")!
-//        let backgroundThree = UIColor.white
         
         
         let descriptionOne = "ExtremeCoupon ist eine App die dir effektiv beim Sammeln von Payback-Punkten hilft und Dich damit beim sparen unterstützt. Du hast die Möglichkeit vorhandene Coupons zu verwenden oder selbst Coupons für Dich und die Community zu erstellen."
-        let desctiptionThree = "ExtremeCoupon ist keine offizielle App von Payback. Die hier angebotenen Coupons stammen aus der Payback Community.\n Obwohl wir alle veröffentlichten Coupons mit bestem Wissen und Gewissen überprüfen, können wir Dir keine Garantie für deren Gültigkeit geben, jedoch entwickeln auch wir uns ständig weiter und hoffen Dir mit unserer Arbeit beim Punkte sammeln und Sparen eine Hilfe zu sein."
-        
-        
+        let desctiptionThree = "ExtremeCoupon ist keine offizielle App von Payback. Die hier angebotenen Coupons stammen aus der Payback Community. Obwohl wir alle veröffentlichten Coupons mit bestem Wissen und Gewissen überprüfen, können wir Dir keine Garantie für deren Gültigkeit geben, jedoch entwickeln auch wir uns ständig weiter und hoffen Dir mit unserer Arbeit beim Punkte sammeln und Sparen eine Hilfe zu sein."
         
         return [
-            OnboardingItemInfo(informationImage: infoImage, title: "Was ist ExtremeCoupon", description: descriptionOne, pageIcon: UIImage(), color: backgroundOne, titleColor: UIColor.black, descriptionColor: UIColor.black, titleFont: titleFont, descriptionFont: descriptionFont, descriptionLabelPadding: 20.0, titleLabelPadding: 0.0),
+            OnboardingItemInfo(informationImage: infoImage, title: "Was ist ExtremeCoupon", description: descriptionOne, pageIcon: UIImage(), color: backgroundOne, titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont, descriptionLabelPadding: 20.0, titleLabelPadding: 0.0),
             OnboardingItemInfo(informationImage: infoImage, title: "Registrierung notwendig", description: "Die Registrierung ist notwendig um den vollen Umfang der App zu nutzen. Selbstverständlich hast Du auch die Möglichkeit dir erstmal die App gemütlich als Anonymer Nutzer anzuschauen", pageIcon: UIImage(), color: backgroundTwo, titleColor: UIColor.black, descriptionColor: UIColor.black, titleFont: titleFont, descriptionFont: descriptionFont, descriptionLabelPadding: 20.0, titleLabelPadding: 0.0),
-            OnboardingItemInfo(informationImage: warningImage, title: "Ein letzter Hinweis", description: desctiptionThree, pageIcon: UIImage(), color: backgroundThree, titleColor: UIColor.black, descriptionColor: UIColor.black, titleFont: titleFont, descriptionFont: descriptionFont, descriptionLabelPadding: 20.0, titleLabelPadding: 0)
+            OnboardingItemInfo(informationImage: warningImage, title: "Ein letzter Hinweis", description: desctiptionThree, pageIcon: UIImage(), color: backgroundThree, titleColor: UIColor.darkGray, descriptionColor: UIColor.darkGray, titleFont: titleFont, descriptionFont: descriptionFont, descriptionLabelPadding: 20.0, titleLabelPadding: 0)
             ][index]
     }
     
     func onboardingWillTransitonToIndex(_ index: Int) {
-        if index == 1 {
+        if index < 2 {
             if self.registerButton.alpha == 1 {
                 UIView.animate(withDuration: 0.2) {
                     self.registerButton.alpha = 0

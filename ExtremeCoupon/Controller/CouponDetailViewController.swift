@@ -71,12 +71,8 @@ class CouponDetailViewController: UIViewController {
             rating.totalVote += 1
             coupon.rating = rating
             
-            FirebaseHelper.updateCoupon(coupon) { (success) in
-                if success {
-                    self.navigationController?.popViewController(animated: true)
-                    
-                }
-            }
+            FirebaseHelper.updateCoupon(coupon) { (success) in}
+            self.navigationController?.popViewController(animated: true)
         }
     }
 
